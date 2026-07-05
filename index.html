@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>8king888-ລະບົບຄູ້ມຄອງ</title>
+<title>8king888 - ລະບົບຄຸ້ມຄອງ</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Share+Tech+Mono&family=Exo+2:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"></script>
 <style>
 :root{
-  --gold:#FFD700;--gold2:#FFA500;--gold3:#FF8C00;
-  --gold-dim:rgba(255,215,0,0.15);--gold-border:rgba(255,215,0,0.22);
+  --gold:#FF7A00;--gold2:#FF9130;--gold3:#FF5500;
+  --gold-dim:rgba(255,122,0,0.15);--gold-border:rgba(255,122,0,0.22);
   --green:#00ff88;--red:#ff4455;--blue:#44aaff;--purple:#cc44ff;
   --bg:#060606;--card:rgba(14,14,2,0.97);
   --text:#fff;--text-dim:rgba(255,255,255,0.45);--text-faint:rgba(255,255,255,0.18);
@@ -18,25 +19,25 @@
 html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Exo 2',sans-serif;overflow-x:hidden;}
 ::-webkit-scrollbar{width:5px;height:5px;}
 ::-webkit-scrollbar-track{background:rgba(255,255,255,0.03);}
-::-webkit-scrollbar-thumb{background:rgba(255,215,0,0.3);border-radius:3px;}
+::-webkit-scrollbar-thumb{background:rgba(255,122,0,0.3);border-radius:3px;}
 
 /* BG */
-.gbg{position:fixed;inset:0;background-image:linear-gradient(rgba(255,215,0,0.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,215,0,0.016) 1px,transparent 1px);background-size:55px 55px;pointer-events:none;z-index:0;}
+.gbg{position:fixed;inset:0;background-image:linear-gradient(rgba(255,122,0,0.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,122,0,0.016) 1px,transparent 1px);background-size:55px 55px;pointer-events:none;z-index:0;}
 .gorb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(80px);}
 
 /* CARD */
-.card{background:var(--card);border:1px solid var(--gold-border);border-radius:var(--r);box-shadow:0 4px 28px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,215,0,0.05);backdrop-filter:blur(12px);transition:border-color .3s,box-shadow .3s;position:relative;overflow:hidden;}
-.card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,0.28),transparent);}
-.card.glow{border-color:rgba(255,215,0,0.6);box-shadow:0 0 24px rgba(255,215,0,0.16),0 4px 28px rgba(0,0,0,0.6);}
+.card{background:var(--card);border:1px solid var(--gold-border);border-radius:var(--r);box-shadow:0 4px 28px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,122,0,0.05);backdrop-filter:blur(12px);transition:border-color .3s,box-shadow .3s;position:relative;overflow:hidden;}
+.card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,122,0,0.28),transparent);}
+.card.glow{border-color:rgba(255,122,0,0.6);box-shadow:0 0 24px rgba(255,122,0,0.16),0 4px 28px rgba(0,0,0,0.6);}
 .card.glow-green{border-color:rgba(0,255,136,0.5);box-shadow:0 0 20px rgba(0,255,136,0.14);}
 .card.glow-red{border-color:rgba(255,68,85,0.5);box-shadow:0 0 20px rgba(255,68,85,0.14);}
 
 /* BUTTONS */
 .btn{border:none;border-radius:var(--rs);padding:10px 20px;font-family:'Exo 2',sans-serif;font-weight:700;cursor:pointer;transition:all .2s;font-size:13px;}
 .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold3));color:#000;}
-.btn-gold:hover{box-shadow:0 0 18px rgba(255,215,0,0.5);transform:translateY(-1px);}
-.btn-outline{background:rgba(255,215,0,0.07);border:1px solid rgba(255,215,0,0.32);color:var(--gold);}
-.btn-outline:hover{background:rgba(255,215,0,0.14);}
+.btn-gold:hover{box-shadow:0 0 18px rgba(255,122,0,0.5);transform:translateY(-1px);}
+.btn-outline{background:rgba(255,122,0,0.07);border:1px solid rgba(255,122,0,0.32);color:var(--gold);}
+.btn-outline:hover{background:rgba(255,122,0,0.14);}
 .btn-red{background:rgba(255,68,85,0.1);border:1px solid rgba(255,68,85,0.32);color:var(--red);}
 .btn-red:hover{background:rgba(255,68,85,0.2);}
 .btn-blue{background:rgba(68,170,255,0.1);border:1px solid rgba(68,170,255,0.32);color:var(--blue);}
@@ -45,7 +46,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Exo 2'
 
 /* INPUTS */
 input,select,textarea{background:rgba(255,255,255,0.05);border:1px solid var(--gold-border);border-radius:var(--rs);padding:10px 14px;color:var(--text);font-family:'Exo 2',sans-serif;font-size:13px;outline:none;transition:border-color .2s;width:100%;}
-input:focus,select:focus,textarea:focus{border-color:rgba(255,215,0,0.65);box-shadow:0 0 0 3px rgba(255,215,0,0.07);}
+input:focus,select:focus,textarea:focus{border-color:rgba(255,122,0,0.65);box-shadow:0 0 0 3px rgba(255,122,0,0.07);}
 select{background:#0e0d00;cursor:pointer;}
 input[type=number]::-webkit-inner-spin-button{opacity:.3;}
 label{color:var(--text-dim);font-size:11px;letter-spacing:.8px;display:block;margin-bottom:5px;text-transform:uppercase;}
@@ -59,16 +60,16 @@ label{color:var(--text-dim);font-size:11px;letter-spacing:.8px;display:block;mar
 
 /* SIDEBAR */
 .brand{padding:20px 18px 16px;border-bottom:1px solid var(--gold-border);display:flex;align-items:center;gap:12px;}
-.bi{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold3));display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 0 16px rgba(255,215,0,0.44);flex-shrink:0;}
-.bn{font-family:'Orbitron',monospace;font-size:15px;color:var(--gold);font-weight:900;letter-spacing:2px;text-shadow:0 0 10px rgba(255,215,0,0.5);}
+.bi{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold3));display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 0 16px rgba(255,122,0,0.44);flex-shrink:0;}
+.bn{font-family:'Orbitron',monospace;font-size:15px;color:var(--gold);font-weight:900;letter-spacing:2px;text-shadow:0 0 10px rgba(255,122,0,0.5);}
 .bs{font-size:8px;color:var(--text-faint);letter-spacing:1.5px;margin-top:1px;}
 nav{flex:1;padding:12px 10px;overflow-y:auto;display:flex;flex-direction:column;gap:2px;}
 .ni{display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:10px;cursor:pointer;transition:all .2s;border-left:2px solid transparent;color:var(--text-dim);font-size:13px;font-weight:500;}
-.ni:hover{background:rgba(255,215,0,0.05);color:rgba(255,255,255,0.8);}
-.ni.active{background:linear-gradient(135deg,rgba(255,215,0,0.12),rgba(255,140,0,0.07));border-left-color:var(--gold);color:var(--gold);font-weight:700;}
+.ni:hover{background:rgba(255,122,0,0.05);color:rgba(255,255,255,0.8);}
+.ni.active{background:linear-gradient(135deg,rgba(255,122,0,0.12),rgba(255,90,0,0.07));border-left-color:var(--gold);color:var(--gold);font-weight:700;}
 .nd{width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold);margin-left:auto;}
 .uinfo{padding:13px 18px;border-top:1px solid var(--gold-border);}
-.uav{width:32px;height:32px;border-radius:50%;background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.28);display:flex;align-items:center;justify-content:center;font-size:14px;}
+.uav{width:32px;height:32px;border-radius:50%;background:rgba(255,122,0,0.1);border:1px solid rgba(255,122,0,0.28);display:flex;align-items:center;justify-content:center;font-size:14px;}
 
 /* STAT */
 .sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:13px;margin-bottom:18px;}
@@ -83,15 +84,15 @@ nav{flex:1;padding:12px 10px;overflow-y:auto;display:flex;flex-direction:column;
 .badge{padding:2px 10px;border-radius:20px;font-size:10px;font-family:'Share Tech Mono',monospace;letter-spacing:.8px;border:1px solid;}
 .bon{color:#00ff88;background:rgba(0,255,136,0.09);border-color:rgba(0,255,136,0.32);}
 .boff{color:#ff4455;background:rgba(255,68,85,0.09);border-color:rgba(255,68,85,0.32);}
-.bbrk{color:var(--gold);background:rgba(255,215,0,0.09);border-color:rgba(255,215,0,0.32);}
+.bbrk{color:var(--gold);background:rgba(255,122,0,0.09);border-color:rgba(255,122,0,0.32);}
 .bprc{color:var(--blue);background:rgba(68,170,255,0.09);border-color:rgba(68,170,255,0.32);}
 
 /* TABLE */
 .tw{overflow-x:auto;}
 table{width:100%;border-collapse:collapse;font-size:13px;}
-th{text-align:left;padding:9px 12px;color:rgba(255,215,0,0.6);font-size:10px;letter-spacing:1.2px;text-transform:uppercase;border-bottom:1px solid rgba(255,215,0,0.16);font-weight:600;}
+th{text-align:left;padding:9px 12px;color:rgba(255,122,0,0.6);font-size:10px;letter-spacing:1.2px;text-transform:uppercase;border-bottom:1px solid rgba(255,122,0,0.16);font-weight:600;}
 td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.04);color:rgba(255,255,255,0.8);}
-tr:hover td{background:rgba(255,215,0,0.022);}
+tr:hover td{background:rgba(255,122,0,0.022);}
 
 /* RING */
 .rrow{display:flex;justify-content:space-around;align-items:center;gap:10px;flex-wrap:wrap;}
@@ -103,16 +104,16 @@ tr:hover td{background:rgba(255,215,0,0.022);}
 /* BAR CHART */
 .bc{display:flex;align-items:flex-end;gap:5px;height:78px;}
 .bcc{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;}
-.bar{width:100%;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--gold),var(--gold3));box-shadow:0 0 8px rgba(255,215,0,0.3);min-height:3px;}
+.bar{width:100%;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--gold),var(--gold3));box-shadow:0 0 8px rgba(255,122,0,0.3);min-height:3px;}
 .bday{color:var(--text-faint);font-size:9px;}
 
 /* SECTION TITLE */
-.st{color:rgba(255,215,0,0.58);font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:13px;display:flex;align-items:center;gap:8px;}
-.st::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(255,215,0,0.18),transparent);}
+.st{color:rgba(255,122,0,0.58);font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:13px;display:flex;align-items:center;gap:8px;}
+.st::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(255,122,0,0.18),transparent);}
 
 /* PAGE HEADER */
 .ph{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px;}
-.pt{font-family:'Orbitron',monospace;font-size:18px;color:var(--gold);font-weight:900;text-shadow:0 0 14px rgba(255,215,0,0.38);}
+.pt{font-family:'Orbitron',monospace;font-size:18px;color:var(--gold);font-weight:900;text-shadow:0 0 14px rgba(255,122,0,0.38);}
 
 /* MODAL */
 .mo{position:fixed;inset:0;background:rgba(0,0,0,0.87);display:flex;align-items:center;justify-content:center;z-index:999;backdrop-filter:blur(10px);}
@@ -125,10 +126,10 @@ tr:hover td{background:rgba(255,215,0,0.022);}
 .ma .btn{flex:1;padding:13px;}
 
 /* CLOCK */
-.lc{font-family:'Share Tech Mono',monospace;color:var(--gold);font-size:13px;text-shadow:0 0 10px rgba(255,215,0,0.55);}
+.lc{font-family:'Share Tech Mono',monospace;color:var(--gold);font-size:13px;text-shadow:0 0 10px rgba(255,122,0,0.55);}
 
 /* SHIFT TIMER */
-.sti{font-family:'Orbitron',monospace;font-size:40px;font-weight:900;color:var(--gold);text-shadow:0 0 28px rgba(255,215,0,0.6);letter-spacing:4px;text-align:center;padding:18px 0;}
+.sti{font-family:'Orbitron',monospace;font-size:40px;font-weight:900;color:var(--gold);text-shadow:0 0 28px rgba(255,122,0,0.6);letter-spacing:4px;text-align:center;padding:18px 0;}
 
 /* PARTNER */
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:13px;}
@@ -140,15 +141,15 @@ tr:hover td{background:rgba(255,215,0,0.022);}
 .nd2{position:absolute;top:-2px;right:-2px;width:16px;height:16px;border-radius:50%;background:#ff4455;color:#fff;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:900;}
 
 /* TIER */
-.tc{padding:8px 15px;background:rgba(255,215,0,0.06);border:1px solid rgba(255,215,0,0.25);border-radius:8px;font-size:12px;}
+.tc{padding:8px 15px;background:rgba(255,122,0,0.06);border:1px solid rgba(255,122,0,0.25);border-radius:8px;font-size:12px;}
 .tr2{color:var(--gold);font-weight:900;margin-left:8px;font-family:'Orbitron',monospace;}
 
 /* EXPENSE BAR */
 .ebg{height:4px;background:rgba(255,255,255,0.05);border-radius:2px;margin-top:8px;}
-.ef{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--gold),var(--gold3));box-shadow:0 0 8px rgba(255,215,0,0.4);}
+.ef{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--gold),var(--gold3));box-shadow:0 0 8px rgba(255,122,0,0.4);}
 
 /* REPORT */
-.rsh{color:rgba(255,215,0,0.6);font-size:10px;letter-spacing:1.8px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(255,215,0,0.13);text-transform:uppercase;}
+.rsh{color:rgba(255,122,0,0.6);font-size:10px;letter-spacing:1.8px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(255,122,0,0.13);text-transform:uppercase;}
 .rrow2{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px;}
 
 /* SCORE BAR */
@@ -157,18 +158,18 @@ tr:hover td{background:rgba(255,215,0,0.022);}
 
 /* LOGIN */
 #lp{min-height:100vh;background:radial-gradient(ellipse at 15% 50%,rgba(40,30,0,.78) 0%,#060606 55%),radial-gradient(ellipse at 85% 15%,rgba(55,38,0,.6) 0%,transparent 50%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
-.lgb{position:absolute;inset:0;background-image:linear-gradient(rgba(255,215,0,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,215,0,0.02) 1px,transparent 1px);background-size:50px 50px;}
+.lgb{position:absolute;inset:0;background-image:linear-gradient(rgba(255,122,0,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,122,0,0.02) 1px,transparent 1px);background-size:50px 50px;}
 .lo{position:absolute;border-radius:50%;pointer-events:none;filter:blur(70px);}
 .lcard{width:100%;max-width:420px;padding:36px;position:relative;z-index:1;}
 .llogo{text-align:center;margin-bottom:34px;}
-.lcrown{width:76px;height:76px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold3));display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 13px;box-shadow:0 0 42px rgba(255,215,0,0.52),0 0 88px rgba(255,215,0,0.18);}
-.ltitle{font-family:'Orbitron',monospace;font-size:30px;color:var(--gold);font-weight:900;letter-spacing:5px;text-shadow:0 0 26px rgba(255,215,0,0.65);}
+.lcrown{width:76px;height:76px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold3));display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 13px;box-shadow:0 0 42px rgba(255,122,0,0.52),0 0 88px rgba(255,122,0,0.18);}
+.ltitle{font-family:'Orbitron',monospace;font-size:30px;color:var(--gold);font-weight:900;letter-spacing:5px;text-shadow:0 0 26px rgba(255,122,0,0.65);}
 .lsub{color:var(--text-faint);font-size:10px;letter-spacing:2px;margin-top:5px;}
 .lf{margin-bottom:17px;}
 .liw{position:relative;}
 .lii{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:15px;opacity:.55;}
 .lin{padding-left:42px!important;}
-.lbtn{width:100%;padding:14px;font-size:14px;letter-spacing:1.5px;margin-top:6px;border-radius:10px;box-shadow:0 0 20px rgba(255,215,0,0.38);}
+.lbtn{width:100%;padding:14px;font-size:14px;letter-spacing:1.5px;margin-top:6px;border-radius:10px;box-shadow:0 0 20px rgba(255,122,0,0.38);}
 .lhint{color:var(--text-faint);font-size:10px;text-align:center;margin-top:16px;}
 .lerr{color:var(--red);font-size:12px;text-align:center;margin-bottom:13px;padding:8px;background:rgba(255,68,85,0.09);border:1px solid rgba(255,68,85,0.28);border-radius:8px;}
 
@@ -186,7 +187,7 @@ tr:hover td{background:rgba(255,215,0,0.022);}
 #rt-dot{animation:rtpulse 2.5s ease-in-out infinite;}
 
 /* MISC */
-.sep{height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,0.18),transparent);margin:18px 0;}
+.sep{height:1px;background:linear-gradient(90deg,transparent,rgba(255,122,0,0.18),transparent);margin:18px 0;}
 .g20{display:flex;flex-direction:column;gap:20px;}
 .g12{display:flex;flex-direction:column;gap:12px;}
 .tg{color:var(--gold);} .tgr{color:var(--green);} .tr{color:var(--red);} .to{color:var(--gold3);} .td{color:var(--text-dim);}
@@ -194,7 +195,7 @@ tr:hover td{background:rgba(255,215,0,0.022);}
 .bold{font-weight:700;}
 .p16{padding:16px;}.p20{padding:20px;}.p24{padding:24px;}.p28{padding:28px;}.p32{padding:32px;}
 .hidden{display:none!important;}
-.calcbox{background:rgba(255,215,0,0.04);border:1px solid rgba(255,215,0,0.13);border-radius:10px;padding:15px;margin-top:14px;}
+.calcbox{background:rgba(255,122,0,0.04);border:1px solid rgba(255,122,0,0.13);border-radius:10px;padding:15px;margin-top:14px;}
 .tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;}
 
 /* SIDEBAR OVERLAY MOBILE */
@@ -202,11 +203,11 @@ tr:hover td{background:rgba(255,215,0,0.022);}
 .sov.show{display:block;}
 
 /* SEARCH BOX */
-.search-box{background:rgba(255,255,255,0.05);border:1px solid rgba(255,215,0,0.2);border-radius:8px;padding:8px 14px;color:var(--text);font-size:13px;outline:none;width:220px;}
-.search-box:focus{border-color:rgba(255,215,0,0.5);}
+.search-box{background:rgba(255,255,255,0.05);border:1px solid rgba(255,122,0,0.2);border-radius:8px;padding:8px 14px;color:var(--text);font-size:13px;outline:none;width:220px;}
+.search-box:focus{border-color:rgba(255,122,0,0.5);}
 
 /* SUMMARY ROW */
-.sum-row{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(255,215,0,0.04);border-radius:8px;border:1px solid rgba(255,215,0,0.1);margin-top:10px;}
+.sum-row{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(255,122,0,0.04);border-radius:8px;border:1px solid rgba(255,122,0,0.1);margin-top:10px;}
 
 /* EMPTY STATE */
 .empty{text-align:center;padding:40px 20px;color:var(--text-faint);}
@@ -231,16 +232,16 @@ tr:hover td{background:rgba(255,215,0,0.022);}
 <body>
 
 <div class="gbg"></div>
-<div class="gorb" style="width:400px;height:400px;background:radial-gradient(circle,rgba(255,215,0,0.05),transparent);left:-100px;top:80px;"></div>
-<div class="gorb" style="width:360px;height:360px;background:radial-gradient(circle,rgba(255,140,0,0.04),transparent);right:-80px;bottom:80px;"></div>
+<div class="gorb" style="width:400px;height:400px;background:radial-gradient(circle,rgba(255,122,0,0.05),transparent);left:-100px;top:80px;"></div>
+<div class="gorb" style="width:360px;height:360px;background:radial-gradient(circle,rgba(255,90,0,0.04),transparent);right:-80px;bottom:80px;"></div>
 
-<div class="toast" id="toast"></div>
+<div class="toast success" id="toast">✅ 🔥 Firebase ເຊື່ອມຕໍ່ສຳເລັດ — Real-Time LIVE!</div>
 
 <!-- LOGIN -->
-<div id="lp">
+<div id="lp" class="hidden">
   <div class="lgb"></div>
-  <div class="lo" style="width:340px;height:340px;background:radial-gradient(circle,rgba(255,215,0,0.07),transparent);left:8%;top:30%;transform:translate(-50%,-50%);"></div>
-  <div class="lo" style="width:270px;height:270px;background:radial-gradient(circle,rgba(255,140,0,0.05),transparent);right:8%;top:20%;transform:translate(50%,-50%);"></div>
+  <div class="lo" style="width:340px;height:340px;background:radial-gradient(circle,rgba(255,122,0,0.07),transparent);left:8%;top:30%;transform:translate(-50%,-50%);"></div>
+  <div class="lo" style="width:270px;height:270px;background:radial-gradient(circle,rgba(255,90,0,0.05),transparent);right:8%;top:20%;transform:translate(50%,-50%);"></div>
   <div class="lcard">
     <div class="llogo">
       <div class="lcrown">👑</div>
@@ -248,23 +249,23 @@ tr:hover td{background:rgba(255,215,0,0.022);}
       <div class="lsub">ລະບົບຄຸ້ມຄອງຮ້ານເກມ</div>
     </div>
     <div class="card glow p32">
-      <div style="color:rgba(255,215,0,0.5);font-size:10px;letter-spacing:2px;text-align:center;margin-bottom:22px;">ກະລຸນາໃສ່ຂໍ້ມູນເຂົ້າລະບົບ</div>
+      <div style="color:rgba(255,122,0,0.5);font-size:10px;letter-spacing:2px;text-align:center;margin-bottom:22px;">ກະລຸນາໃສ່ຂໍ້ມູນເຂົ້າລະບົບ</div>
       <div id="lerr" class="lerr hidden"></div>
       <div class="lf">
         <label>ຊື່ຜູ້ໃຊ້</label>
         <div class="liw">
           <span class="lii">👤</span>
-          <input id="iu" class="lin" type="text" placeholder="ໃສ່ຊື່ຜູ້ໃຊ້" onkeydown="if(event.key==='Enter')doLogin()">
+          <input id="iu" class="lin" type="text" placeholder="ໃສ່ຊື່ຜູ້ໃຊ້" onkeydown="if(event.key===&#39;Enter&#39;)doLogin()">
         </div>
       </div>
       <div class="lf">
         <label>ລະຫັດຜ່ານ</label>
         <div class="liw">
           <span class="lii">🔒</span>
-          <input id="ip" class="lin" type="password" placeholder="ໃສ່ລະຫັດຜ່ານ" onkeydown="if(event.key==='Enter')doLogin()">
+          <input id="ip" class="lin" type="password" placeholder="ໃສ່ລະຫັດຜ່ານ" onkeydown="if(event.key===&#39;Enter&#39;)doLogin()">
         </div>
       </div>
-      <button class="btn btn-gold lbtn" id="lbtn" onclick="doLogin()">ເຂົ້າສູ່ລະບົບ →</button>
+      <button class="btn btn-gold lbtn" id="lbtn" onclick="doLogin()">ເຂົ້າລະບົບ →</button>
       
       <div id="shift-warn" class="hidden" style="margin-top:14px;padding:10px 14px;background:rgba(0,255,136,0.08);border:1px solid rgba(0,255,136,0.35);border-radius:10px;color:#00ff88;font-size:11px;text-align:center;letter-spacing:.5px;">
         🟢 Shift ກຳລັງດຳເນີນຢູ່ — ກະລຸນາ Login ເພື່ອສືບຕໍ່
@@ -275,7 +276,7 @@ tr:hover td{background:rgba(255,215,0,0.022);}
 </div>
 
 <!-- APP -->
-<div id="app" class="hidden">
+<div id="app" class="">
   <div class="sov" id="sov" onclick="closeSB()"></div>
 
   <div id="sb">
@@ -283,13 +284,13 @@ tr:hover td{background:rgba(255,215,0,0.022);}
       <div class="bi">👑</div>
       <div><div class="bn">8king888</div><div class="bs">ສູນຄວບຄຸມ</div></div>
     </div>
-    <nav id="snav"></nav>
+    <nav id="snav"><div class="ni" data-key="dashboard"><span style="font-size:16px;width:20px;text-align:center;">⚡</span><span>ໜ້າຫຼັກ</span></div><div class="ni" data-key="revenue"><span style="font-size:16px;width:20px;text-align:center;">💰</span><span>ຕິດຕາມລາຍຮັບ</span></div><div class="ni" data-key="employees"><span style="font-size:16px;width:20px;text-align:center;">👥</span><span>ພະນັກງານ</span></div><div class="ni" data-key="shift"><span style="font-size:16px;width:20px;text-align:center;">🕐</span><span>ຕິດຕາມ Shift</span></div><div class="ni" data-key="commission"><span style="font-size:16px;width:20px;text-align:center;">🏆</span><span>ລະບົບ Commission</span></div><div class="ni" data-key="expenses"><span style="font-size:16px;width:20px;text-align:center;">💸</span><span>ຈັດການລາຍຈ່າຍ</span></div><div class="ni" data-key="reserve"><span style="font-size:16px;width:20px;text-align:center;">🏦</span><span>ເງິນສຳຮອງ</span></div><div class="ni" data-key="partner"><span style="font-size:16px;width:20px;text-align:center;">🤝</span><span>ສ່ວນແບ່ງຫຸ້ນສ່ວນ</span></div><div class="ni" data-key="users"><span style="font-size:16px;width:20px;text-align:center;">🔑</span><span>ຈັດການຜູ້ໃຊ້</span></div><div class="ni" data-key="reports"><span style="font-size:16px;width:20px;text-align:center;">📊</span><span>ລາຍງານ</span></div><div class="ni" data-key="notif"><span style="font-size:16px;width:20px;text-align:center;">🔔</span><span>ການແຈ້ງເຕືອນ</span></div><div class="ni" data-key="actlogs"><span style="font-size:16px;width:20px;text-align:center;">📋</span><span>ບັນທຶກກິດຈະກຳ</span></div><div class="ni active" data-key="settings"><span style="font-size:16px;width:20px;text-align:center;">⚙</span><span>ຕັ້ງຄ່າ</span><div class="nd"></div></div></nav>
     <div class="uinfo">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
         <div class="uav">👤</div>
         <div>
           <div style="font-size:12px;font-weight:700;" id="udis">ຜູ້ບໍລິຫານ</div>
-          <div style="font-size:10px;color:rgba(255,215,0,0.55);" id="rdis">ADMIN</div>
+          <div style="font-size:10px;color:rgba(255,122,0,0.55);" id="rdis">ADMIN</div>
         </div>
       </div>
       <button class="btn btn-red" style="width:100%;font-size:11px;padding:8px;" onclick="doLogout()">⏏ ອອກຈາກລະບົບ</button>
@@ -298,22 +299,127 @@ tr:hover td{background:rgba(255,215,0,0.022);}
 
   <div id="main">
     <div id="topbar">
-      <button onclick="toggleSB()" style="background:none;border:none;color:rgba(255,215,0,0.55);cursor:pointer;font-size:22px;padding:4px 8px;line-height:1;">☰</button>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:600;color:rgba(255,255,255,0.72);" id="tbtitle">ໜ້າຫຼັກ</div></div>
+      <button onclick="toggleSB()" style="background:none;border:none;color:rgba(255,122,0,0.55);cursor:pointer;font-size:22px;padding:4px 8px;line-height:1;">☰</button>
+      <div style="flex:1;"><div style="font-size:14px;font-weight:600;color:rgba(255,255,255,0.72);" id="tbtitle">ຕັ້ງຄ່າ</div></div>
       <div style="display:flex;align-items:center;gap:12px;">
-        <div class="nb" id="nbbtn" onclick="navigate('notif')">🔔<div class="nd2" id="nbadge">0</div></div>
+        <div class="nb" id="nbbtn" onclick="navigate(&#39;notif&#39;)">🔔<div class="nd2" id="nbadge" style="display: none;">0</div></div>
         <div style="color:var(--text-faint);font-size:12px;">|</div>
         <!-- RT Live indicator -->
         <div style="display:flex;align-items:center;gap:5px;" title="Real-Time Sync ສະຖານະ">
-          <div id="rt-dot" style="width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);opacity:0.5;transition:all 0.3s;"></div>
+          <div id="rt-dot" style="width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); opacity: 1; transition: 0.3s;"></div>
           <span style="font-size:10px;color:var(--text-faint);letter-spacing:.5px;">LIVE</span>
         </div>
         <div style="color:var(--text-faint);font-size:12px;">|</div>
-        <span id="syncind" title="ສະຖານະ Cloud" style="font-size:15px;cursor:default;transition:color .3s;">☁️</span>
-        <div class="lc" id="clk">00:00:00</div>
+        <span id="syncind" title="Firebase sync ສຳເລັດ" style="font-size: 15px; cursor: default; transition: color 0.3s; color: var(--green);">🟢</span>
+        <div class="lc" id="clk">14:30:59</div>
       </div>
     </div>
-    <div id="ct"></div>
+    <div id="ct">
+  <div class="g20 ai">
+    <div class="ph"><div class="pt">ຕັ້ງຄ່າລະບົບ</div></div>
+
+    <!-- ===== FIREBASE REAL-TIME SYNC ===== -->
+    <div class="card p24" style="border-color:rgba(255,100,0,0.45);">
+      <div class="st" style="color:#FF6B35;">🔥 Firebase Real-Time Database</div>
+      <div style="margin-bottom:14px;font-size:12px;color:var(--text-dim);line-height:1.8;">
+        ຂໍ້ມູນ sync ໄປທຸກ device ທັນທີ <b style="color:#FF6B35;">~100ms</b> — ສະຖານະ: <span style="color:var(--green);">🟢 ເຊື່ອມຕໍ່ແລ້ວ — Real-Time LIVE</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+        <div class="fgr">
+          <label>Database URL</label>
+          <input id="fb-url" type="text" value="https://king888-d4969-default-rtdb.asia-southeast1.firebasedatabase.app" placeholder="https://your-app-default-rtdb.firebaseio.com" style="font-family:&#39;Share Tech Mono&#39;,monospace;font-size:11px;">
+        </div>
+        <div class="fgr">
+          <label>Database Secret (Auth Token)</label>
+          <input id="fb-key" type="text" value="O4ZFR98y94AMAWn1M9CnDhW4YEzYyfj3chqF8hCX" placeholder="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" style="font-family:&#39;Share Tech Mono&#39;,monospace;font-size:11px;">
+        </div>
+      </div>
+
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;">
+        <button class="btn btn-gold" onclick="saveFirebaseCfg()" style="padding:10px 22px;font-size:13px;background:linear-gradient(135deg,#FF6B35,#FF4500);">🔥 ບັນທຶກ &amp; ເຊື່ອມຕໍ່</button>
+        <button class="btn btn-outline" onclick="testFirebase()" style="font-size:12px;">🔍 ທົດສອບ</button>
+        <button class="btn btn-red" onclick="clearFirebaseCfg()" style="font-size:12px;">✕ ລຶບ</button>
+      </div>
+      <div id="fb-test-result" style="font-size:12px;min-height:18px;font-family:&#39;Share Tech Mono&#39;,monospace;"></div>
+
+      <!-- STEP-BY-STEP GUIDE -->
+      <div style="background:rgba(255,107,53,0.06);border:1px solid rgba(255,107,53,0.2);border-radius:10px;padding:15px;margin-top:14px;font-size:12px;color:var(--text-dim);line-height:2;">
+        <div style="color:#FF6B35;font-weight:700;font-size:13px;margin-bottom:8px;">📋 ວິທີ Setup Firebase (ຟຣີ ~5 ນາທີ):</div>
+        <b style="color:var(--gold);">ຂັ້ນຕອນ 1</b> — ໄປ <a href="https://console.firebase.google.com/" target="_blank" style="color:#FF6B35;">console.firebase.google.com</a> → Add project<br>
+        <b style="color:var(--gold);">ຂັ້ນຕອນ 2</b> — ໃນ project → Build → <b>Realtime Database</b> → Create database → Start in <b>test mode</b><br>
+        <b style="color:var(--gold);">ຂັ້ນຕອນ 3</b> — Copy <b>Database URL</b> (ຮູບແບບ: https://xxx-default-rtdb.firebaseio.com)<br>
+        <b style="color:var(--gold);">ຂັ້ນຕອນ 4</b> — Project Settings ⚙ → Service accounts → <b>Database secrets</b> → Show → Copy secret<br>
+        <b style="color:var(--gold);">ຂັ້ນຕອນ 5</b> — ໃສ່ທັງ 2 ຄ່າຂ້າງເທິງ → ກົດ "ບັນທຶກ &amp; ເຊື່ອມຕໍ່"<br>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(0,255,136,0.06);border-radius:8px;color:var(--green);font-size:11px;">
+          ✅ ຫຼັງຈາກ setup — ທຸກ device ທີ່ເປີດ file ດຽວກັນ ຈະເຫັນຂໍ້ມູນດຽວກັນທັນທີ ~2 ວິ.
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== ການຕັ້ງຄ່າທົ່ວໄປ ===== -->
+    <div class="card p24">
+      <div class="st">ການຕັ້ງຄ່າທົ່ວໄປ</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:14px;">
+        <div class="fgr"><label>ຊື່ຮ້ານ</label><input id="set-sn" value="8king888 Gaming"></div>
+        <div class="fgr"><label>ເປົ້າໝາຍ/ເດືອນ (₭)</label><input id="set-mt" type="number" value="150000000"></div>
+        <div class="fgr"><label>ເປົ້າໝາຍ/ວັນ (₭)</label><input id="set-dt" type="number" value="5000000"></div>
+      </div>
+      <button class="btn btn-gold" onclick="saveSettings()">💾 ບັນທຶກ</button>
+    </div>
+
+    <div class="card p24">
+      <div class="st">ສູດຄຳນວນ Break Even</div>
+      <div style="background:rgba(255,122,0,0.04);border:1px solid rgba(255,122,0,0.12);border-radius:10px;padding:17px;">
+        <div class="fm tg" style="font-size:13px;line-height:2.2;">
+          ກຳໄລສຸດທິ = ລາຍຮັບທັງໝົດ − ລາຍຈ່າຍທັງໝົດ<br>
+          Break Even = ລາຍຈ່າຍ ÷ ອັດຕາກຳໄລ<br>
+          ເປົ້າໝາຍ/ວັນ = ເປົ້າໝາຍ/ເດືອນ ÷ 30<br>
+          Commission = ລາຍຮັບ × ອັດຕາ
+        </div>
+      </div>
+    </div>
+
+    <div class="card p24">
+      <div class="st">ຂໍ້ມູນ ແລະ ຄຳສັ່ງ</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="btn btn-blue" onclick="exportAllData()" style="font-size:12px;">📦 Export JSON</button>
+        <button class="btn btn-outline" onclick="importDataPrompt()" style="font-size:12px;">📥 Import JSON</button>
+        <button class="btn btn-red" onclick="resetAll()" style="font-size:12px;">🔄 Reset Default</button>
+      </div>
+    </div>
+
+    <div class="card p24" style="border-color:rgba(255,68,85,0.3);">
+      <div class="st" style="color:var(--red);">🗑 Reset ຂໍ້ມູນລາຍເດືອນ</div>
+      <div style="font-size:12px;color:var(--text-dim);margin-bottom:12px;line-height:1.7;">ລ້າງລາຍຮັບ, Shift logs, ການແຈ້ງເຕືອນ ແລະ Activity logs ສະເພາະເດືອນທີ່ເລືອກ — ຂໍ້ມູນເດືອນອື່ນຈະບໍ່ຖືກກະທົບ.</div>
+      <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;">
+        <div class="fgr" style="width:170px;">
+          <label>ເລືອກເດືອນ</label>
+          <input type="month" id="reset-month-val" value="2026-07">
+        </div>
+        <button class="btn btn-red" onclick="resetMonthData()" style="font-size:12px;">🗑 Reset ເດືອນນີ້</button>
+      </div>
+    </div>
+
+    <div class="card p24" style="border-color:rgba(255,68,85,0.3);">
+      <div class="st" style="color:var(--red);">🗑 ລຶບຂໍ້ມູນລາຍຮັບທັງໝົດ</div>
+      <div style="font-size:12px;color:var(--text-dim);margin-bottom:12px;line-height:1.7;">ລຶບປະຫວັດ "ລາຍຮັບ" ທັງໝົດ (ທຸກເດືອນ, ທຸກປີ) ອອກຈາກລະບົບ — Shift logs, ລາຍຈ່າຍ, ພະນັກງານ ຈະບໍ່ຖືກກະທົບ. ບໍ່ສາມາດກູ້ຄືນໄດ້.</div>
+      <button class="btn btn-red" onclick="deleteAllRevenues()" style="font-size:12px;">🗑 ລຶບລາຍຮັບທັງໝົດ</button>
+    </div>
+
+    <div class="card p24">
+      <div class="st">ຂໍ້ມູນລະບົບ</div>
+      
+      <div class="rrow2"><span class="td">ລະບົບ</span><span style="color:var(--green);font-size:13px;">8king888 v3.0 (Firebase Real-Time)</span></div>
+      <div class="rrow2"><span class="td">Firebase</span><span style="color:var(--green);font-size:13px;">🔥 ເຊື່ອມຕໍ່ແລ້ວ</span></div>
+      <div class="rrow2"><span class="td">Real-Time</span><span style="color:var(--green);font-size:13px;">🟢 LIVE poll 2s (~100ms UX)</span></div>
+      <div class="rrow2"><span class="td">ພະນັກງານ</span><span style="color:var(--green);font-size:13px;">3 ຄົນ</span></div>
+      <div class="rrow2"><span class="td">ລາຍຮັບ</span><span style="color:var(--green);font-size:13px;">0 ລາຍການ</span></div>
+      <div class="rrow2"><span class="td">ລາຍຈ່າຍ</span><span style="color:var(--green);font-size:13px;">4 ລາຍການ</span></div>
+      <div class="rrow2"><span class="td">Logs</span><span style="color:var(--green);font-size:13px;">2 ລາຍການ</span></div>
+      <div class="rrow2"><span class="td">ສະຖານະ</span><span style="color:var(--green);font-size:13px;">✓ ທຸກລະບົບທຳງານ</span></div>
+    </div>
+  </div></div>
   </div>
 </div>
 
@@ -330,8 +436,8 @@ tr:hover td{background:rgba(255,215,0,0.022);}
 // ============================================================
 // STORAGE — Firebase Realtime Database (True Real-Time ~100ms)
 // ============================================================
-const SK       = '4king77_v1_cache';
-const FB_KEY   = '4king77_firebase_cfg'; // { dbUrl, apiKey }
+const SK       = '8king888_v1_cache';
+const FB_KEY   = '8king888_firebase_cfg'; // { dbUrl, apiKey }
 
 // Firebase config baked in — ທຸກຄົນໃຊ້ໄດ້ທັນທີ ບໍ່ຕ້ອງ setup
 const _FB_DEFAULT = {
@@ -406,7 +512,7 @@ async function fbWrite(path, data) {
 let _bc = null;
 function initBroadcast() {
   try {
-    _bc = new BroadcastChannel('4king77_realtime');
+    _bc = new BroadcastChannel('8king888_realtime');
     _bc.onmessage = function(e) {
       if (!SESSION || !SESSION.user) return;
       if (e.data && e.data.type === 'db_update' && e.data.db) {
@@ -449,7 +555,7 @@ let _pollSig = '';
 async function pollFirebase() {
   if (!isFirebaseConfigured() || !SESSION || !SESSION.user) return;
   try {
-    const data = await fbRead('4king77');
+    const data = await fbRead('8king888');
     if (!data) return;
     const incoming = JSON.stringify(data);
     const sig = incoming.length + '_' + (data.actLogs?.[0]?.id || '');
@@ -475,7 +581,7 @@ async function loadData() {
   if (isFirebaseConfigured()) {
     try {
       showSyncStatus('loading');
-      const data = await fbRead('4king77');
+      const data = await fbRead('8king888');
       if (data) {
         localStorage.setItem(SK, JSON.stringify(data));
         showSyncStatus('saved');
@@ -511,7 +617,7 @@ function saveData() {
     _isSaving = true;
     const h = dbHash();
     try {
-      await fbWrite('4king77', DB);
+      await fbWrite('8king888', DB);
       _lastSavedHash = h;
       showSyncStatus('saved');
     } catch(e) {
@@ -554,9 +660,9 @@ const DEFAULT = {
     {id:4,name:'ເງິນສຳຮອງ',amount:10000000,category:'ສຳຮອງ',date:'2026-05-01'},
   ],
   partners:[
-    {id:1,name:'ເຈົ້າຂອງ',share:40,color:'#FFD700'},
-    {id:2,name:'ອ້າຍເປີ້ນ',share:20,color:'#FFA500'},
-    {id:3,name:'ອ້າຕຸ້ຍ',share:20,color:'#FF8C00'},
+    {id:1,name:'ເຈົ້າຂອງ',share:40,color:'#FF7A00'},
+    {id:2,name:'ອ້າຍເປີ້ນ',share:20,color:'#FF9130'},
+    {id:3,name:'ອ້າຕຸ້ຍ',share:20,color:'#FF5500'},
     {id:4,name:'ພີ່ເກັ່ງ',share:20,color:'#FFB347'},
   ],
   commTiers:[
@@ -573,7 +679,7 @@ const DEFAULT = {
     monthTarget:150000000,
     dailyTarget:5000000,
     currency:'₭',
-    storeName:'4king77 Gaming',
+    storeName:'8king888 Gaming',
   },
   reserve:{
     balance: 10000000,
@@ -592,7 +698,7 @@ function loadDataSync(){
 let DB = loadDataSync() || JSON.parse(JSON.stringify(DEFAULT));
 
 // Session (not persisted) — shiftActive/shiftStart/shiftLogId ARE persisted via SHIFT_KEY
-const SHIFT_KEY = '4king77_shift_v1';
+const SHIFT_KEY = '8king888_shift_v1';
 let SESSION = { user:null, shiftActive:false, shiftStart:null, shiftElapsed:0, shiftInterval:null, shiftLogId:null, shiftOpenBal:0, calcAmount:3000000, page:'dashboard' };
 
 // ── Shift persistence helpers ─────────────────────────────────
@@ -806,9 +912,10 @@ function doLogout(){
   // ຖ້າ Shift ບໍ່ໄດ້ດຳເນີນ → ລຶບ key ອອກ
   if(SESSION.shiftActive && SESSION.user){
     const shiftData = {
-      username:   SESSION.user.username,
-      shiftStart: SESSION.shiftStart,
-      shiftLogId: SESSION.shiftLogId,
+      username:     SESSION.user.username,
+      shiftStart:   SESSION.shiftStart,
+      shiftLogId:   SESSION.shiftLogId,
+      shiftOpenBal: SESSION.shiftOpenBal||0,
     };
     localStorage.setItem(SHIFT_KEY, JSON.stringify(shiftData));
     console.log('[SHIFT SAVE on logout]', shiftData);
@@ -933,7 +1040,7 @@ function statusBadge(s){
   const x=m[s]||m.OFFLINE;
   return `<span class="badge ${x[0]}">${x[1]}</span>`;
 }
-function scoreColor(s){ return s>=80?'#00ff88':s>=60?'#FFD700':'#ff4455'; }
+function scoreColor(s){ return s>=80?'#00ff88':s>=60?'#FF7A00':'#ff4455'; }
 
 // ============================================================
 // ============================================================
@@ -955,7 +1062,7 @@ function pgDashboard(){
     <!-- HEADER + FILTER BAR -->
     <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;">
       <div>
-        <div class="pt">4king77 ສູນຄວບຄຸມ</div>
+        <div class="pt">8king888 ສູນຄວບຄຸມ</div>
         <div style="color:var(--text-faint);font-size:10px;letter-spacing:1px;margin-top:3px;">ລະບົບຄຸ້ມຄອງລາຍຮັບ Premium Gaming</div>
       </div>
       <div style="display:flex;align-items:center;gap:6px;">
@@ -965,32 +1072,32 @@ function pgDashboard(){
     </div>
 
     <!-- PILL FILTER BAR -->
-    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;background:rgba(255,215,0,0.04);border:1px solid rgba(255,215,0,0.14);border-radius:12px;padding:10px 14px;">
+    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;background:rgba(255,122,0,0.04);border:1px solid rgba(255,122,0,0.14);border-radius:12px;padding:10px 14px;">
       <span style="font-size:10px;color:var(--text-faint);letter-spacing:1px;margin-right:4px;">FILTER</span>
       ${[['all','ທັງໝົດ'],['day','ມື້'],['week','ອາທິດ'],['month','ເດືອນ']].map(([k,l])=>`
         <button id="dbtab-${k}" onclick="setDbPeriod('${k}')"
-          style="border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;border:1px solid rgba(255,215,0,0.3);
-          background:${_dbPeriod===k?'var(--gold)':'rgba(255,215,0,0.07)'};
-          color:${_dbPeriod===k?'#000':'rgba(255,215,0,0.7)'};">${l}</button>`).join('')}
+          style="border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;border:1px solid rgba(255,122,0,0.3);
+          background:${_dbPeriod===k?'var(--gold)':'rgba(255,122,0,0.07)'};
+          color:${_dbPeriod===k?'#000':'rgba(255,122,0,0.7)'};">${l}</button>`).join('')}
 
       <!-- ມື້ picker -->
       <div id="db-day-row" style="display:${_dbPeriod==='day'?'flex':'none'};align-items:center;gap:5px;">
         <input type="date" id="db-day-input" value="${_dbDaySelect||today()}"
-          style="background:#0a0a00;border:1px solid rgba(255,215,0,0.35);border-radius:8px;color:var(--gold);padding:4px 10px;font-size:12px;width:155px;"
+          style="background:#0a0a00;border:1px solid rgba(255,122,0,0.35);border-radius:8px;color:var(--gold);padding:4px 10px;font-size:12px;width:155px;"
           onchange="_dbDaySelect=this.value;renderDashboard()">
       </div>
 
       <!-- ອາທິດ picker (week-of input) -->
       <div id="db-week-row" style="display:${_dbPeriod==='week'?'flex':'none'};align-items:center;gap:5px;">
         <input type="week" id="db-week-input" value="${_dbWeekStart?isoWeekVal(_dbWeekStart):currentIsoWeek()}"
-          style="background:#0a0a00;border:1px solid rgba(255,215,0,0.35);border-radius:8px;color:var(--gold);padding:4px 10px;font-size:12px;width:165px;"
+          style="background:#0a0a00;border:1px solid rgba(255,122,0,0.35);border-radius:8px;color:var(--gold);padding:4px 10px;font-size:12px;width:165px;"
           onchange="onDbWeekChange(this.value)">
       </div>
 
       <!-- ເດືອນ picker -->
       <div id="db-month-row" style="display:${_dbPeriod==='month'?'flex':'none'};align-items:center;gap:5px;">
         <input type="month" id="db-month-input" value="${_dbMonthSel||today().slice(0,7)}"
-          style="background:#0a0a00;border:1px solid rgba(255,215,0,0.35);border-radius:8px;color:var(--gold);padding:4px 10px;font-size:12px;width:150px;"
+          style="background:#0a0a00;border:1px solid rgba(255,122,0,0.35);border-radius:8px;color:var(--gold);padding:4px 10px;font-size:12px;width:150px;"
           onchange="_dbMonthSel=this.value;renderDashboard()">
       </div>
     </div>
@@ -1038,8 +1145,8 @@ function setDbPeriod(p){
   ['all','day','week','month'].forEach(k=>{
     const el = document.getElementById('dbtab-'+k);
     if(!el) return;
-    el.style.background = k===p ? 'var(--gold)' : 'rgba(255,215,0,0.07)';
-    el.style.color      = k===p ? '#000' : 'rgba(255,215,0,0.7)';
+    el.style.background = k===p ? 'var(--gold)' : 'rgba(255,122,0,0.07)';
+    el.style.color      = k===p ? '#000' : 'rgba(255,122,0,0.7)';
   });
   const dr  = document.getElementById('db-day-row');
   const wr  = document.getElementById('db-week-row');
@@ -1247,7 +1354,7 @@ function renderDashboard(){
       ${groups.map(g=>`
       <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;height:${H+22}px;justify-content:flex-end;">
         <div style="width:100%;display:flex;gap:2px;align-items:flex-end;height:${H}px;">
-          <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,#FFD700,#FF8C00);min-height:2px;height:${Math.max(2,(g.rev/maxV)*H)}px;box-shadow:0 0 6px rgba(255,215,0,0.3);transition:height .4s;position:relative;" title="${fmt(g.rev)}">
+          <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,#FF7A00,#FF5500);min-height:2px;height:${Math.max(2,(g.rev/maxV)*H)}px;box-shadow:0 0 6px rgba(255,122,0,0.3);transition:height .4s;position:relative;" title="${fmt(g.rev)}">
             ${g.rev>0?`<div style="position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:8px;color:var(--gold);white-space:nowrap;">${(g.rev/1000000).toFixed(1)}M</div>`:''}
           </div>
           <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,#ff4455,#cc2233);min-height:2px;height:${Math.max(2,(g.exp/maxV)*H)}px;box-shadow:0 0 6px rgba(255,68,85,0.3);transition:height .4s;position:relative;" title="${fmt(g.exp)}">
@@ -1270,9 +1377,9 @@ function renderDashboard(){
   // ── RINGS ────────────────────────────────────────────────────
   const rings = document.getElementById('db-rings');
   if(rings) rings.innerHTML=`<div class="rrow">
-    ${ringHTML(revMonth,mTarget,84,'ເດືອນ','#FFD700')}
+    ${ringHTML(revMonth,mTarget,84,'ເດືອນ','#FF7A00')}
     ${ringHTML(rev,_dbPeriod==='day'?dTarget:_dbPeriod==='week'?dTarget*7:mTarget,84,label,'#00ff88')}
-    ${ringHTML(Math.max(netAll,0),Math.max(expAll,1),84,'ກຳໄລ','#FF8C00')}
+    ${ringHTML(Math.max(netAll,0),Math.max(expAll,1),84,'ກຳໄລ','#FF5500')}
   </div>`;
   const be = document.getElementById('db-breakeven');
   if(be) be.innerHTML=`
@@ -1324,8 +1431,8 @@ function renderDashboard(){
     ? `<div class="empty"><div class="eicon">👥</div><p>ຍັງບໍ່ມີພະນັກງານ</p></div>`
     : DB.employees.map(e=>{
       const empRev = DB.revenues.filter(r=>(r.empId===e.id||r.empName===e.name)&&(r.date||'')>=from&&(r.date||'')<=to).reduce((a,b)=>a+b.amount,0);
-      return `<div style="display:flex;align-items:center;gap:12px;padding:11px 14px;background:rgba(255,255,255,0.025);border-radius:10px;border:1px solid ${e.status==='ONLINE'?'rgba(0,255,136,0.18)':'rgba(255,215,0,0.06)'};">
-        <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#1c1800,#120f00);border:2px solid rgba(255,215,0,0.22);display:flex;align-items:center;justify-content:center;font-size:16px;">👤</div>
+      return `<div style="display:flex;align-items:center;gap:12px;padding:11px 14px;background:rgba(255,255,255,0.025);border-radius:10px;border:1px solid ${e.status==='ONLINE'?'rgba(0,255,136,0.18)':'rgba(255,122,0,0.06)'};">
+        <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#1c1800,#120f00);border:2px solid rgba(255,122,0,0.22);display:flex;align-items:center;justify-content:center;font-size:16px;">👤</div>
         <div style="flex:1;">
           <div style="font-weight:700;font-size:13px;">${e.name}</div>
           <div class="td" style="font-size:10px;">Shift: ${e.shift}</div>
@@ -1341,7 +1448,7 @@ function renderDashboard(){
   const lg = document.getElementById('db-logs');
   if(lg) lg.innerHTML = DB.actLogs.slice(0,7).map(l=>`
     <div style="display:flex;gap:8px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.04);">
-      <div class="fm" style="color:rgba(255,215,0,0.5);font-size:10px;min-width:34px;">${l.time}</div>
+      <div class="fm" style="color:rgba(255,122,0,0.5);font-size:10px;min-width:34px;">${l.time}</div>
       <div style="font-size:12px;"><span class="tg bold">${l.user}</span><span class="td"> — ${l.action}</span></div>
     </div>`).join('');
 }
@@ -1624,7 +1731,7 @@ function renderEmpList(){
   <div class="card ${e.status==='ONLINE'?'glow-green':''} p24" id="emp-card-${e.id}">
     <!-- HEADER ROW -->
     <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;flex-wrap:wrap;">
-      <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold3));display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:#000;box-shadow:0 0 14px rgba(255,215,0,0.4);flex-shrink:0;">${i+1}</div>
+      <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold3));display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:#000;box-shadow:0 0 14px rgba(255,122,0,0.4);flex-shrink:0;">${i+1}</div>
       <div style="flex:1;">
         <div style="font-weight:800;font-size:17px;">${e.name}</div>
         <div class="td" style="font-size:11px;margin-top:2px;">
@@ -1640,7 +1747,7 @@ function renderEmpList(){
 
     <!-- STATS GRID -->
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:14px;">
-      <div style="background:rgba(255,215,0,0.05);border:1px solid rgba(255,215,0,0.1);border-radius:8px;padding:10px 12px;">
+      <div style="background:rgba(255,122,0,0.05);border:1px solid rgba(255,122,0,0.1);border-radius:8px;padding:10px 12px;">
         <div class="sl">ເງິນເດືອນ</div>
         <div class="tg" style="font-weight:800;font-size:15px;">${fmt(e.salary)}</div>
       </div>
@@ -1648,7 +1755,7 @@ function renderEmpList(){
         <div class="sl">Commission %</div>
         <div class="tgr" style="font-weight:800;font-size:15px;">${e.commission}%</div>
       </div>
-      <div style="background:rgba(255,140,0,0.05);border:1px solid rgba(255,140,0,0.1);border-radius:8px;padding:10px 12px;">
+      <div style="background:rgba(255,90,0,0.05);border:1px solid rgba(255,90,0,0.1);border-radius:8px;padding:10px 12px;">
         <div class="sl">ເປົ້າ/ວັນ</div>
         <div class="to" style="font-weight:800;font-size:14px;">${fmt(e.target)}</div>
       </div>
@@ -1668,7 +1775,7 @@ function renderEmpList(){
     </div>
 
     <!-- INLINE EDIT PANEL (hidden by default) -->
-    <div id="emp-edit-${e.id}" class="hidden" style="border-top:1px solid rgba(255,215,0,0.12);padding-top:16px;margin-top:4px;">
+    <div id="emp-edit-${e.id}" class="hidden" style="border-top:1px solid rgba(255,122,0,0.12);padding-top:16px;margin-top:4px;">
       <div style="color:var(--gold);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;">✏ ແກ້ໄຂຂໍ້ມູນ</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-bottom:14px;">
         <div class="fgr"><label>ຊື່ພະນັກງານ</label>
@@ -1888,7 +1995,7 @@ function pgShift(){
       <div class="st">ສະຖານະ Shift ທຸກຄົນ</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:11px;">
         ${DB.employees.map(e=>`
-        <div class="card p16" style="border-color:${e.status==='ONLINE'?'rgba(0,255,136,0.2)':'rgba(255,215,0,0.07)'};">
+        <div class="card p16" style="border-color:${e.status==='ONLINE'?'rgba(0,255,136,0.2)':'rgba(255,122,0,0.07)'};">
           <div style="display:flex;justify-content:space-between;margin-bottom:7px;">
             <span style="font-weight:700;">${e.name}${e.username===SESSION.user.username?' <span style="font-size:9px;color:var(--gold);">(ທ່ານ)</span>':''}</span>
             ${statusBadge(e.status)}
@@ -2094,7 +2201,7 @@ function tryEndShift(){
   const emp = DB.employees.find(e=>e.username===SESSION.user.username||e.name===SESSION.user.name);
   const hrs = (SESSION.shiftElapsed/3600).toFixed(1);
   showModal('📤 ສົ່ງລາຍງານ Shift',`
-    <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(255,215,0,0.05);border-radius:8px;margin-bottom:16px;">
+    <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(255,122,0,0.05);border-radius:8px;margin-bottom:16px;">
       <span style="font-size:22px;">👤</span>
       <div>
         <div style="font-weight:700;font-size:14px;">${SESSION.user.name}</div>
@@ -2166,18 +2273,6 @@ function tryEndShift(){
         <span style="font-weight:600;">ສ່ວນຕ່າງ</span>
         <span id="sp-net" style="font-weight:900;color:var(--green);font-size:16px;">₭0</span>
       </div>
-
-      <!-- Commission footer -->
-      <div style="display:flex;gap:24px;margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.05);font-size:12px;">
-        <div>
-          <div style="color:var(--text-faint);margin-bottom:2px;">Commission</div>
-          <span id="sp-comm" style="color:var(--blue);font-weight:700;">₭0</span>
-        </div>
-        <div>
-          <div style="color:var(--text-faint);margin-bottom:2px;">ລາຍຮັບລວມ</div>
-          <span id="sp-rev2" style="color:var(--gold);font-weight:700;">₭0</span>
-        </div>
-      </div>
     </div>
 
     <div class="fgr"><label>ບັນຫາ / ໝາຍເຫດ</label><textarea id="sr-n" rows="2" placeholder="ອະທິບາຍ..."></textarea></div>
@@ -2205,16 +2300,21 @@ function updateShiftPreview(){
 
   const ne = document.getElementById('sp-net');
   if(ne){ ne.textContent=fmt(net); ne.style.color=net>=0?'var(--green)':'var(--red)'; }
-
-  const cm = document.getElementById('sp-comm');
-  if(cm) cm.parentElement.style.display='none';
 }
 
 function submitShiftReport(){
+  // ອ່ານຄ່າຈາກ form ຄັ້ງດຽວ ແລ້ວສົ່ງຕໍ່ໄປ — ບໍ່ອ່ານຊ້ຳຈາກ DOM ພາຍຫຼັງ
+  // (ການອ່ານຊ້ຳເຄີຍເປັນສາເຫດເຮັດໃຫ້ຂໍ້ມູນກາຍເປັນ 0 ຫຼັງຢືນຢັນສ່ວນຕ່າງຕິດລົບ,
+  //  ເພາະ input ໃນ modal ຖືກແທນທີ່ໄປແລ້ວຕອນສະແດງກ່ອງຢືນຢັນ)
+  const close = Number(document.getElementById('sr-close')?.value)||0;
+  const wth   = Number(document.getElementById('sr-w')?.value)||0;
+  const prz   = Number(document.getElementById('sr-p')?.value)||0;
+  const notes = document.getElementById('sr-n')?.value||'';
+  finalizeShiftReport(close, wth, prz, notes);
+}
+
+function finalizeShiftReport(close, wth, prz, notes){
   const openBal = SESSION.shiftOpenBal||0;
-  const close   = Number(document.getElementById('sr-close')?.value)||0;
-  const wth     = Number(document.getElementById('sr-w').value)||0;
-  const prz     = Number(document.getElementById('sr-p').value)||0;
   const dep     = close - openBal;   // ຍອດເຕີມ = ປິດ − ເປີດ
   const rev     = dep - wth - prz;   // ສ່ວນຕ່າງ
 
@@ -2234,20 +2334,17 @@ function submitShiftReport(){
         </div>
         <div style="margin-top:14px;font-size:12px;color:var(--text-dim);">ກວດຄືນຕົວເລກຖືກຕ້ອງແລ້ວໃຊ່ບໍ່?</div>
       </div>`,
-      [{label:'✓ ຖືກຕ້ອງ ດຳເນີນຕໍ່',cls:'btn btn-red',fn:()=>{ closeModal(); submitShiftReport(); }},
+      [{label:'✓ ຖືກຕ້ອງ ດຳເນີນຕໍ່',cls:'btn btn-red',fn:()=>{ closeModal(); finalizeShiftReport(close, wth, prz, notes); }},
        {label:'◀ ກັບໄປແກ້ໄຂ',cls:'btn btn-outline',fn:()=>{ window._shiftNegConfirmed=false; closeModal(); tryEndShift(); }}]
     );
     return;
   }
   window._shiftNegConfirmed = false;
   const bon=0;
-  const notes=document.getElementById('sr-n').value;
   const amount=Math.max(dep,0);
 
-  // add revenue entry
-  if(dep>0||rev>0){
-    DB.revenues.unshift({id:uid(),date:today(),empId:SESSION.user.id,empName:SESSION.user.name,amount:amount,deposit:dep,withdraw:wth,prize:prz,bonus:bon,notes:notes||'ລາຍງານ Shift',shiftReport:true});
-  }
+  // add revenue entry — ບັນທຶກທຸກກໍລະນີ (ລວມທັງສ່ວນຕ່າງຕິດລົບ) ເພື່ອບໍ່ໃຫ້ຂໍ້ມູນຫາຍ
+  DB.revenues.unshift({id:uid(),date:today(),empId:SESSION.user.id,empName:SESSION.user.name,amount:amount,deposit:dep,withdraw:wth,prize:prz,bonus:bon,notes:notes||'ລາຍງານ Shift',shiftReport:true});
 
   // close shift log
   const hours=(SESSION.shiftElapsed || Math.floor((Date.now()-SESSION.shiftStart)/1000))/3600;
@@ -2261,7 +2358,7 @@ function submitShiftReport(){
   if(e){ e.status='OFFLINE'; }
 
   if(SESSION.shiftInterval){ clearInterval(SESSION.shiftInterval); SESSION.shiftInterval=null; }
-  SESSION.shiftActive=false; SESSION.shiftElapsed=0; SESSION.shiftLogId=null;
+  SESSION.shiftActive=false; SESSION.shiftElapsed=0; SESSION.shiftLogId=null; SESSION.shiftOpenBal=0;
   saveShiftState(); // clear persisted shift
 
   addLog(SESSION.user.name,`ສິ້ນສຸດ Shift ລາຍຮັບ ${fmt(rev)}`,'shift');
@@ -2407,7 +2504,7 @@ function exportShiftImage(shiftId){
   const emp        = DB.employees.find(e=>e.id===s.empId||e.name===s.empName);
   const tier       = getCommTier(totalRev);
   const commission = totalRev * tier.rate / 100;
-  const storeName  = DB.settings.storeName || '4king77 Gaming';
+  const storeName  = DB.settings.storeName || '8king888 Gaming';
 
   // ── CANVAS SETUP ──────────────────────────────────────────
   const W = 560, PADDING = 30;
@@ -2415,11 +2512,11 @@ function exportShiftImage(shiftId){
   const rowH   = 36;
   const rows   = [
     ['ລາຍຮັບທັງໝົດ', fmt(totalRev), '#00ff88'],
-    ['ຍອດຝາກ',       fmt(totalDep), '#FFD700'],
+    ['ຍອດຝາກ',       fmt(totalDep), '#FF7A00'],
     ['ຍອດຖອນ',       fmt(totalWith), '#ff4455'],
     ['ຄ່າທຳນຽມ',       fmt(totalPrize), '#44aaff'],
     ['Bonus',         fmt(totalBonus), '#cc44ff'],
-    ['Commission '+tier.rate+'%', fmt(commission), '#FF8C00'],
+    ['Commission '+tier.rate+'%', fmt(commission), '#FF5500'],
   ];
   const H = 300 + rows.length * rowH + 60;
 
@@ -2434,26 +2531,26 @@ function exportShiftImage(shiftId){
   ctx.fillRect(0, 0, W, H);
 
   // grid lines
-  ctx.strokeStyle = 'rgba(255,215,0,0.025)';
+  ctx.strokeStyle = 'rgba(255,122,0,0.025)';
   ctx.lineWidth = 0.5;
   for(let x=0;x<W;x+=40){ ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke(); }
   for(let y=0;y<H;y+=40){ ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke(); }
 
   // glow top
   const grd = ctx.createRadialGradient(W/2,0,10,W/2,0,200);
-  grd.addColorStop(0,'rgba(255,215,0,0.12)');
+  grd.addColorStop(0,'rgba(255,122,0,0.12)');
   grd.addColorStop(1,'rgba(0,0,0,0)');
   ctx.fillStyle = grd;
   ctx.fillRect(0,0,W,H);
 
   // border
-  ctx.strokeStyle = 'rgba(255,215,0,0.5)';
+  ctx.strokeStyle = 'rgba(255,122,0,0.5)';
   ctx.lineWidth   = 1.5;
   roundRect(ctx, 8, 8, W-16, H-16, 16);
   ctx.stroke();
 
   // inner border
-  ctx.strokeStyle = 'rgba(255,215,0,0.15)';
+  ctx.strokeStyle = 'rgba(255,122,0,0.15)';
   ctx.lineWidth   = 0.5;
   roundRect(ctx, 12, 12, W-24, H-24, 13);
   ctx.stroke();
@@ -2462,7 +2559,7 @@ function exportShiftImage(shiftId){
 
   // ── HEADER: STORE NAME ────────────────────────────────────
   ctx.font = 'bold 11px monospace';
-  ctx.fillStyle = 'rgba(255,215,0,0.5)';
+  ctx.fillStyle = 'rgba(255,122,0,0.5)';
   ctx.textAlign = 'center';
   ctx.letterSpacing = '3px';
   ctx.fillText(storeName.toUpperCase(), W/2, y+14);
@@ -2470,8 +2567,8 @@ function exportShiftImage(shiftId){
 
   // ── TITLE ─────────────────────────────────────────────────
   ctx.font = 'bold 22px monospace';
-  ctx.fillStyle = '#FFD700';
-  ctx.shadowColor = 'rgba(255,215,0,0.5)';
+  ctx.fillStyle = '#FF7A00';
+  ctx.shadowColor = 'rgba(255,122,0,0.5)';
   ctx.shadowBlur  = 14;
   ctx.fillText('SHIFT REPORT', W/2, y+18);
   ctx.shadowBlur = 0;
@@ -2495,7 +2592,7 @@ function exportShiftImage(shiftId){
 
   // ── DATE / TIME ROW ───────────────────────────────────────
   ctx.font      = 'bold 12px monospace';
-  ctx.fillStyle = 'rgba(255,215,0,0.7)';
+  ctx.fillStyle = 'rgba(255,122,0,0.7)';
   const dateStr = `📅 ${s.date}   ⏰ ${s.startTime||'-'} → ${s.endTime||'ຍັງດຳເນີນ'}   ⏱ ${s.hours?(s.hours.toFixed(1)+'h'):'-'}`;
   ctx.fillText(dateStr, W/2, y+12);
   y += 26;
@@ -2527,7 +2624,7 @@ function exportShiftImage(shiftId){
   });
 
   y += 8;
-  drawDivider(ctx, PADDING, y, W-PADDING*2, '#FFD700');
+  drawDivider(ctx, PADDING, y, W-PADDING*2, '#FF7A00');
   y += 20;
 
   // ── TOTAL NET ─────────────────────────────────────────────
@@ -2552,14 +2649,14 @@ function exportShiftImage(shiftId){
   const statusText = s.endTime ? '✅ ປິດ Shift ສຳເລັດ' : '🟢 Shift ດຳເນີນຢູ່';
   ctx.textAlign  = 'center';
   ctx.font       = 'bold 13px sans-serif';
-  ctx.fillStyle  = s.endTime ? '#00ff88' : '#FFD700';
+  ctx.fillStyle  = s.endTime ? '#00ff88' : '#FF7A00';
   ctx.fillText(statusText, W/2, y+14);
   y += 28;
 
   // ── FOOTER ────────────────────────────────────────────────
   ctx.font      = '10px monospace';
-  ctx.fillStyle = 'rgba(255,215,0,0.3)';
-  ctx.fillText(`Generated: ${new Date().toLocaleString()} | 4king77 System`, W/2, y+12);
+  ctx.fillStyle = 'rgba(255,122,0,0.3)';
+  ctx.fillText(`Generated: ${new Date().toLocaleString()} | 8king888 System`, W/2, y+12);
 
   // ── DOWNLOAD ──────────────────────────────────────────────
   const a = document.createElement('a');
@@ -2588,8 +2685,8 @@ function roundRect(ctx, x, y, w, h, r){
 function drawDivider(ctx, x, y, w, color){
   const grad = ctx.createLinearGradient(x, y, x+w, y);
   grad.addColorStop(0,   'transparent');
-  grad.addColorStop(0.3, color||'rgba(255,215,0,0.3)');
-  grad.addColorStop(0.7, color||'rgba(255,215,0,0.3)');
+  grad.addColorStop(0.3, color||'rgba(255,122,0,0.3)');
+  grad.addColorStop(0.7, color||'rgba(255,122,0,0.3)');
   grad.addColorStop(1,   'transparent');
   ctx.strokeStyle = grad;
   ctx.lineWidth   = 1;
@@ -2642,34 +2739,60 @@ function pgCommission(){
       <div class="tw">
         <table>
           <thead><tr><th>ພະນັກງານ</th><th>ເງິນເດືອນ</th><th>ລາຍຮັບຈິງ</th><th>ອັດຕາ</th><th>Commission</th><th>ລວມ</th></tr></thead>
-          <tbody>
-            ${DB.employees.map(e=>{
-              const empRevs=DB.revenues.filter(r=>(r.empId===e.id||r.empName===e.name)&&r.date.startsWith(today().slice(0,7)));
-              const rev=empRevs.reduce((a,b)=>a+b.amount,0);
-              const t=getCommTier(rev);
-              const comm=rev*t.rate/100;
-              return `<tr>
-                <td class="tg bold">${e.name}</td>
-                <td>${fmt(e.salary)}</td>
-                <td class="tgr">${fmt(rev)}</td>
-                <td class="to">${t.rate}%</td>
-                <td class="tg">${fmt(comm)}</td>
-                <td class="bold">${fmt(e.salary+comm)}</td>
-              </tr>`;
-            }).join('')}
-          </tbody>
+          <tbody id="comm-emp-tbody"></tbody>
         </table>
       </div>
     </div>
   </div>`;
   renderTierList();
+  renderCommEmpTable();
   updateCalc(SESSION.calcAmount);
+}
+
+function renderCommEmpTable(){
+  const tb = document.getElementById('comm-emp-tbody'); if(!tb) return;
+  tb.innerHTML = DB.employees.map(e=>{
+    const empRevs=DB.revenues.filter(r=>(r.empId===e.id||r.empName===e.name)&&r.date.startsWith(today().slice(0,7)));
+    const rev=empRevs.reduce((a,b)=>a+b.amount,0);
+    const rate = e.commission!=null ? e.commission : getCommTier(rev).rate;
+    const comm=rev*rate/100;
+    return `<tr>
+      <td class="tg bold">${e.name}</td>
+      <td>${fmt(e.salary)}</td>
+      <td class="tgr">${fmt(rev)}</td>
+      <td>
+        <div style="display:flex;align-items:center;gap:4px;">
+          <input type="number" value="${rate}" min="0" max="100" step="0.1"
+            style="width:58px;text-align:center;padding:5px 6px;font-size:12px;color:var(--gold);font-weight:700;"
+            onchange="updateEmpCommRate(${e.id}, this.value)">
+          <span class="to" style="font-size:12px;">%</span>
+        </div>
+      </td>
+      <td class="tg" id="comm-val-${e.id}">${fmt(comm)}</td>
+      <td class="bold" id="comm-total-${e.id}">${fmt(e.salary+comm)}</td>
+    </tr>`;
+  }).join('');
+}
+
+function updateEmpCommRate(empId, val){
+  const rate = Math.max(0, Math.min(100, Number(val)||0));
+  const e = DB.employees.find(x=>x.id===empId);
+  if(!e) return;
+  e.commission = rate;
+  saveData();
+  addLog(SESSION.user.name, `ແກ້ໄຂອັດຕາ Commission ຂອງ ${e.name} ເປັນ ${rate}%`, 'settings');
+  const empRevs=DB.revenues.filter(r=>(r.empId===e.id||r.empName===e.name)&&r.date.startsWith(today().slice(0,7)));
+  const rev=empRevs.reduce((a,b)=>a+b.amount,0);
+  const comm=rev*rate/100;
+  const cv=document.getElementById('comm-val-'+empId); if(cv) cv.textContent=fmt(comm);
+  const ct=document.getElementById('comm-total-'+empId); if(ct) ct.textContent=fmt(e.salary+comm);
+  showToast(`ບັນທຶກອັດຕາ Commission ${e.name}: ${rate}% ✓`);
 }
 
 function renderTierList(){
   const el=document.getElementById('tier-list'); if(!el) return;
   el.innerHTML=DB.commTiers.map((t,i)=>`
-  <div style="display:flex;align-items:center;gap:11px;padding:11px 15px;background:rgba(255,255,255,0.025);border-radius:10px;border:1px solid rgba(255,215,0,0.07);">
+  <div style="display:flex;align-items:center;gap:11px;padding:11px 15px;background:rgba(255,255,255,0.025);border-radius:10px;border:1px solid rgba(255,122,0,0.07);">
     <span class="td" style="font-size:12px;min-width:190px;">${t.min===0?'₭0':fmt(t.min)} – ${t.max===null||t.max===Infinity?'∞':fmt(t.max)}</span>
     <div style="display:flex;align-items:center;gap:7px;">
       <input type="number" value="${t.rate}" min="0" max="100" style="width:62px;text-align:center;font-weight:900;color:var(--gold);font-family:'Orbitron',monospace;font-size:14px;" oninput="DB.commTiers[${i}].rate=Number(this.value);updateCalc(SESSION.calcAmount)">
@@ -2713,7 +2836,7 @@ function updateCalc(v){
 // PAGE: EXPENSES
 // ============================================================
 const EXP_CATS = ['ລະບົບ','ບໍລິຫານ','HR','ສຳຮອງ','ສາທາລະນູປະໂພກ','ການຕະຫຼາດ','ອື່ນໆ'];
-const CAT_COLORS = {'ລະບົບ':'#FF6B35','ບໍລິຫານ':'#FFD700','HR':'#00ff88','ສຳຮອງ':'#44aaff','ສາທາລະນູປະໂພກ':'#cc44ff','ການຕະຫຼາດ':'#ff4455','ອື່ນໆ':'#aaaaaa'};
+const CAT_COLORS = {'ລະບົບ':'#FF6B35','ບໍລິຫານ':'#FF7A00','HR':'#00ff88','ສຳຮອງ':'#44aaff','ສາທາລະນູປະໂພກ':'#cc44ff','ການຕະຫຼາດ':'#ff4455','ອື່ນໆ':'#aaaaaa'};
 let _expPeriod = 'all'; // all | day | week | month
 
 function pgExpenses(){
@@ -3330,19 +3453,19 @@ function pgPartner(){
     </div>
     <div class="card glow p20" style="max-width:420px;">
       <div style="display:flex;flex-direction:column;gap:8px;">
-        <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(255,215,0,0.1);">
+        <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(255,122,0,0.1);">
           <span style="color:var(--text-dim);">ສ່ວນຕ່າງລວມ (ຝາກ−ຖອນ−ຄ່າທຳນຽມ)</span>
           <span class="tg bold">${fmt(totalRevMonth())}</span>
         </div>
-        <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(255,215,0,0.1);">
+        <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(255,122,0,0.1);">
           <span style="color:var(--text-dim);">ຫັກລາຍຈ່າຍທັງໝົດ</span>
           <span class="tr bold">− ${fmt(totalExp())}</span>
         </div>
-        <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(255,215,0,0.1);">
+        <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(255,122,0,0.1);">
           <span style="color:var(--text-dim);">ກຳໄລສຸດທິການຂາຍ (×75%)</span>
           <span class="tg bold">${fmt(salesProfit())}</span>
         </div>
-        <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(255,215,0,0.1);">
+        <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(255,122,0,0.1);">
           <span style="color:var(--text-dim);">ຄ່າຄຸ້ມຄອງລະບົບ (25%)</span>
           <span style="color:var(--gold3);font-weight:700;">− ${fmt(totalRevMonth()*0.25)}</span>
         </div>
@@ -3418,7 +3541,7 @@ function openPartnerForm(x){
       <div class="fgr"><label>ຊື່ຫຸ້ນສ່ວນ</label><input id="pf-n" placeholder="ຊື່..."></div>
       <div class="fr">
         <div class="fgr"><label>ສ່ວນແບ່ງ %</label><input id="pf-s" type="number" placeholder="0" min="0" max="100"></div>
-        <div class="fgr"><label>ສີ</label><input id="pf-c" type="color" value="#FFD700" style="height:40px;cursor:pointer;width:100%;"></div>
+        <div class="fgr"><label>ສີ</label><input id="pf-c" type="color" value="#FF7A00" style="height:40px;cursor:pointer;width:100%;"></div>
       </div>
     </div>`,
     [{label:'+ ເພີ່ມ',cls:'btn btn-gold',fn:()=>{
@@ -3462,7 +3585,7 @@ function renderUserTable(){
     <td class="td">${i+1}</td>
     <td class="tg bold">${u.name}</td>
     <td class="td fm">${u.username}</td>
-    <td><span class="tag" style="background:${u.role==='admin'?'rgba(255,215,0,0.15)':'rgba(68,170,255,0.15)'};color:${u.role==='admin'?'var(--gold)':'var(--blue)'};">${u.role}</span></td>
+    <td><span class="tag" style="background:${u.role==='admin'?'rgba(255,122,0,0.15)':'rgba(68,170,255,0.15)'};color:${u.role==='admin'?'var(--gold)':'var(--blue)'};">${u.role}</span></td>
     <td style="display:flex;gap:6px;">
       <button class="btn btn-outline" style="font-size:11px;padding:5px 10px;" onclick="openUserForm(${u.id})">✏</button>
       ${u.id!==SESSION.user.id?`<button class="btn btn-red" style="font-size:11px;padding:5px 10px;" onclick="delUser(${u.id})">✕</button>`:'<span class="td" style="font-size:11px;padding:5px;">(ຕົນເອງ)</span>'}
@@ -3532,8 +3655,9 @@ function pgReports(){
     <div class="ph">
       <div class="pt">📊 ລາຍງານ</div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <button class="btn btn-blue" onclick="exportCSVRange()" style="font-size:12px;">📥 CSV</button>
-        <button class="btn btn-gold" onclick="exportAllData()" style="font-size:12px;">📦 JSON</button>
+        <button class="btn btn-gold" onclick="exportExcelReport()" style="font-size:12px;">📥 ດາວໂຫຼດ Excel</button>
+        <button class="btn btn-blue" onclick="exportCSVRange()" style="font-size:12px;">📄 CSV</button>
+        <button class="btn btn-outline" onclick="exportAllData()" style="font-size:12px;">📦 JSON</button>
       </div>
     </div>
 
@@ -3626,7 +3750,7 @@ function pgReports(){
     </div>
 
     <div style="text-align:center;color:var(--text-faint);font-size:10px;letter-spacing:1px;padding:8px 0;">
-      4king77 · ${DB.settings.storeName||'4king77 Gaming'} · ${SESSION.user.name} · ${new Date().toLocaleString()}
+      8king888 · ${DB.settings.storeName||'8king888 Gaming'} · ${SESSION.user.name} · ${new Date().toLocaleString()}
     </div>
   </div>`;
 
@@ -3886,6 +4010,103 @@ function renderRptExpTable(q){
   </div>`;
 }
 
+// ============================================================
+// EXCEL EXPORT — ຮູບແບບຕາມໄຟລ໌ "ສະຫຼຸບເວັບ" ຂອງຮ້ານ
+// ============================================================
+async function exportExcelReport(){
+  if(typeof ExcelJS==='undefined'){ showToast('ບໍ່ພົບໄລບຣາຣີ Excel — ກວດການເຊື່ອມຕໍ່ອິນເຕີເນັດ','error'); return; }
+  const from = _rptFrom, to = _rptTo;
+  const revs = getRptRevs(), exps = getRptExps();
+
+  const dep = revs.reduce((a,b)=>a+(b.deposit||0),0);
+  const wit = revs.reduce((a,b)=>a+(b.withdraw||0),0);
+  const prz = revs.reduce((a,b)=>a+(b.prize||0),0);
+
+  // ຍອດເງິນສຳຮອງຍົກມາ = ຍອດເງິນສຳຮອງ ກ່ອນວັນທີເລີ່ມຕົ້ນຂອງໄລຍະນີ້
+  const r = getReserve();
+  const txs = r.transactions||[];
+  const bfBalance = txs.filter(t=>(t.date||'')<from).reduce((a,b)=>a+(b.type==='in'?b.amount:-b.amount),0);
+  const reserveInPeriod = txs.filter(t=>t.type==='in'&&(t.date||'')>=from&&(t.date||'')<=to).reduce((a,b)=>a+b.amount,0);
+
+  const days = Math.max(1,Math.round((new Date(to)-new Date(from))/864e5)+1);
+
+  const wb = new ExcelJS.Workbook();
+  const monthLabel = to.slice(0,7);
+  const sh = wb.addWorksheet('ເດືອນ'+monthLabel.slice(5,7));
+
+  sh.columns = [{width:8.66},{width:44.83},{width:32.5},{width:25},{width:8.66}];
+
+  const FONT = 'Saysettha OT';
+  const blue = 'FF1F4E78', blue2='FF2E75B6', blue3='FF0070C0', green='FF00B050', lightBlue='FFD9E1F2', lightGreen='FFC6E0B4';
+  const white = {argb:'FFFFFFFF'}, black={argb:'FF000000'}, blueTxt={argb:'FF0000FF'}, gray={argb:'FF808080'};
+
+  const setCell = (addr, val, opt={}) => {
+    const c = sh.getCell(addr);
+    c.value = val;
+    c.font = Object.assign({name:FONT, size:opt.size||12, bold:!!opt.bold, color:opt.color||black}, opt.font||{});
+    c.alignment = Object.assign({vertical:'middle', horizontal:opt.align||'left', wrapText:!!opt.wrap}, opt.alignment||{});
+    if(opt.fill) c.fill = {type:'pattern', pattern:'solid', fgColor:{argb:opt.fill}};
+    if(opt.numFmt) c.numFmt = opt.numFmt;
+    if(opt.border!==false) c.border = {top:{style:'thin'},bottom:{style:'thin'},left:{style:'thin'},right:{style:'thin'}};
+    return c;
+  };
+  const mergeRow = (row, text, opt={}) => {
+    sh.mergeCells(`B${row}:D${row}`);
+    setCell(`B${row}`, text, Object.assign({align:'center', border:false}, opt));
+  };
+
+  // ── HEADER ──
+  mergeRow(1, `ສະຫຼຸບເວັບ ${DB.settings.storeName||'8king888'}`, {size:14, fill:blue, color:white});
+  sh.getRow(1).height = 29;
+  mergeRow(2, `ວັນທີ ${from} - ${to} (${days} ວັນ)`, {size:14, fill:blue, color:white});
+  sh.getRow(2).height = 27.75;
+  mergeRow(3, 'ໜ່ວຍ: ກີບ (LAK)', {bold:true});
+
+  // ── 1. ລາຍການເຕີມ + ຖອນ + ລະບົບເວັບ ──
+  mergeRow(5, '1. ລາຍການເຕີມ + ຖອນ + ລະບົບເວັບ', {bold:true, fill:blue2, color:white, align:'left'});
+  setCell('B6','ລາຍການ',{bold:true, align:'center'}); setCell('C6','ຈຳນວນເງິນ',{bold:true, align:'center'}); setCell('D6','ໝາຍເຫດ',{bold:true, align:'center'});
+  setCell('B7','ລາຍຮັບຈາກການເຕີມ'); setCell('C7',dep,{color:blueTxt, numFmt:'#,##0'}); setCell('D7','');
+  setCell('B8','ລາຍຈ່າຍຈາກການຖອນ'); setCell('C8',wit,{color:blueTxt, numFmt:'#,##0'}); setCell('D8','');
+  setCell('B9','ຄ່າບໍລິການ'); setCell('C9',prz,{color:blueTxt, numFmt:'#,##0'}); setCell('D9','');
+  setCell('B10','ລະບົບເວັບ 25%'); setCell('C10',{formula:'(C7-(C8+C9))*25%'},{color:blueTxt, numFmt:'#,##0'}); setCell('D10','');
+  setCell('B11','ສະຫຼຸບກຳໄລຈາກເວັບ',{bold:true, fill:lightBlue}); setCell('C11',{formula:'C7-C8-C10'},{bold:true, fill:lightBlue, numFmt:'#,##0'}); setCell('D11','',{fill:lightBlue});
+
+  // ── 2. ລາຍຈ່າຍຄົງທີ່ ──
+  mergeRow(13, '2. ລາຍຈ່າຍຄົງທີ່', {bold:true, fill:blue2, color:white, align:'left'});
+  setCell('B14','ລາຍການ',{bold:true, align:'center'}); setCell('C14','ຈຳນວນເງິນ',{bold:true, align:'center'}); setCell('D14','ໝາຍເຫດ',{bold:true, align:'center'});
+  let row = 15;
+  if(exps.length===0){ setCell(`B${row}`,'(ບໍ່ມີລາຍຈ່າຍໃນໄລຍະນີ້)'); setCell(`C${row}`,0,{color:blueTxt, numFmt:'#,##0'}); setCell(`D${row}`,''); row++; }
+  else exps.forEach(e=>{ setCell(`B${row}`,e.name); setCell(`C${row}`,e.amount,{color:blueTxt, numFmt:'#,##0'}); setCell(`D${row}`,e.notes||'',{color:gray}); row++; });
+  const expStart=15, expEnd=row-1;
+  setCell(`B${row}`,'ລວມລາຍຈ່າຍ',{bold:true, fill:lightBlue}); setCell(`C${row}`,{formula:`SUM(C${expStart}:C${expEnd})`},{bold:true, fill:lightBlue, numFmt:'#,##0'}); setCell(`D${row}`,'',{fill:lightBlue});
+  const sumExpRow = row; row+=2;
+
+  setCell(`B${row}`,'ກຳໄລ / ຂາດທຶນສຸດທິ',{bold:true, size:14, fill:lightGreen}); setCell(`C${row}`,{formula:`C11-C${sumExpRow}`},{bold:true, size:14, fill:lightGreen, numFmt:'#,##0;\\-#,##0'}); setCell(`D${row}`,'',{fill:lightGreen});
+  sh.getRow(row).height = 29;
+  row += 2;
+
+  // ── 3. ເງິນສຳຮອງ ──
+  mergeRow(row, '3. ເງິນສຳຮອງ', {bold:true, fill:blue3, color:white, align:'left'}); const sec3Row=row; row++;
+  setCell(`B${row}`,'ລາຍການ',{bold:true, align:'center'}); setCell(`C${row}`,'ຈຳນວນເງິນ',{bold:true, align:'center'}); setCell(`D${row}`,'ໝາຍເຫດ',{bold:true, align:'center'}); row++;
+  const accFmt = '_(* #,##0.00_);_(* \\(#,##0.00\\);_(* "-"??_);_(@_)';
+  setCell(`B${row}`,'ຍອດເງິນສຳຮອງຍົກມາ'); setCell(`C${row}`,bfBalance,{color:{argb:'FF0011FF'}, numFmt:accFmt}); const rowResBF=row; row++;
+  setCell(`B${row}`,'ເງີນສຳຮອງທີ່ຈ່າຍໄປ'); setCell(`C${row}`,{formula:`C${sumExpRow}`},{color:{argb:'FF0011FF'}, numFmt:accFmt}); const rowResPaid=row; row++;
+  setCell(`B${row}`,'ເງີນສຳຮອງທີ່ເຕີມເຂົ້າ'); setCell(`C${row}`,reserveInPeriod,{color:{argb:'FF0011FF'}, numFmt:accFmt}); const rowResIn=row; row++;
+  setCell(`B${row}`,'ຍອດເງິນສຳຮອງທີ່ຍັງເຫຼືອ',{bold:true}); setCell(`C${row}`,{formula:`C${rowResBF}-C${rowResPaid}+C${rowResIn}`},{bold:true, numFmt:'#,##0'}); setCell(`D${row}`,'');
+  row += 2;
+
+  // ── 4. ຍອດເງີນຄົງເຫຼືອໃນທະນາຄານ ──
+  setCell(`B${row}`,'4. ຍອດເງີນຄົງເຫຼືອໃນທະນາຄານ',{bold:true, size:16, fill:green, color:white});
+  setCell(`C${row}`,null,{bold:true, size:16, fill:green, numFmt:'0.00'});
+  setCell(`D${row}`,'',{fill:green});
+  sh.getRow(row).height = 32;
+
+  const buf = await wb.xlsx.writeBuffer();
+  const blob = new Blob([buf],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=`8king888_ສະຫຼຸບເວັບ_${from}_${to}.xlsx`; a.click();
+  showToast('Export Excel ສຳເລັດ');
+}
+
 function exportCSVRange(){
   const revs=getRptRevs(), exps=getRptExps();
   const rows=[['=== ລາຍຮັບ ==='],['ວັນທີ','ພະນັກງານ','ລາຍຮັບ','ຝາກ','ຖອນ','ຄ່າທຳນຽມ','Bonus','Commission','ໝາຍເຫດ']];
@@ -3900,7 +4121,7 @@ function exportCSVRange(){
   const csv=rows.map(r=>r.map(v=>`"${v}"`).join(',')).join('\n');
   const blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8;'});
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);
-  a.download=`4king77_${_rptFrom}_${_rptTo}.csv`;a.click();
+  a.download=`8king888_${_rptFrom}_${_rptTo}.csv`;a.click();
   showToast('Export CSV ສຳເລັດ');
 }
 
@@ -3927,7 +4148,7 @@ function renderNotifList(){
   const typeColor={shift:'var(--green)',revenue:'var(--gold)',warn:'var(--red)',settings:'var(--blue)',expense:'var(--red)'};
   const typeIcon={shift:'🕐',revenue:'💰',warn:'⚠',settings:'⚙',expense:'💸'};
   el.innerHTML=DB.notifications.map(n=>`
-  <div style="display:flex;gap:13px;padding:13px 15px;background:${n.read?'rgba(255,255,255,0.015)':'rgba(255,215,0,0.04)'};border-radius:10px;border-left:3px solid ${n.read?'rgba(255,255,255,0.1)':typeColor[n.type]||'var(--gold)'};" onclick="readNotif(${n.id})">
+  <div style="display:flex;gap:13px;padding:13px 15px;background:${n.read?'rgba(255,255,255,0.015)':'rgba(255,122,0,0.04)'};border-radius:10px;border-left:3px solid ${n.read?'rgba(255,255,255,0.1)':typeColor[n.type]||'var(--gold)'};" onclick="readNotif(${n.id})">
     <span style="font-size:20px;">${typeIcon[n.type]||'📋'}</span>
     <div style="flex:1;">
       <div style="font-size:13px;color:${n.read?'var(--text-dim)':'var(--text)'};">${n.text}</div>
@@ -3973,7 +4194,7 @@ function renderLogList(q){
   if(q) logs=logs.filter(l=>l.user.includes(q)||l.action.includes(q));
   if(logs.length===0){ el.innerHTML=`<div class="empty"><div class="eicon">📋</div><p>ບໍ່ມີຂໍ້ມູນ</p></div>`; return; }
   el.innerHTML=logs.map(l=>`
-  <div style="display:flex;gap:13px;padding:11px 15px;background:rgba(255,255,255,0.02);border-radius:10px;border-left:3px solid ${tcolor[l.type]||'rgba(255,215,0,0.25)'};">
+  <div style="display:flex;gap:13px;padding:11px 15px;background:rgba(255,255,255,0.02);border-radius:10px;border-left:3px solid ${tcolor[l.type]||'rgba(255,122,0,0.25)'};">
     <span style="font-size:17px;">${ticon[l.type]||'📋'}</span>
     <div style="flex:1;">
       <div style="font-size:13px;"><span class="tg bold">${l.user}</span><span class="td"> — ${l.action}</span></div>
@@ -3987,6 +4208,58 @@ function clearLogs(){ if(!confirm('ລ້າງ Log ທັງໝົດ?')) retur
 // ============================================================
 // PAGE: SETTINGS
 // ============================================================
+function deleteAllRevenues(){
+  const count = DB.revenues.length;
+  if(count===0){ showToast('ບໍ່ມີຂໍ້ມູນລາຍຮັບໃຫ້ລຶບ'); return; }
+  showModal('🗑 ລຶບຂໍ້ມູນລາຍຮັບທັງໝົດ',`
+    <div style="text-align:center;padding:10px 0;">
+      <div style="font-size:40px;margin-bottom:10px;">⚠️</div>
+      <div style="font-size:14px;color:var(--red);font-weight:700;margin-bottom:8px;">ຈະລຶບລາຍຮັບທັງໝົດ ${count} ລາຍການ!</div>
+      <div style="font-size:12px;color:var(--text-dim);">ຂໍ້ມູນລາຍຮັບທຸກເດືອນ ທຸກປີ ຈະຖືກລຶບຖາວອນ<br>Shift logs, ລາຍຈ່າຍ, ພະນັກງານ ຈະບໍ່ຖືກກະທົບ — ບໍ່ສາມາດກູ້ຄືນໄດ້</div>
+    </div>`,
+    [{label:'🗑 ຢືນຢັນລຶບທັງໝົດ',cls:'btn btn-red',fn:()=>{
+      DB.revenues = [];
+      saveData();
+      addLog(SESSION.user.name, `ລຶບຂໍ້ມູນລາຍຮັບທັງໝົດ (${count} ລາຍການ)`, 'settings');
+      closeModal();
+      showToast(`ລຶບຂໍ້ມູນລາຍຮັບທັງໝົດ ສຳເລັດ (${count} ລາຍການ) ✓`);
+      navigate('settings');
+    }},
+    {label:'ຍົກເລີກ',cls:'btn btn-outline',fn:closeModal}]
+  );
+}
+
+function resetMonthData(){
+  const monthVal = document.getElementById('reset-month-val')?.value || today().slice(0,7);
+  showModal('🗑 Reset ຂໍ້ມູນລາຍເດືອນ',`
+    <div style="text-align:center;padding:10px 0;">
+      <div style="font-size:40px;margin-bottom:10px;">⚠️</div>
+      <div style="font-size:14px;color:var(--red);font-weight:700;margin-bottom:8px;">ລຶບຂໍ້ມູນຂອງເດືອນ ${monthVal}!</div>
+      <div style="font-size:12px;color:var(--text-dim);">ລາຍຮັບ, Shift logs, ການແຈ້ງເຕືອນ, Activity logs<br>ຂອງເດືອນນີ້ຈະຖືກລຶບ — ຂໍ້ມູນເດືອນອື່ນຍັງຢູ່ຄືເກົ່າ ບໍ່ສາມາດກູ້ຄືນໄດ້</div>
+    </div>`,
+    [{label:'🗑 ຢືນຢັນ Reset ເດືອນນີ້',cls:'btn btn-red',fn:()=>{
+      const before = { rev:DB.revenues.length, sh:DB.shiftLogs.length, notif:DB.notifications.length, log:DB.actLogs.length };
+      DB.revenues      = DB.revenues.filter(r=>!(r.date||'').startsWith(monthVal));
+      DB.shiftLogs     = DB.shiftLogs.filter(s=>!(s.date||'').startsWith(monthVal));
+      DB.notifications = DB.notifications.filter(n=>!(n.date||n.time||'').startsWith(monthVal));
+      DB.actLogs        = DB.actLogs.filter(l=>!(l.date||'').startsWith(monthVal));
+      // ຖ້າ shift ຂອງ session ປັດຈຸບັນຢູ່ໃນເດືອນທີ່ຖືກລຶບ → ປິດ session ນັ້ນ
+      if(SESSION.shiftActive && today().startsWith(monthVal)){
+        if(SESSION.shiftInterval){ clearInterval(SESSION.shiftInterval); SESSION.shiftInterval=null; }
+        SESSION.shiftActive=false; SESSION.shiftElapsed=0; SESSION.shiftLogId=null; SESSION.shiftOpenBal=0;
+        localStorage.removeItem(SHIFT_KEY);
+      }
+      DB.employees.forEach(e=>{ if(today().startsWith(monthVal)) e.status='OFFLINE'; });
+      saveData();
+      closeModal();
+      const removed = before.rev-DB.revenues.length + before.sh-DB.shiftLogs.length;
+      showToast(`Reset ຂໍ້ມູນເດືອນ ${monthVal} ສຳເລັດ (${removed} ລາຍການ) ✓`);
+      navigate('settings');
+    }},
+    {label:'ຍົກເລີກ',cls:'btn btn-outline',fn:closeModal}]
+  );
+}
+
 function resetAllData(){
   showModal('🗑 Reset ຂໍ້ມູນທັງໝົດ',`
     <div style="text-align:center;padding:10px 0;">
@@ -4078,7 +4351,7 @@ function pgSettings(){
 
     <div class="card p24">
       <div class="st">ສູດຄຳນວນ Break Even</div>
-      <div style="background:rgba(255,215,0,0.04);border:1px solid rgba(255,215,0,0.12);border-radius:10px;padding:17px;">
+      <div style="background:rgba(255,122,0,0.04);border:1px solid rgba(255,122,0,0.12);border-radius:10px;padding:17px;">
         <div class="fm tg" style="font-size:13px;line-height:2.2;">
           ກຳໄລສຸດທິ = ລາຍຮັບທັງໝົດ − ລາຍຈ່າຍທັງໝົດ<br>
           Break Even = ລາຍຈ່າຍ ÷ ອັດຕາກຳໄລ<br>
@@ -4097,9 +4370,27 @@ function pgSettings(){
       </div>
     </div>
 
+    <div class="card p24" style="border-color:rgba(255,68,85,0.3);">
+      <div class="st" style="color:var(--red);">🗑 Reset ຂໍ້ມູນລາຍເດືອນ</div>
+      <div style="font-size:12px;color:var(--text-dim);margin-bottom:12px;line-height:1.7;">ລ້າງລາຍຮັບ, Shift logs, ການແຈ້ງເຕືອນ ແລະ Activity logs ສະເພາະເດືອນທີ່ເລືອກ — ຂໍ້ມູນເດືອນອື່ນຈະບໍ່ຖືກກະທົບ.</div>
+      <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;">
+        <div class="fgr" style="width:170px;">
+          <label>ເລືອກເດືອນ</label>
+          <input type="month" id="reset-month-val" value="${today().slice(0,7)}">
+        </div>
+        <button class="btn btn-red" onclick="resetMonthData()" style="font-size:12px;">🗑 Reset ເດືອນນີ້</button>
+      </div>
+    </div>
+
+    <div class="card p24" style="border-color:rgba(255,68,85,0.3);">
+      <div class="st" style="color:var(--red);">🗑 ລຶບຂໍ້ມູນລາຍຮັບທັງໝົດ</div>
+      <div style="font-size:12px;color:var(--text-dim);margin-bottom:12px;line-height:1.7;">ລຶບປະຫວັດ "ລາຍຮັບ" ທັງໝົດ (ທຸກເດືອນ, ທຸກປີ) ອອກຈາກລະບົບ — Shift logs, ລາຍຈ່າຍ, ພະນັກງານ ຈະບໍ່ຖືກກະທົບ. ບໍ່ສາມາດກູ້ຄືນໄດ້.</div>
+      <button class="btn btn-red" onclick="deleteAllRevenues()" style="font-size:12px;">🗑 ລຶບລາຍຮັບທັງໝົດ</button>
+    </div>
+
     <div class="card p24">
       <div class="st">ຂໍ້ມູນລະບົບ</div>
-      ${[['ລະບົບ','4king77 v3.0 (Firebase Real-Time)'],
+      ${[['ລະບົບ','8king888 v3.0 (Firebase Real-Time)'],
          ['Firebase',isFirebaseConfigured()?'🔥 ເຊື່ອມຕໍ່ແລ້ວ':'⚠ ຍັງບໍ່ໄດ້ຕັ້ງຄ່າ'],
          ['Real-Time',isFirebaseConfigured()?'🟢 LIVE poll 2s (~100ms UX)':'🟡 Same-browser instant (BroadcastChannel)'],
          ['ພະນັກງານ',DB.employees.length+' ຄົນ'],
@@ -4146,14 +4437,14 @@ async function testFirebase(){
   if(r){ r.textContent='⏳ ກຳລັງທົດສອບ Firebase...'; r.style.color='var(--text-dim)'; }
   try{
     // Write a ping then read back
-    await fbWrite('4king77_ping', { t: Date.now() });
-    const ping = await fbRead('4king77_ping');
+    await fbWrite('8king888_ping', { t: Date.now() });
+    const ping = await fbRead('8king888_ping');
     if(ping && ping.t){
       if(r){ r.textContent='✅ Firebase ເຊື່ອມຕໍ່ສຳເລັດ! Real-Time sync ພ້ອມໃຊ້'; r.style.color='var(--green)'; }
       showSyncStatus('saved');
       showToast('🔥 Firebase ເຊື່ອມຕໍ່ສຳເລັດ — Real-Time LIVE!');
       // Push current DB to Firebase
-      await fbWrite('4king77', DB);
+      await fbWrite('8king888', DB);
       _lastSavedHash = dbHash();
       // Restart polling
       startPolling();
@@ -4175,7 +4466,7 @@ function saveSettings(){
 
 function exportAllData(){
   const blob=new Blob([JSON.stringify(DB,null,2)],{type:'application/json'});
-  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=`4king77_backup_${today()}.json`; a.click();
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=`8king888_backup_${today()}.json`; a.click();
   showToast('Export ຂໍ້ມູນສຳເລັດ');
 }
 
@@ -4213,5 +4504,6 @@ startClock();
 })();
 document.getElementById('mover').addEventListener('click',function(e){ if(e.target===this) closeModal(); });
 </script>
-</body>
-</html>
+
+
+</body></html>
