@@ -7,68 +7,68 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Share+Tech+Mono&family=Exo+2:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --gold:#FF7A00;--gold2:#FF9130;--gold3:#FF5500;
-  --gold-dim:rgba(255,122,0,0.15);--gold-border:rgba(255,122,0,0.22);
-  --green:#00ff88;--red:#ff4455;--blue:#44aaff;--purple:#cc44ff;
-  --bg:#060606;--card:rgba(14,14,2,0.97);
-  --text:#fff;--text-dim:rgba(255,255,255,0.45);--text-faint:rgba(255,255,255,0.18);
+  --gold:#C2410C;--gold2:#E8720A;--gold3:#A63C00;
+  --gold-dim:rgba(194,65,12,0.10);--gold-border:rgba(194,65,12,0.35);
+  --green:#0b8a53;--red:#dc2626;--blue:#2563eb;--purple:#9333ea;
+  --bg:#f7f4ee;--card:rgba(255,255,255,0.97);
+  --text:#1a1a1a;--text-dim:rgba(0,0,0,0.62);--text-faint:rgba(0,0,0,0.42);
   --r:14px;--rs:8px;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Exo 2',sans-serif;overflow-x:hidden;}
 ::-webkit-scrollbar{width:5px;height:5px;}
-::-webkit-scrollbar-track{background:rgba(255,255,255,0.03);}
-::-webkit-scrollbar-thumb{background:rgba(255,122,0,0.3);border-radius:3px;}
+::-webkit-scrollbar-track{background:rgba(0,0,0,0.03);}
+::-webkit-scrollbar-thumb{background:rgba(194,65,12,0.3);border-radius:3px;}
 
 /* BG */
-.gbg{position:fixed;inset:0;background-image:linear-gradient(rgba(255,122,0,0.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,122,0,0.016) 1px,transparent 1px);background-size:55px 55px;pointer-events:none;z-index:0;}
+.gbg{position:fixed;inset:0;background-image:linear-gradient(rgba(194,65,12,0.016) 1px,transparent 1px),linear-gradient(90deg,rgba(194,65,12,0.016) 1px,transparent 1px);background-size:55px 55px;pointer-events:none;z-index:0;}
 .gorb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(80px);}
 
 /* CARD */
-.card{background:var(--card);border:1px solid var(--gold-border);border-radius:var(--r);box-shadow:0 4px 28px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,122,0,0.05);backdrop-filter:blur(12px);transition:border-color .3s,box-shadow .3s;position:relative;overflow:hidden;}
-.card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,122,0,0.28),transparent);}
-.card.glow{border-color:rgba(255,122,0,0.6);box-shadow:0 0 24px rgba(255,122,0,0.16),0 4px 28px rgba(0,0,0,0.6);}
-.card.glow-green{border-color:rgba(0,255,136,0.5);box-shadow:0 0 20px rgba(0,255,136,0.14);}
-.card.glow-red{border-color:rgba(255,68,85,0.5);box-shadow:0 0 20px rgba(255,68,85,0.14);}
+.card{background:var(--card);border:1px solid var(--gold-border);border-radius:var(--r);box-shadow:0 2px 20px rgba(20,16,10,0.10),inset 0 1px 0 rgba(194,65,12,0.06);backdrop-filter:blur(12px);transition:border-color .3s,box-shadow .3s;position:relative;overflow:hidden;}
+.card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(194,65,12,0.28),transparent);}
+.card.glow{border-color:rgba(194,65,12,0.6);box-shadow:0 0 24px rgba(194,65,12,0.16),0 4px 28px rgba(20,16,10,0.10);}
+.card.glow-green{border-color:rgba(11,138,83,0.5);box-shadow:0 0 20px rgba(11,138,83,0.14);}
+.card.glow-red{border-color:rgba(220,38,38,0.5);box-shadow:0 0 20px rgba(220,38,38,0.14);}
 
 /* BUTTONS */
 .btn{border:none;border-radius:var(--rs);padding:10px 20px;font-family:'Exo 2',sans-serif;font-weight:700;cursor:pointer;transition:all .2s;font-size:13px;}
 .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold3));color:#000;}
-.btn-gold:hover{box-shadow:0 0 18px rgba(255,122,0,0.5);transform:translateY(-1px);}
-.btn-outline{background:rgba(255,122,0,0.07);border:1px solid rgba(255,122,0,0.32);color:var(--gold);}
-.btn-outline:hover{background:rgba(255,122,0,0.14);}
-.btn-red{background:rgba(255,68,85,0.1);border:1px solid rgba(255,68,85,0.32);color:var(--red);}
-.btn-red:hover{background:rgba(255,68,85,0.2);}
-.btn-blue{background:rgba(68,170,255,0.1);border:1px solid rgba(68,170,255,0.32);color:var(--blue);}
-.btn-green{background:linear-gradient(135deg,#00ff88,#00cc66);color:#000;font-weight:900;padding:14px 32px;border-radius:12px;}
-.btn-stop{background:linear-gradient(135deg,#ff4455,#cc2233);color:#fff;font-weight:900;padding:14px 32px;border-radius:12px;}
+.btn-gold:hover{box-shadow:0 0 18px rgba(194,65,12,0.5);transform:translateY(-1px);}
+.btn-outline{background:rgba(194,65,12,0.07);border:1px solid rgba(194,65,12,0.32);color:var(--gold);}
+.btn-outline:hover{background:rgba(194,65,12,0.14);}
+.btn-red{background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.32);color:var(--red);}
+.btn-red:hover{background:rgba(220,38,38,0.2);}
+.btn-blue{background:rgba(37,99,235,0.1);border:1px solid rgba(37,99,235,0.32);color:var(--blue);}
+.btn-green{background:linear-gradient(135deg,#0b8a53,#00cc66);color:#000;font-weight:900;padding:14px 32px;border-radius:12px;}
+.btn-stop{background:linear-gradient(135deg,#dc2626,#cc2233);color:#fff;font-weight:900;padding:14px 32px;border-radius:12px;}
 
 /* INPUTS */
-input,select,textarea{background:rgba(255,255,255,0.05);border:1px solid var(--gold-border);border-radius:var(--rs);padding:10px 14px;color:var(--text);font-family:'Exo 2',sans-serif;font-size:13px;outline:none;transition:border-color .2s;width:100%;}
-input:focus,select:focus,textarea:focus{border-color:rgba(255,122,0,0.65);box-shadow:0 0 0 3px rgba(255,122,0,0.07);}
-select{background:#0e0d00;cursor:pointer;}
+input,select,textarea{background:rgba(0,0,0,0.05);border:1px solid var(--gold-border);border-radius:var(--rs);padding:10px 14px;color:var(--text);font-family:'Exo 2',sans-serif;font-size:13px;outline:none;transition:border-color .2s;width:100%;}
+input:focus,select:focus,textarea:focus{border-color:rgba(194,65,12,0.65);box-shadow:0 0 0 3px rgba(194,65,12,0.07);}
+select{background:#fffaf2;cursor:pointer;}
 input[type=number]::-webkit-inner-spin-button{opacity:.3;}
 label{color:var(--text-dim);font-size:11px;letter-spacing:.8px;display:block;margin-bottom:5px;text-transform:uppercase;}
 
 /* LAYOUT */
 #app{display:flex;height:100vh;}
-#sb{width:238px;min-height:100vh;background:linear-gradient(180deg,#0d0d00,#060606);border-right:1px solid var(--gold-border);display:flex;flex-direction:column;flex-shrink:0;transition:transform .3s;z-index:100;}
+#sb{width:238px;min-height:100vh;background:linear-gradient(180deg,#fffaf5,#f7f4ee);border-right:1px solid var(--gold-border);display:flex;flex-direction:column;flex-shrink:0;transition:transform .3s;z-index:100;}
 #main{flex:1;display:flex;flex-direction:column;min-width:0;overflow:hidden;}
-#topbar{height:58px;border-bottom:1px solid var(--gold-border);display:flex;align-items:center;padding:0 20px;gap:12px;background:rgba(6,6,0,0.93);backdrop-filter:blur(12px);flex-shrink:0;z-index:50;}
+#topbar{height:58px;border-bottom:1px solid var(--gold-border);display:flex;align-items:center;padding:0 20px;gap:12px;background:rgba(255,255,255,0.93);backdrop-filter:blur(12px);flex-shrink:0;z-index:50;}
 #ct{flex:1;padding:22px 20px;overflow-y:auto;}
 
 /* SIDEBAR */
 .brand{padding:20px 18px 16px;border-bottom:1px solid var(--gold-border);display:flex;align-items:center;gap:12px;}
-.bi{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold3));display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 0 16px rgba(255,122,0,0.44);flex-shrink:0;}
-.bn{font-family:'Orbitron',monospace;font-size:15px;color:var(--gold);font-weight:900;letter-spacing:2px;text-shadow:0 0 10px rgba(255,122,0,0.5);}
+.bi{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold3));display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 0 16px rgba(194,65,12,0.44);flex-shrink:0;}
+.bn{font-family:'Orbitron',monospace;font-size:15px;color:var(--gold);font-weight:900;letter-spacing:2px;text-shadow:0 0 10px rgba(194,65,12,0.5);}
 .bs{font-size:8px;color:var(--text-faint);letter-spacing:1.5px;margin-top:1px;}
 nav{flex:1;padding:12px 10px;overflow-y:auto;display:flex;flex-direction:column;gap:2px;}
 .ni{display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:10px;cursor:pointer;transition:all .2s;border-left:2px solid transparent;color:var(--text-dim);font-size:13px;font-weight:500;}
-.ni:hover{background:rgba(255,122,0,0.05);color:rgba(255,255,255,0.8);}
-.ni.active{background:linear-gradient(135deg,rgba(255,122,0,0.12),rgba(255,90,0,0.07));border-left-color:var(--gold);color:var(--gold);font-weight:700;}
+.ni:hover{background:rgba(194,65,12,0.05);color:rgba(0,0,0,0.8);}
+.ni.active{background:linear-gradient(135deg,rgba(194,65,12,0.12),rgba(255,90,0,0.07));border-left-color:var(--gold);color:var(--gold);font-weight:700;}
 .nd{width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold);margin-left:auto;}
 .uinfo{padding:13px 18px;border-top:1px solid var(--gold-border);}
-.uav{width:32px;height:32px;border-radius:50%;background:rgba(255,122,0,0.1);border:1px solid rgba(255,122,0,0.28);display:flex;align-items:center;justify-content:center;font-size:14px;}
+.uav{width:32px;height:32px;border-radius:50%;background:rgba(194,65,12,0.1);border:1px solid rgba(194,65,12,0.28);display:flex;align-items:center;justify-content:center;font-size:14px;}
 
 /* STAT */
 .sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:13px;margin-bottom:18px;}
@@ -81,17 +81,17 @@ nav{flex:1;padding:12px 10px;overflow-y:auto;display:flex;flex-direction:column;
 
 /* BADGE */
 .badge{padding:2px 10px;border-radius:20px;font-size:10px;font-family:'Share Tech Mono',monospace;letter-spacing:.8px;border:1px solid;}
-.bon{color:#00ff88;background:rgba(0,255,136,0.09);border-color:rgba(0,255,136,0.32);}
-.boff{color:#ff4455;background:rgba(255,68,85,0.09);border-color:rgba(255,68,85,0.32);}
-.bbrk{color:var(--gold);background:rgba(255,122,0,0.09);border-color:rgba(255,122,0,0.32);}
-.bprc{color:var(--blue);background:rgba(68,170,255,0.09);border-color:rgba(68,170,255,0.32);}
+.bon{color:#0b8a53;background:rgba(11,138,83,0.09);border-color:rgba(11,138,83,0.32);}
+.boff{color:#dc2626;background:rgba(220,38,38,0.09);border-color:rgba(220,38,38,0.32);}
+.bbrk{color:var(--gold);background:rgba(194,65,12,0.09);border-color:rgba(194,65,12,0.32);}
+.bprc{color:var(--blue);background:rgba(37,99,235,0.09);border-color:rgba(37,99,235,0.32);}
 
 /* TABLE */
 .tw{overflow-x:auto;}
 table{width:100%;border-collapse:collapse;font-size:13px;}
-th{text-align:left;padding:9px 12px;color:rgba(255,122,0,0.6);font-size:10px;letter-spacing:1.2px;text-transform:uppercase;border-bottom:1px solid rgba(255,122,0,0.16);font-weight:600;}
-td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.04);color:rgba(255,255,255,0.8);}
-tr:hover td{background:rgba(255,122,0,0.022);}
+th{text-align:left;padding:9px 12px;color:rgba(194,65,12,0.6);font-size:10px;letter-spacing:1.2px;text-transform:uppercase;border-bottom:1px solid rgba(194,65,12,0.16);font-weight:600;}
+td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(0,0,0,0.8);}
+tr:hover td{background:rgba(194,65,12,0.022);}
 
 /* RING */
 .rrow{display:flex;justify-content:space-around;align-items:center;gap:10px;flex-wrap:wrap;}
@@ -103,19 +103,19 @@ tr:hover td{background:rgba(255,122,0,0.022);}
 /* BAR CHART */
 .bc{display:flex;align-items:flex-end;gap:5px;height:78px;}
 .bcc{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;}
-.bar{width:100%;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--gold),var(--gold3));box-shadow:0 0 8px rgba(255,122,0,0.3);min-height:3px;}
+.bar{width:100%;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--gold),var(--gold3));box-shadow:0 0 8px rgba(194,65,12,0.3);min-height:3px;}
 .bday{color:var(--text-faint);font-size:9px;}
 
 /* SECTION TITLE */
-.st{color:rgba(255,122,0,0.58);font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:13px;display:flex;align-items:center;gap:8px;}
-.st::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(255,122,0,0.18),transparent);}
+.st{color:rgba(194,65,12,0.58);font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:13px;display:flex;align-items:center;gap:8px;}
+.st::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(194,65,12,0.18),transparent);}
 
 /* PAGE HEADER */
 .ph{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px;}
-.pt{font-family:'Orbitron',monospace;font-size:18px;color:var(--gold);font-weight:900;text-shadow:0 0 14px rgba(255,122,0,0.38);}
+.pt{font-family:'Orbitron',monospace;font-size:18px;color:var(--gold);font-weight:900;text-shadow:0 0 14px rgba(194,65,12,0.38);}
 
 /* MODAL */
-.mo{position:fixed;inset:0;background:rgba(0,0,0,0.87);display:flex;align-items:center;justify-content:center;z-index:999;backdrop-filter:blur(10px);}
+.mo{position:fixed;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;z-index:999;backdrop-filter:blur(10px);}
 .mb{width:100%;max-width:520px;max-height:90vh;overflow-y:auto;padding:30px;margin:20px;}
 .mt{font-family:'Share Tech Mono',monospace;color:var(--gold);font-size:15px;margin-bottom:20px;letter-spacing:.8px;}
 .fg{display:grid;gap:13px;}
@@ -125,68 +125,68 @@ tr:hover td{background:rgba(255,122,0,0.022);}
 .ma .btn{flex:1;padding:13px;}
 
 /* CLOCK */
-.lc{font-family:'Share Tech Mono',monospace;color:var(--gold);font-size:13px;text-shadow:0 0 10px rgba(255,122,0,0.55);}
+.lc{font-family:'Share Tech Mono',monospace;color:var(--gold);font-size:13px;text-shadow:0 0 10px rgba(194,65,12,0.55);}
 
 /* SHIFT TIMER */
-.sti{font-family:'Orbitron',monospace;font-size:40px;font-weight:900;color:var(--gold);text-shadow:0 0 28px rgba(255,122,0,0.6);letter-spacing:4px;text-align:center;padding:18px 0;}
+.sti{font-family:'Orbitron',monospace;font-size:40px;font-weight:900;color:var(--gold);text-shadow:0 0 28px rgba(194,65,12,0.6);letter-spacing:4px;text-align:center;padding:18px 0;}
 
 /* PARTNER */
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:13px;}
-.psi{width:70px;background:rgba(255,255,255,0.05);border:1px solid currentColor;border-radius:6px;padding:6px 8px;text-align:center;font-weight:900;font-size:20px;font-family:'Orbitron',monospace;outline:none;}
+.psi{width:70px;background:rgba(0,0,0,0.05);border:1px solid currentColor;border-radius:6px;padding:6px 8px;text-align:center;font-weight:900;font-size:20px;font-family:'Orbitron',monospace;outline:none;}
 
 /* NOTIF */
-.nb{position:relative;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.05);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;transition:all .2s;}
+.nb{position:relative;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.05);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;transition:all .2s;}
 .nb:hover{background:var(--gold-dim);}
-.nd2{position:absolute;top:-2px;right:-2px;width:16px;height:16px;border-radius:50%;background:#ff4455;color:#fff;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:900;}
+.nd2{position:absolute;top:-2px;right:-2px;width:16px;height:16px;border-radius:50%;background:#dc2626;color:#fff;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:900;}
 
 /* TIER */
-.tc{padding:8px 15px;background:rgba(255,122,0,0.06);border:1px solid rgba(255,122,0,0.25);border-radius:8px;font-size:12px;}
+.tc{padding:8px 15px;background:rgba(194,65,12,0.06);border:1px solid rgba(194,65,12,0.25);border-radius:8px;font-size:12px;}
 .tr2{color:var(--gold);font-weight:900;margin-left:8px;font-family:'Orbitron',monospace;}
 
 /* EXPENSE BAR */
-.ebg{height:4px;background:rgba(255,255,255,0.05);border-radius:2px;margin-top:8px;}
-.ef{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--gold),var(--gold3));box-shadow:0 0 8px rgba(255,122,0,0.4);}
+.ebg{height:4px;background:rgba(0,0,0,0.05);border-radius:2px;margin-top:8px;}
+.ef{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--gold),var(--gold3));box-shadow:0 0 8px rgba(194,65,12,0.4);}
 
 /* REPORT */
-.rsh{color:rgba(255,122,0,0.6);font-size:10px;letter-spacing:1.8px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(255,122,0,0.13);text-transform:uppercase;}
-.rrow2{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px;}
+.rsh{color:rgba(194,65,12,0.6);font-size:10px;letter-spacing:1.8px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(194,65,12,0.13);text-transform:uppercase;}
+.rrow2{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(0,0,0,0.04);font-size:13px;}
 
 /* SCORE BAR */
-.scbar{height:3px;background:rgba(255,255,255,0.07);border-radius:2px;margin-top:6px;}
+.scbar{height:3px;background:rgba(0,0,0,0.07);border-radius:2px;margin-top:6px;}
 .scfill{height:100%;border-radius:2px;}
 
 /* LOGIN */
-#lp{min-height:100vh;background:radial-gradient(ellipse at 15% 50%,rgba(40,30,0,.78) 0%,#060606 55%),radial-gradient(ellipse at 85% 15%,rgba(55,38,0,.6) 0%,transparent 50%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
-.lgb{position:absolute;inset:0;background-image:linear-gradient(rgba(255,122,0,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,122,0,0.02) 1px,transparent 1px);background-size:50px 50px;}
+#lp{min-height:100vh;background:radial-gradient(ellipse at 15% 50%,rgba(255,205,150,.55) 0%,#f7f4ee 55%),radial-gradient(ellipse at 85% 15%,rgba(255,215,160,.4) 0%,transparent 50%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.lgb{position:absolute;inset:0;background-image:linear-gradient(rgba(194,65,12,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(194,65,12,0.02) 1px,transparent 1px);background-size:50px 50px;}
 .lo{position:absolute;border-radius:50%;pointer-events:none;filter:blur(70px);}
 .lcard{width:100%;max-width:420px;padding:36px;position:relative;z-index:1;}
 .llogo{text-align:center;margin-bottom:34px;}
-.lcrown{width:76px;height:76px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold3));display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 13px;box-shadow:0 0 42px rgba(255,122,0,0.52),0 0 88px rgba(255,122,0,0.18);}
-.ltitle{font-family:'Orbitron',monospace;font-size:30px;color:var(--gold);font-weight:900;letter-spacing:5px;text-shadow:0 0 26px rgba(255,122,0,0.65);}
+.lcrown{width:76px;height:76px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold3));display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 13px;box-shadow:0 0 42px rgba(194,65,12,0.52),0 0 88px rgba(194,65,12,0.18);}
+.ltitle{font-family:'Orbitron',monospace;font-size:30px;color:var(--gold);font-weight:900;letter-spacing:5px;text-shadow:0 0 26px rgba(194,65,12,0.65);}
 .lsub{color:var(--text-faint);font-size:10px;letter-spacing:2px;margin-top:5px;}
 .lf{margin-bottom:17px;}
 .liw{position:relative;}
 .lii{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:15px;opacity:.55;}
 .lin{padding-left:42px!important;}
-.lbtn{width:100%;padding:14px;font-size:14px;letter-spacing:1.5px;margin-top:6px;border-radius:10px;box-shadow:0 0 20px rgba(255,122,0,0.38);}
+.lbtn{width:100%;padding:14px;font-size:14px;letter-spacing:1.5px;margin-top:6px;border-radius:10px;box-shadow:0 0 20px rgba(194,65,12,0.38);}
 .lhint{color:var(--text-faint);font-size:10px;text-align:center;margin-top:16px;}
-.lerr{color:var(--red);font-size:12px;text-align:center;margin-bottom:13px;padding:8px;background:rgba(255,68,85,0.09);border:1px solid rgba(255,68,85,0.28);border-radius:8px;}
+.lerr{color:var(--red);font-size:12px;text-align:center;margin-bottom:13px;padding:8px;background:rgba(220,38,38,0.09);border:1px solid rgba(220,38,38,0.28);border-radius:8px;}
 
 /* TOAST */
-.toast{position:fixed;bottom:24px;right:24px;background:rgba(0,0,0,0.9);border:1px solid var(--gold-border);border-radius:10px;padding:12px 18px;font-size:13px;z-index:9999;display:flex;align-items:center;gap:10px;backdrop-filter:blur(12px);transform:translateX(120%);transition:transform .3s ease;max-width:300px;}
+.toast{position:fixed;bottom:24px;right:24px;background:rgba(255,255,255,0.98);box-shadow:0 4px 24px rgba(20,16,10,0.18);border:1px solid var(--gold-border);border-radius:10px;padding:12px 18px;font-size:13px;z-index:9999;display:flex;align-items:center;gap:10px;backdrop-filter:blur(12px);transform:translateX(120%);transition:transform .3s ease;max-width:300px;color:#1a1a1a;}
 .toast.show{transform:translateX(0);}
-.toast.success{border-color:rgba(0,255,136,0.5);}
-.toast.error{border-color:rgba(255,68,85,0.5);}
+.toast.success{border-color:rgba(11,138,83,0.5);}
+.toast.error{border-color:rgba(220,38,38,0.5);}
 
 /* ANIMATIONS */
 @keyframes si{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
-@keyframes rtpulse{0%,100%{box-shadow:0 0 6px var(--green);}50%{box-shadow:0 0 14px var(--green),0 0 28px rgba(0,255,136,0.4);}}
+@keyframes rtpulse{0%,100%{box-shadow:0 0 6px var(--green);}50%{box-shadow:0 0 14px var(--green),0 0 28px rgba(11,138,83,0.4);}}
 .ai{animation:si .35s ease both;}
 #rt-dot{animation:rtpulse 2.5s ease-in-out infinite;}
 
 /* MISC */
-.sep{height:1px;background:linear-gradient(90deg,transparent,rgba(255,122,0,0.18),transparent);margin:18px 0;}
+.sep{height:1px;background:linear-gradient(90deg,transparent,rgba(194,65,12,0.18),transparent);margin:18px 0;}
 .g20{display:flex;flex-direction:column;gap:20px;}
 .g12{display:flex;flex-direction:column;gap:12px;}
 .tg{color:var(--gold);} .tgr{color:var(--green);} .tr{color:var(--red);} .to{color:var(--gold3);} .td{color:var(--text-dim);}
@@ -194,7 +194,7 @@ tr:hover td{background:rgba(255,122,0,0.022);}
 .bold{font-weight:700;}
 .p16{padding:16px;}.p20{padding:20px;}.p24{padding:24px;}.p28{padding:28px;}.p32{padding:32px;}
 .hidden{display:none!important;}
-.calcbox{background:rgba(255,122,0,0.04);border:1px solid rgba(255,122,0,0.13);border-radius:10px;padding:15px;margin-top:14px;}
+.calcbox{background:rgba(194,65,12,0.04);border:1px solid rgba(194,65,12,0.13);border-radius:10px;padding:15px;margin-top:14px;}
 .tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;}
 
 /* SIDEBAR OVERLAY MOBILE */
@@ -202,11 +202,11 @@ tr:hover td{background:rgba(255,122,0,0.022);}
 .sov.show{display:block;}
 
 /* SEARCH BOX */
-.search-box{background:rgba(255,255,255,0.05);border:1px solid rgba(255,122,0,0.2);border-radius:8px;padding:8px 14px;color:var(--text);font-size:13px;outline:none;width:220px;}
-.search-box:focus{border-color:rgba(255,122,0,0.5);}
+.search-box{background:rgba(0,0,0,0.05);border:1px solid rgba(194,65,12,0.2);border-radius:8px;padding:8px 14px;color:var(--text);font-size:13px;outline:none;width:220px;}
+.search-box:focus{border-color:rgba(194,65,12,0.5);}
 
 /* SUMMARY ROW */
-.sum-row{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(255,122,0,0.04);border-radius:8px;border:1px solid rgba(255,122,0,0.1);margin-top:10px;}
+.sum-row{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(194,65,12,0.04);border-radius:8px;border:1px solid rgba(194,65,12,0.1);margin-top:10px;}
 
 /* EMPTY STATE */
 .empty{text-align:center;padding:40px 20px;color:var(--text-faint);}
@@ -231,7 +231,7 @@ tr:hover td{background:rgba(255,122,0,0.022);}
 <body>
 
 <div class="gbg"></div>
-<div class="gorb" style="width:400px;height:400px;background:radial-gradient(circle,rgba(255,122,0,0.05),transparent);left:-100px;top:80px;"></div>
+<div class="gorb" style="width:400px;height:400px;background:radial-gradient(circle,rgba(194,65,12,0.05),transparent);left:-100px;top:80px;"></div>
 <div class="gorb" style="width:360px;height:360px;background:radial-gradient(circle,rgba(255,90,0,0.04),transparent);right:-80px;bottom:80px;"></div>
 
 <div class="toast" id="toast"></div>
@@ -239,7 +239,7 @@ tr:hover td{background:rgba(255,122,0,0.022);}
 <!-- LOGIN -->
 <div id="lp">
   <div class="lgb"></div>
-  <div class="lo" style="width:340px;height:340px;background:radial-gradient(circle,rgba(255,122,0,0.07),transparent);left:8%;top:30%;transform:translate(-50%,-50%);"></div>
+  <div class="lo" style="width:340px;height:340px;background:radial-gradient(circle,rgba(194,65,12,0.07),transparent);left:8%;top:30%;transform:translate(-50%,-50%);"></div>
   <div class="lo" style="width:270px;height:270px;background:radial-gradient(circle,rgba(255,90,0,0.05),transparent);right:8%;top:20%;transform:translate(50%,-50%);"></div>
   <div class="lcard">
     <div class="llogo">
@@ -248,7 +248,7 @@ tr:hover td{background:rgba(255,122,0,0.022);}
       <div class="lsub">ລະບົບຄຸ້ມຄອງຮ້ານເກມ</div>
     </div>
     <div class="card glow p32">
-      <div style="color:rgba(255,122,0,0.5);font-size:10px;letter-spacing:2px;text-align:center;margin-bottom:22px;">ກະລຸນາໃສ່ຂໍ້ມູນເຂົ້າລະບົບ</div>
+      <div style="color:rgba(194,65,12,0.5);font-size:10px;letter-spacing:2px;text-align:center;margin-bottom:22px;">ກະລຸນາໃສ່ຂໍ້ມູນເຂົ້າລະບົບ</div>
       <div id="lerr" class="lerr hidden"></div>
       <div class="lf">
         <label>ຊື່ຜູ້ໃຊ້</label>
@@ -266,7 +266,7 @@ tr:hover td{background:rgba(255,122,0,0.022);}
       </div>
       <button class="btn btn-gold lbtn" id="lbtn" onclick="doLogin()">ເຂົ້າສູ່ລະບົບ →</button>
       
-      <div id="shift-warn" class="hidden" style="margin-top:14px;padding:10px 14px;background:rgba(0,255,136,0.08);border:1px solid rgba(0,255,136,0.35);border-radius:10px;color:#00ff88;font-size:11px;text-align:center;letter-spacing:.5px;">
+      <div id="shift-warn" class="hidden" style="margin-top:14px;padding:10px 14px;background:rgba(11,138,83,0.08);border:1px solid rgba(11,138,83,0.35);border-radius:10px;color:#0b8a53;font-size:11px;text-align:center;letter-spacing:.5px;">
         🟢 Shift ກຳລັງດຳເນີນຢູ່ — ກະລຸນາ Login ເພື່ອສືບຕໍ່
       </div>
 
@@ -289,7 +289,7 @@ tr:hover td{background:rgba(255,122,0,0.022);}
         <div class="uav">👤</div>
         <div>
           <div style="font-size:12px;font-weight:700;" id="udis">ຜູ້ບໍລິຫານ</div>
-          <div style="font-size:10px;color:rgba(255,122,0,0.55);" id="rdis">ADMIN</div>
+          <div style="font-size:10px;color:rgba(194,65,12,0.55);" id="rdis">ADMIN</div>
         </div>
       </div>
       <button class="btn btn-red" style="width:100%;font-size:11px;padding:8px;" onclick="doLogout()">⏏ ອອກຈາກລະບົບ</button>
@@ -298,8 +298,8 @@ tr:hover td{background:rgba(255,122,0,0.022);}
 
   <div id="main">
     <div id="topbar">
-      <button onclick="toggleSB()" style="background:none;border:none;color:rgba(255,122,0,0.55);cursor:pointer;font-size:22px;padding:4px 8px;line-height:1;">☰</button>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:600;color:rgba(255,255,255,0.72);" id="tbtitle">ໜ້າຫຼັກ</div></div>
+      <button onclick="toggleSB()" style="background:none;border:none;color:rgba(194,65,12,0.55);cursor:pointer;font-size:22px;padding:4px 8px;line-height:1;">☰</button>
+      <div style="flex:1;"><div style="font-size:14px;font-weight:600;color:rgba(0,0,0,0.72);" id="tbtitle">ໜ້າຫຼັກ</div></div>
       <div style="display:flex;align-items:center;gap:12px;">
         <div class="nb" id="nbbtn" onclick="navigate('notif')">🔔<div class="nd2" id="nbadge">0</div></div>
         <div style="color:var(--text-faint);font-size:12px;">|</div>
@@ -326,6 +326,7 @@ tr:hover td{background:rgba(255,122,0,0.022);}
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
 <script>
 // ============================================================
 // STORAGE — Firebase Realtime Database (True Real-Time ~100ms)
@@ -554,9 +555,9 @@ const DEFAULT = {
     {id:4,name:'ເງິນສຳຮອງ',amount:10000000,category:'ສຳຮອງ',date:'2026-05-01'},
   ],
   partners:[
-    {id:1,name:'ເຈົ້າຂອງ',share:40,color:'#FF7A00'},
-    {id:2,name:'ອ້າຍເປີ້ນ',share:20,color:'#FF9130'},
-    {id:3,name:'ອ້າຕຸ້ຍ',share:20,color:'#FF5500'},
+    {id:1,name:'ເຈົ້າຂອງ',share:40,color:'#C2410C'},
+    {id:2,name:'ອ້າຍເປີ້ນ',share:20,color:'#E8720A'},
+    {id:3,name:'ອ້າຕຸ້ຍ',share:20,color:'#A63C00'},
     {id:4,name:'ພີ່ເກັ່ງ',share:20,color:'#FFB347'},
   ],
   commTiers:[
@@ -904,7 +905,7 @@ function ringHTML(value,max,size,label,color){
   const circ=2*Math.PI*r, dash=circ*pct, cx=size/2, cy=size/2;
   return `<div class="rw" style="width:${size}px;height:${size}px;">
     <svg width="${size}" height="${size}" style="display:block;">
-      <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="7"/>
+      <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="rgba(0,0,0,0.07)" stroke-width="7"/>
       <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${color}" stroke-width="7"
         stroke-dasharray="${dash} ${circ-dash}" stroke-dashoffset="${circ/4}"
         stroke-linecap="round" style="filter:drop-shadow(0 0 5px ${color});"/>
@@ -933,7 +934,7 @@ function statusBadge(s){
   const x=m[s]||m.OFFLINE;
   return `<span class="badge ${x[0]}">${x[1]}</span>`;
 }
-function scoreColor(s){ return s>=80?'#00ff88':s>=60?'#FF7A00':'#ff4455'; }
+function scoreColor(s){ return s>=80?'#0b8a53':s>=60?'#C2410C':'#dc2626'; }
 
 // ============================================================
 // ============================================================
@@ -965,32 +966,32 @@ function pgDashboard(){
     </div>
 
     <!-- PILL FILTER BAR -->
-    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;background:rgba(255,122,0,0.04);border:1px solid rgba(255,122,0,0.14);border-radius:12px;padding:10px 14px;">
+    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;background:rgba(194,65,12,0.04);border:1px solid rgba(194,65,12,0.14);border-radius:12px;padding:10px 14px;">
       <span style="font-size:10px;color:var(--text-faint);letter-spacing:1px;margin-right:4px;">FILTER</span>
       ${[['all','ທັງໝົດ'],['day','ມື້'],['week','ອາທິດ'],['month','ເດືອນ']].map(([k,l])=>`
         <button id="dbtab-${k}" onclick="setDbPeriod('${k}')"
-          style="border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;border:1px solid rgba(255,122,0,0.3);
-          background:${_dbPeriod===k?'var(--gold)':'rgba(255,122,0,0.07)'};
-          color:${_dbPeriod===k?'#000':'rgba(255,122,0,0.7)'};">${l}</button>`).join('')}
+          style="border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;border:1px solid rgba(194,65,12,0.3);
+          background:${_dbPeriod===k?'var(--gold)':'rgba(194,65,12,0.07)'};
+          color:${_dbPeriod===k?'#000':'rgba(194,65,12,0.7)'};">${l}</button>`).join('')}
 
       <!-- ມື້ picker -->
       <div id="db-day-row" style="display:${_dbPeriod==='day'?'flex':'none'};align-items:center;gap:5px;">
         <input type="date" id="db-day-input" value="${_dbDaySelect||today()}"
-          style="background:#0a0a00;border:1px solid rgba(255,122,0,0.35);border-radius:8px;color:var(--gold);padding:4px 10px;font-size:12px;width:155px;"
+          style="background:#0a0a00;border:1px solid rgba(194,65,12,0.35);border-radius:8px;color:var(--gold);padding:4px 10px;font-size:12px;width:155px;"
           onchange="_dbDaySelect=this.value;renderDashboard()">
       </div>
 
       <!-- ອາທິດ picker (week-of input) -->
       <div id="db-week-row" style="display:${_dbPeriod==='week'?'flex':'none'};align-items:center;gap:5px;">
         <input type="week" id="db-week-input" value="${_dbWeekStart?isoWeekVal(_dbWeekStart):currentIsoWeek()}"
-          style="background:#0a0a00;border:1px solid rgba(255,122,0,0.35);border-radius:8px;color:var(--gold);padding:4px 10px;font-size:12px;width:165px;"
+          style="background:#0a0a00;border:1px solid rgba(194,65,12,0.35);border-radius:8px;color:var(--gold);padding:4px 10px;font-size:12px;width:165px;"
           onchange="onDbWeekChange(this.value)">
       </div>
 
       <!-- ເດືອນ picker -->
       <div id="db-month-row" style="display:${_dbPeriod==='month'?'flex':'none'};align-items:center;gap:5px;">
         <input type="month" id="db-month-input" value="${_dbMonthSel||today().slice(0,7)}"
-          style="background:#0a0a00;border:1px solid rgba(255,122,0,0.35);border-radius:8px;color:var(--gold);padding:4px 10px;font-size:12px;width:150px;"
+          style="background:#0a0a00;border:1px solid rgba(194,65,12,0.35);border-radius:8px;color:var(--gold);padding:4px 10px;font-size:12px;width:150px;"
           onchange="_dbMonthSel=this.value;renderDashboard()">
       </div>
     </div>
@@ -1038,8 +1039,8 @@ function setDbPeriod(p){
   ['all','day','week','month'].forEach(k=>{
     const el = document.getElementById('dbtab-'+k);
     if(!el) return;
-    el.style.background = k===p ? 'var(--gold)' : 'rgba(255,122,0,0.07)';
-    el.style.color      = k===p ? '#000' : 'rgba(255,122,0,0.7)';
+    el.style.background = k===p ? 'var(--gold)' : 'rgba(194,65,12,0.07)';
+    el.style.color      = k===p ? '#000' : 'rgba(194,65,12,0.7)';
   });
   const dr  = document.getElementById('db-day-row');
   const wr  = document.getElementById('db-week-row');
@@ -1186,7 +1187,7 @@ function renderDashboard(){
       <div class="ss">ການຂາຍ ${fmt(salesProfit())} − ຈ່າຍ ${fmt(totalExp())}</div>
       <div class="sbar" style="color:var(--green);"></div>
     </div>
-    <div class="card p20 sc" style="cursor:pointer;border-color:rgba(68,170,255,0.3);" onclick="navigate('reserve')"><div class="bgi">🏦</div>
+    <div class="card p20 sc" style="cursor:pointer;border-color:rgba(37,99,235,0.3);" onclick="navigate('reserve')"><div class="bgi">🏦</div>
       <div class="sl">ເງິນສຳຮອງທີ່ໃຊ້ໄດ້</div>
       <div class="sv" style="color:var(--blue);">${fmt(reserveNetBalance().net)}</div>
       <div class="ss">ຝາກ ${fmt((DB.reserve||{balance:0}).balance)} − ຈ່າຍ ${fmt(totalExp())}</div>
@@ -1243,14 +1244,14 @@ function renderDashboard(){
     barWrap.innerHTML=`
     <div style="display:flex;align-items:flex-end;gap:6px;height:${H+30}px;padding-bottom:22px;position:relative;">
       <!-- Y axis line -->
-      <div style="position:absolute;left:0;top:0;bottom:22px;width:1px;background:rgba(255,255,255,0.06);"></div>
+      <div style="position:absolute;left:0;top:0;bottom:22px;width:1px;background:rgba(0,0,0,0.06);"></div>
       ${groups.map(g=>`
       <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;height:${H+22}px;justify-content:flex-end;">
         <div style="width:100%;display:flex;gap:2px;align-items:flex-end;height:${H}px;">
-          <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,#FF7A00,#FF5500);min-height:2px;height:${Math.max(2,(g.rev/maxV)*H)}px;box-shadow:0 0 6px rgba(255,122,0,0.3);transition:height .4s;position:relative;" title="${fmt(g.rev)}">
+          <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,#C2410C,#A63C00);min-height:2px;height:${Math.max(2,(g.rev/maxV)*H)}px;box-shadow:0 0 6px rgba(194,65,12,0.3);transition:height .4s;position:relative;" title="${fmt(g.rev)}">
             ${g.rev>0?`<div style="position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:8px;color:var(--gold);white-space:nowrap;">${(g.rev/1000000).toFixed(1)}M</div>`:''}
           </div>
-          <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,#ff4455,#cc2233);min-height:2px;height:${Math.max(2,(g.exp/maxV)*H)}px;box-shadow:0 0 6px rgba(255,68,85,0.3);transition:height .4s;position:relative;" title="${fmt(g.exp)}">
+          <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,#dc2626,#cc2233);min-height:2px;height:${Math.max(2,(g.exp/maxV)*H)}px;box-shadow:0 0 6px rgba(220,38,38,0.3);transition:height .4s;position:relative;" title="${fmt(g.exp)}">
             ${g.exp>0?`<div style="position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:8px;color:var(--red);white-space:nowrap;">${(g.exp/1000000).toFixed(1)}M</div>`:''}
           </div>
         </div>
@@ -1270,16 +1271,16 @@ function renderDashboard(){
   // ── RINGS ────────────────────────────────────────────────────
   const rings = document.getElementById('db-rings');
   if(rings) rings.innerHTML=`<div class="rrow">
-    ${ringHTML(revMonth,mTarget,84,'ເດືອນ','#FF7A00')}
-    ${ringHTML(rev,_dbPeriod==='day'?dTarget:_dbPeriod==='week'?dTarget*7:mTarget,84,label,'#00ff88')}
-    ${ringHTML(Math.max(netAll,0),Math.max(expAll,1),84,'ກຳໄລ','#FF5500')}
+    ${ringHTML(revMonth,mTarget,84,'ເດືອນ','#C2410C')}
+    ${ringHTML(rev,_dbPeriod==='day'?dTarget:_dbPeriod==='week'?dTarget*7:mTarget,84,label,'#0b8a53')}
+    ${ringHTML(Math.max(netAll,0),Math.max(expAll,1),84,'ກຳໄລ','#A63C00')}
   </div>`;
   const be = document.getElementById('db-breakeven');
   if(be) be.innerHTML=`
     <div style="display:flex;justify-content:space-between;"><span class="td">Break Even:</span><span style="color:${netAll>=0?'var(--green)':'var(--red)'};">${netAll>=0?'✓ ຜ່ານແລ້ວ':'⚠ ຍັງຂາດ '+fmt(Math.abs(netAll))}</span></div>
     <div style="display:flex;justify-content:space-between;margin-top:6px;"><span class="td">ລາຍຮັບ (${label}):</span><span class="tg">${fmt(rev)}</span></div>
     <div style="display:flex;justify-content:space-between;margin-top:4px;"><span class="td">ລາຍຈ່າຍ (${label}):</span><span class="tr">${fmt(exp)}</span></div>
-    <div style="display:flex;justify-content:space-between;margin-top:4px;border-top:1px solid rgba(255,255,255,0.06);padding-top:6px;"><span class="td bold">ກຳໄລທັງໝົດ (${label}):</span><span class="${profit>=0?'tgr':'tr'} bold">${fmt(profit)}</span></div>
+    <div style="display:flex;justify-content:space-between;margin-top:4px;border-top:1px solid rgba(0,0,0,0.06);padding-top:6px;"><span class="td bold">ກຳໄລທັງໝົດ (${label}):</span><span class="${profit>=0?'tgr':'tr'} bold">${fmt(profit)}</span></div>
   `;
 
   // ── PARTNER OVERVIEW ─────────────────────────────────────────
@@ -1298,15 +1299,15 @@ function renderDashboard(){
           <div style="font-weight:800;font-size:14px;margin-bottom:4px;">${p.name}</div>
           <div style="color:${p.color};font-size:20px;font-weight:900;font-family:'Orbitron',monospace;">${pct}%</div>
           <div style="color:${p.color};font-size:14px;font-weight:700;margin-top:4px;">${fmt(amt)}</div>
-          <div style="margin-top:8px;height:4px;background:rgba(255,255,255,0.05);border-radius:2px;">
+          <div style="margin-top:8px;height:4px;background:rgba(0,0,0,0.05);border-radius:2px;">
             <div style="height:100%;width:${Math.min(pct,100)}%;background:${p.color};border-radius:2px;"></div>
           </div>
         </div>`;
       }).join('')}
     </div>
-    ${Math.round(totalShare)!==100?`<div style="color:var(--red);font-size:12px;padding:8px 12px;background:rgba(255,68,85,0.08);border-radius:6px;border:1px solid rgba(255,68,85,0.2);">⚠ ສ່ວນແບ່ງທັງໝົດ = ${totalShare}% (ຄວນເປັນ 100%)</div>`:''}
+    ${Math.round(totalShare)!==100?`<div style="color:var(--red);font-size:12px;padding:8px 12px;background:rgba(220,38,38,0.08);border-radius:6px;border:1px solid rgba(220,38,38,0.2);">⚠ ສ່ວນແບ່ງທັງໝົດ = ${totalShare}% (ຄວນເປັນ 100%)</div>`:''}
     <!-- Profit bar breakdown -->
-    <div style="background:rgba(255,255,255,0.025);border-radius:8px;padding:12px 14px;margin-top:4px;">
+    <div style="background:rgba(0,0,0,0.025);border-radius:8px;padding:12px 14px;margin-top:4px;">
       <div style="font-size:10px;color:var(--text-faint);letter-spacing:1px;margin-bottom:8px;">ສ່ວນແບ່ງ Visual</div>
       <div style="height:16px;border-radius:8px;overflow:hidden;display:flex;">
         ${DB.partners.map(p=>`<div style="flex:${p.share};background:${p.color};opacity:0.8;" title="${p.name}: ${p.share}%"></div>`).join('')}
@@ -1324,8 +1325,8 @@ function renderDashboard(){
     ? `<div class="empty"><div class="eicon">👥</div><p>ຍັງບໍ່ມີພະນັກງານ</p></div>`
     : DB.employees.map(e=>{
       const empRev = DB.revenues.filter(r=>(r.empId===e.id||r.empName===e.name)&&(r.date||'')>=from&&(r.date||'')<=to).reduce((a,b)=>a+b.amount,0);
-      return `<div style="display:flex;align-items:center;gap:12px;padding:11px 14px;background:rgba(255,255,255,0.025);border-radius:10px;border:1px solid ${e.status==='ONLINE'?'rgba(0,255,136,0.18)':'rgba(255,122,0,0.06)'};">
-        <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#1c1800,#120f00);border:2px solid rgba(255,122,0,0.22);display:flex;align-items:center;justify-content:center;font-size:16px;">👤</div>
+      return `<div style="display:flex;align-items:center;gap:12px;padding:11px 14px;background:rgba(0,0,0,0.025);border-radius:10px;border:1px solid ${e.status==='ONLINE'?'rgba(11,138,83,0.18)':'rgba(194,65,12,0.06)'};">
+        <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#1c1800,#120f00);border:2px solid rgba(194,65,12,0.22);display:flex;align-items:center;justify-content:center;font-size:16px;">👤</div>
         <div style="flex:1;">
           <div style="font-weight:700;font-size:13px;">${e.name}</div>
           <div class="td" style="font-size:10px;">Shift: ${e.shift}</div>
@@ -1340,8 +1341,8 @@ function renderDashboard(){
   // ── ACTIVITY LOGS ────────────────────────────────────────────
   const lg = document.getElementById('db-logs');
   if(lg) lg.innerHTML = DB.actLogs.slice(0,7).map(l=>`
-    <div style="display:flex;gap:8px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.04);">
-      <div class="fm" style="color:rgba(255,122,0,0.5);font-size:10px;min-width:34px;">${l.time}</div>
+    <div style="display:flex;gap:8px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,0.04);">
+      <div class="fm" style="color:rgba(194,65,12,0.5);font-size:10px;min-width:34px;">${l.time}</div>
       <div style="font-size:12px;"><span class="tg bold">${l.user}</span><span class="td"> — ${l.action}</span></div>
     </div>`).join('');
 }
@@ -1421,11 +1422,11 @@ function pgRevenue(){
           <span style="font-size:15px;font-weight:700;">ຍອດເງິນ (Amount)</span>
         </div>
 
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.06);font-size:14px;">
           <span style="color:var(--text-dim);">ຍອດຝາກ</span>
           <span id="rpv-val-0" style="color:var(--green);font-weight:700;font-size:15px;">₭0</span>
         </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.06);font-size:14px;">
           <span style="color:var(--text-dim);">ຍອດຖອນ</span>
           <span id="rpv-val-1" style="color:var(--red);font-weight:700;font-size:15px;">₭0</span>
         </div>
@@ -1434,14 +1435,14 @@ function pgRevenue(){
           <span id="rpv-val-2" style="color:var(--gold3);font-weight:700;font-size:15px;">₭0</span>
         </div>
 
-        <div style="height:1.5px;background:linear-gradient(90deg,rgba(68,170,255,0.7),rgba(68,170,255,0.1));margin:2px 0 4px;border-radius:2px;"></div>
+        <div style="height:1.5px;background:linear-gradient(90deg,rgba(37,99,235,0.7),rgba(37,99,235,0.1));margin:2px 0 4px;border-radius:2px;"></div>
 
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:rgba(255,255,255,0.04);border-radius:8px;margin-top:4px;font-size:15px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:rgba(0,0,0,0.04);border-radius:8px;margin-top:4px;font-size:15px;">
           <span style="font-weight:600;">ສ່ວນຕ່າງ</span>
           <span id="rpv-net" style="font-weight:900;color:var(--green);font-size:16px;">₭0</span>
         </div>
 
-        <div style="display:flex;gap:24px;margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.05);font-size:12px;">
+        <div style="display:flex;gap:24px;margin-top:12px;padding-top:10px;border-top:1px solid rgba(0,0,0,0.05);font-size:12px;">
           <div>
             <div style="color:var(--text-faint);margin-bottom:2px;">Commission</div>
             <span id="rpv-val-3" style="color:var(--blue);font-weight:700;">₭0</span>
@@ -1624,7 +1625,7 @@ function renderEmpList(){
   <div class="card ${e.status==='ONLINE'?'glow-green':''} p24" id="emp-card-${e.id}">
     <!-- HEADER ROW -->
     <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;flex-wrap:wrap;">
-      <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold3));display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:#000;box-shadow:0 0 14px rgba(255,122,0,0.4);flex-shrink:0;">${i+1}</div>
+      <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold3));display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:#000;box-shadow:0 0 14px rgba(194,65,12,0.4);flex-shrink:0;">${i+1}</div>
       <div style="flex:1;">
         <div style="font-weight:800;font-size:17px;">${e.name}</div>
         <div class="td" style="font-size:11px;margin-top:2px;">
@@ -1640,11 +1641,11 @@ function renderEmpList(){
 
     <!-- STATS GRID -->
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:14px;">
-      <div style="background:rgba(255,122,0,0.05);border:1px solid rgba(255,122,0,0.1);border-radius:8px;padding:10px 12px;">
+      <div style="background:rgba(194,65,12,0.05);border:1px solid rgba(194,65,12,0.1);border-radius:8px;padding:10px 12px;">
         <div class="sl">ເງິນເດືອນ</div>
         <div class="tg" style="font-weight:800;font-size:15px;">${fmt(e.salary)}</div>
       </div>
-      <div style="background:rgba(0,255,136,0.05);border:1px solid rgba(0,255,136,0.1);border-radius:8px;padding:10px 12px;">
+      <div style="background:rgba(11,138,83,0.05);border:1px solid rgba(11,138,83,0.1);border-radius:8px;padding:10px 12px;">
         <div class="sl">Commission %</div>
         <div class="tgr" style="font-weight:800;font-size:15px;">${e.commission}%</div>
       </div>
@@ -1652,23 +1653,23 @@ function renderEmpList(){
         <div class="sl">ເປົ້າ/ວັນ</div>
         <div class="to" style="font-weight:800;font-size:14px;">${fmt(e.target)}</div>
       </div>
-      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:10px 12px;">
+      <div style="background:rgba(0,0,0,0.03);border:1px solid rgba(0,0,0,0.07);border-radius:8px;padding:10px 12px;">
         <div class="sl">ລາຍຮັບ (ເດືອນ)</div>
         <div class="tg" style="font-weight:800;font-size:14px;">${fmt(mRev)}</div>
       </div>
-      <div style="background:rgba(68,170,255,0.05);border:1px solid rgba(68,170,255,0.1);border-radius:8px;padding:10px 12px;">
+      <div style="background:rgba(37,99,235,0.05);border:1px solid rgba(37,99,235,0.1);border-radius:8px;padding:10px 12px;">
         <div class="sl">Commission (ເດືອນ)</div>
         <div style="color:var(--blue);font-weight:800;font-size:14px;">${fmt(comm)}</div>
       </div>
-      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:10px 12px;">
+      <div style="background:rgba(0,0,0,0.03);border:1px solid rgba(0,0,0,0.06);border-radius:8px;padding:10px 12px;">
         <div class="sl">ຄະແນນ</div>
         <div style="color:${scoreColor(e.score)};font-weight:800;font-size:15px;">${e.score}<span style="font-size:10px;opacity:.5;">/100</span></div>
-        <div style="margin-top:5px;height:3px;background:rgba(255,255,255,0.06);border-radius:2px;"><div style="height:100%;width:${e.score}%;background:${scoreColor(e.score)};border-radius:2px;"></div></div>
+        <div style="margin-top:5px;height:3px;background:rgba(0,0,0,0.06);border-radius:2px;"><div style="height:100%;width:${e.score}%;background:${scoreColor(e.score)};border-radius:2px;"></div></div>
       </div>
     </div>
 
     <!-- INLINE EDIT PANEL (hidden by default) -->
-    <div id="emp-edit-${e.id}" class="hidden" style="border-top:1px solid rgba(255,122,0,0.12);padding-top:16px;margin-top:4px;">
+    <div id="emp-edit-${e.id}" class="hidden" style="border-top:1px solid rgba(194,65,12,0.12);padding-top:16px;margin-top:4px;">
       <div style="color:var(--gold);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;">✏ ແກ້ໄຂຂໍ້ມູນ</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-bottom:14px;">
         <div class="fgr"><label>ຊື່ພະນັກງານ</label>
@@ -1711,7 +1712,7 @@ function renderEmpList(){
               oninput="document.getElementById('sc-bar-${e.id}').style.width=Math.min(this.value,100)+'%';document.getElementById('sc-val-${e.id}').textContent=this.value;">
             <button class="btn btn-red" style="font-size:10px;padding:5px 8px;flex-shrink:0;" onclick="resetField('ef-sc-${e.id}',0)">✕0</button>
           </div>
-          <div style="margin-top:5px;height:4px;background:rgba(255,255,255,0.06);border-radius:2px;">
+          <div style="margin-top:5px;height:4px;background:rgba(0,0,0,0.06);border-radius:2px;">
             <div id="sc-bar-${e.id}" style="height:100%;width:${e.score}%;background:${scoreColor(e.score)};border-radius:2px;transition:width .2s;"></div>
           </div>
           <div style="font-size:10px;color:var(--text-dim);margin-top:2px;">ຄ່າປັດຈຸບັນ: <span id="sc-val-${e.id}" style="color:${scoreColor(e.score)};">${e.score}</span>/100</div>
@@ -1888,7 +1889,7 @@ function pgShift(){
       <div class="st">ສະຖານະ Shift ທຸກຄົນ</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:11px;">
         ${DB.employees.map(e=>`
-        <div class="card p16" style="border-color:${e.status==='ONLINE'?'rgba(0,255,136,0.2)':'rgba(255,122,0,0.07)'};">
+        <div class="card p16" style="border-color:${e.status==='ONLINE'?'rgba(11,138,83,0.2)':'rgba(194,65,12,0.07)'};">
           <div style="display:flex;justify-content:space-between;margin-bottom:7px;">
             <span style="font-weight:700;">${e.name}${e.username===SESSION.user.username?' <span style="font-size:9px;color:var(--gold);">(ທ່ານ)</span>':''}</span>
             ${statusBadge(e.status)}
@@ -1987,7 +1988,7 @@ function addQuickRev(){
 function startShift(){
   // ຂໍ Opening Balance ກ່ອນ
   showModal('▶ ເລີ່ມ Shift — ຍອດຍົກມາ',`
-    <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(0,255,136,0.05);border-radius:8px;margin-bottom:16px;">
+    <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(11,138,83,0.05);border-radius:8px;margin-bottom:16px;">
       <span style="font-size:22px;">👤</span>
       <div style="font-size:14px;font-weight:700;">${SESSION.user.name}</div>
     </div>
@@ -1995,7 +1996,7 @@ function startShift(){
       <label>ຍອດຍົກມາ / Opening Balance (₭)</label>
       <input id="ob-val" type="number" placeholder="0" min="0"
         style="font-size:18px;padding:12px 14px;text-align:right;"
-        oninput="this.style.borderColor='rgba(0,255,136,0.6)'">
+        oninput="this.style.borderColor='rgba(11,138,83,0.6)'">
       <div style="font-size:11px;color:var(--text-faint);margin-top:4px;">ຍອດເງິນໃນລະບົບຕອນຕົ້ນກະ</div>
     </div>`,
     [{label:'▶ ເລີ່ມ Shift',cls:'btn btn-green',fn:confirmStartShift},
@@ -2015,7 +2016,7 @@ function confirmStartShift(){
       <div style="text-align:center;padding:10px 0 18px;">
         <div style="font-size:40px;margin-bottom:8px;">⚠️</div>
         <div style="font-size:14px;color:var(--text-dim);margin-bottom:12px;">ທ່ານມີ Shift ທີ່ຍັງບໍ່ໄດ້ປິດ</div>
-        <div style="background:rgba(255,68,85,0.08);border:1px solid rgba(255,68,85,0.25);border-radius:10px;padding:12px;font-size:12px;">
+        <div style="background:rgba(220,38,38,0.08);border:1px solid rgba(220,38,38,0.25);border-radius:10px;padding:12px;font-size:12px;">
           <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
             <span style="color:var(--text-dim);">ວັນທີ</span>
             <span>${openShift.date} ${openShift.startTime}</span>
@@ -2094,7 +2095,7 @@ function tryEndShift(){
   const emp = DB.employees.find(e=>e.username===SESSION.user.username||e.name===SESSION.user.name);
   const hrs = (SESSION.shiftElapsed/3600).toFixed(1);
   showModal('📤 ສົ່ງລາຍງານ Shift',`
-    <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(255,122,0,0.05);border-radius:8px;margin-bottom:16px;">
+    <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(194,65,12,0.05);border-radius:8px;margin-bottom:16px;">
       <span style="font-size:22px;">👤</span>
       <div>
         <div style="font-weight:700;font-size:14px;">${SESSION.user.name}</div>
@@ -2103,7 +2104,7 @@ function tryEndShift(){
     </div>
 
     <!-- Opening Balance display -->
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border-radius:8px;margin-bottom:12px;font-size:13px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(0,0,0,0.03);border-radius:8px;margin-bottom:12px;font-size:13px;">
       <span style="color:var(--text-dim);">ຍອດຍົກມາ (Opening Balance)</span>
       <span style="color:var(--blue);font-weight:700;font-size:15px;">${fmt(SESSION.shiftOpenBal||0)}</span>
     </div>
@@ -2113,7 +2114,7 @@ function tryEndShift(){
       <div class="fgr" style="grid-column:span 2;">
         <label style="color:var(--green);font-size:12px;letter-spacing:1px;">💰 ຍອດປິດ / Closing Balance (₭)</label>
         <input id="sr-close" type="number" placeholder="0" min="0"
-          style="font-size:18px;padding:12px 14px;text-align:right;border-color:rgba(0,255,136,0.4);"
+          style="font-size:18px;padding:12px 14px;text-align:right;border-color:rgba(11,138,83,0.4);"
           oninput="updateShiftPreview()">
         <div style="font-size:11px;color:var(--text-faint);margin-top:3px;">ຍອດເງິນໃນລະບົບຕອນສິ້ນກະ</div>
       </div>
@@ -2125,7 +2126,7 @@ function tryEndShift(){
     </div>
 
     <!-- BCEL Amount format -->
-    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:16px 18px;margin-bottom:12px;">
+    <div style="background:rgba(0,0,0,0.02);border:1px solid rgba(0,0,0,0.08);border-radius:10px;padding:16px 18px;margin-bottom:12px;">
       <!-- Title -->
       <div style="display:flex;align-items:center;gap:7px;margin-bottom:14px;">
         <span style="font-size:16px;">💰</span>
@@ -2133,22 +2134,22 @@ function tryEndShift(){
       </div>
 
       <!-- ຍອດຍົກມາ -->
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.06);font-size:14px;">
         <span style="color:var(--text-dim);">ຍອດຍົກມາ (Opening)</span>
         <span style="color:var(--blue);font-weight:700;font-size:15px;">${fmt(SESSION.shiftOpenBal||0)}</span>
       </div>
       <!-- ຍອດປິດ -->
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.06);font-size:14px;">
         <span style="color:var(--text-dim);">ຍອດປິດ (Closing)</span>
         <span id="sp-rev" style="color:var(--green);font-weight:700;font-size:15px;">₭0</span>
       </div>
       <!-- ຍອດເຕີມ (ຄຳນວນ) -->
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.06);font-size:14px;">
         <span style="color:var(--text-dim);">ຍອດເຕີມ (ປິດ − ເປີດ)</span>
         <span id="sp-dep" style="color:var(--green);font-weight:700;font-size:15px;">₭0</span>
       </div>
       <!-- ຍອດຖອນ -->
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.06);font-size:14px;">
         <span style="color:var(--text-dim);">ຍອດຖອນ</span>
         <span id="sp-wth" style="color:var(--red);font-weight:700;font-size:15px;">₭0</span>
       </div>
@@ -2159,16 +2160,16 @@ function tryEndShift(){
       </div>
 
       <!-- Divider ສີຟ້າ -->
-      <div style="height:1.5px;background:linear-gradient(90deg,rgba(68,170,255,0.7),rgba(68,170,255,0.1));margin:2px 0 4px;border-radius:2px;"></div>
+      <div style="height:1.5px;background:linear-gradient(90deg,rgba(37,99,235,0.7),rgba(37,99,235,0.1));margin:2px 0 4px;border-radius:2px;"></div>
 
       <!-- ສ່ວນຕ່າງ — shaded -->
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:rgba(255,255,255,0.04);border-radius:8px;margin-top:4px;font-size:15px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:rgba(0,0,0,0.04);border-radius:8px;margin-top:4px;font-size:15px;">
         <span style="font-weight:600;">ສ່ວນຕ່າງ</span>
         <span id="sp-net" style="font-weight:900;color:var(--green);font-size:16px;">₭0</span>
       </div>
 
       <!-- Commission footer -->
-      <div style="display:flex;gap:24px;margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.05);font-size:12px;">
+      <div style="display:flex;gap:24px;margin-top:12px;padding-top:10px;border-top:1px solid rgba(0,0,0,0.05);font-size:12px;">
         <div>
           <div style="color:var(--text-faint);margin-bottom:2px;">Commission</div>
           <span id="sp-comm" style="color:var(--blue);font-weight:700;">₭0</span>
@@ -2226,11 +2227,11 @@ function submitShiftReport(){
         <div style="font-size:42px;margin-bottom:8px;">📉</div>
         <div style="font-size:22px;font-weight:900;color:var(--red);margin-bottom:6px;">${fmt(rev)}</div>
         <div style="font-size:13px;color:var(--text-dim);margin-bottom:16px;">ລູກຄ້າຖອນຫຼາຍກວ່າຝາກໃນກະນີ້</div>
-        <div style="display:flex;flex-direction:column;gap:6px;background:rgba(255,68,85,0.06);border:1px solid rgba(255,68,85,0.2);border-radius:10px;padding:12px;font-size:12px;text-align:left;">
+        <div style="display:flex;flex-direction:column;gap:6px;background:rgba(220,38,38,0.06);border:1px solid rgba(220,38,38,0.2);border-radius:10px;padding:12px;font-size:12px;text-align:left;">
           <div style="display:flex;justify-content:space-between;"><span style="color:var(--text-dim);">ຍອດເຕີມ</span><span style="color:var(--green);">${fmt(Math.max(dep,0))}</span></div>
           <div style="display:flex;justify-content:space-between;"><span style="color:var(--text-dim);">ຍອດຖອນ</span><span style="color:var(--red);">− ${fmt(wth)}</span></div>
           <div style="display:flex;justify-content:space-between;"><span style="color:var(--text-dim);">ຄ່າທຳນຽມ</span><span style="color:var(--gold3);">− ${fmt(prz)}</span></div>
-          <div style="border-top:1px solid rgba(255,255,255,0.08);margin-top:4px;padding-top:8px;display:flex;justify-content:space-between;font-weight:700;"><span>ສ່ວນຕ່າງ</span><span style="color:var(--red);">${fmt(rev)}</span></div>
+          <div style="border-top:1px solid rgba(0,0,0,0.08);margin-top:4px;padding-top:8px;display:flex;justify-content:space-between;font-weight:700;"><span>ສ່ວນຕ່າງ</span><span style="color:var(--red);">${fmt(rev)}</span></div>
         </div>
         <div style="margin-top:14px;font-size:12px;color:var(--text-dim);">ກວດຄືນຕົວເລກຖືກຕ້ອງແລ້ວໃຊ່ບໍ່?</div>
       </div>`,
@@ -2283,7 +2284,7 @@ function adminDeleteShift(shiftId){
     <div style="text-align:center;padding:8px 0 16px;">
       <div style="font-size:36px;margin-bottom:8px;">🗑</div>
       <div style="font-size:13px;color:var(--text-dim);margin-bottom:12px;">ຢືນຢັນລົບ Shift ນີ້?</div>
-      <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:10px;font-size:12px;text-align:left;">
+      <div style="background:rgba(0,0,0,0.04);border-radius:8px;padding:10px;font-size:12px;text-align:left;">
         <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span style="color:var(--text-dim);">ພະນັກງານ</span><span class="tg bold">${s.empName}</span></div>
         <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span style="color:var(--text-dim);">ວັນທີ</span><span>${s.date}</span></div>
         <div style="display:flex;justify-content:space-between;"><span style="color:var(--text-dim);">ສະຖານະ</span><span style="color:${s.endTime?'var(--green)':'var(--red)'};">${s.endTime?'ປິດແລ້ວ':'ຍັງດຳເນີນ ⚠'}</span></div>
@@ -2414,12 +2415,12 @@ function exportShiftImage(shiftId){
   // calculate height dynamically
   const rowH   = 36;
   const rows   = [
-    ['ລາຍຮັບທັງໝົດ', fmt(totalRev), '#00ff88'],
-    ['ຍອດຝາກ',       fmt(totalDep), '#FF7A00'],
-    ['ຍອດຖອນ',       fmt(totalWith), '#ff4455'],
-    ['ຄ່າທຳນຽມ',       fmt(totalPrize), '#44aaff'],
-    ['Bonus',         fmt(totalBonus), '#cc44ff'],
-    ['Commission '+tier.rate+'%', fmt(commission), '#FF5500'],
+    ['ລາຍຮັບທັງໝົດ', fmt(totalRev), '#0b8a53'],
+    ['ຍອດຝາກ',       fmt(totalDep), '#C2410C'],
+    ['ຍອດຖອນ',       fmt(totalWith), '#dc2626'],
+    ['ຄ່າທຳນຽມ',       fmt(totalPrize), '#2563eb'],
+    ['Bonus',         fmt(totalBonus), '#9333ea'],
+    ['Commission '+tier.rate+'%', fmt(commission), '#A63C00'],
   ];
   const H = 300 + rows.length * rowH + 60;
 
@@ -2430,30 +2431,30 @@ function exportShiftImage(shiftId){
   ctx.scale(2, 2);
 
   // ── BACKGROUND ────────────────────────────────────────────
-  ctx.fillStyle = '#080800';
+  ctx.fillStyle = '#fdf9f2';
   ctx.fillRect(0, 0, W, H);
 
   // grid lines
-  ctx.strokeStyle = 'rgba(255,122,0,0.025)';
+  ctx.strokeStyle = 'rgba(194,65,12,0.025)';
   ctx.lineWidth = 0.5;
   for(let x=0;x<W;x+=40){ ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke(); }
   for(let y=0;y<H;y+=40){ ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke(); }
 
   // glow top
   const grd = ctx.createRadialGradient(W/2,0,10,W/2,0,200);
-  grd.addColorStop(0,'rgba(255,122,0,0.12)');
+  grd.addColorStop(0,'rgba(194,65,12,0.12)');
   grd.addColorStop(1,'rgba(0,0,0,0)');
   ctx.fillStyle = grd;
   ctx.fillRect(0,0,W,H);
 
   // border
-  ctx.strokeStyle = 'rgba(255,122,0,0.5)';
+  ctx.strokeStyle = 'rgba(194,65,12,0.5)';
   ctx.lineWidth   = 1.5;
   roundRect(ctx, 8, 8, W-16, H-16, 16);
   ctx.stroke();
 
   // inner border
-  ctx.strokeStyle = 'rgba(255,122,0,0.15)';
+  ctx.strokeStyle = 'rgba(194,65,12,0.15)';
   ctx.lineWidth   = 0.5;
   roundRect(ctx, 12, 12, W-24, H-24, 13);
   ctx.stroke();
@@ -2462,7 +2463,7 @@ function exportShiftImage(shiftId){
 
   // ── HEADER: STORE NAME ────────────────────────────────────
   ctx.font = 'bold 11px monospace';
-  ctx.fillStyle = 'rgba(255,122,0,0.5)';
+  ctx.fillStyle = 'rgba(194,65,12,0.5)';
   ctx.textAlign = 'center';
   ctx.letterSpacing = '3px';
   ctx.fillText(storeName.toUpperCase(), W/2, y+14);
@@ -2470,8 +2471,8 @@ function exportShiftImage(shiftId){
 
   // ── TITLE ─────────────────────────────────────────────────
   ctx.font = 'bold 22px monospace';
-  ctx.fillStyle = '#FF7A00';
-  ctx.shadowColor = 'rgba(255,122,0,0.5)';
+  ctx.fillStyle = '#C2410C';
+  ctx.shadowColor = 'rgba(194,65,12,0.5)';
   ctx.shadowBlur  = 14;
   ctx.fillText('SHIFT REPORT', W/2, y+18);
   ctx.shadowBlur = 0;
@@ -2484,18 +2485,18 @@ function exportShiftImage(shiftId){
   // ── EMPLOYEE INFO ─────────────────────────────────────────
   ctx.textAlign = 'center';
   ctx.font      = 'bold 18px sans-serif';
-  ctx.fillStyle = '#ffffff';
+  ctx.fillStyle = '#1a1a1a';
   ctx.fillText(s.empName, W/2, y+14);
   y += 24;
 
   ctx.font      = '12px monospace';
-  ctx.fillStyle = 'rgba(255,255,255,0.45)';
+  ctx.fillStyle = 'rgba(0,0,0,0.45)';
   ctx.fillText(emp ? emp.shift : '', W/2, y+12);
   y += 22;
 
   // ── DATE / TIME ROW ───────────────────────────────────────
   ctx.font      = 'bold 12px monospace';
-  ctx.fillStyle = 'rgba(255,122,0,0.7)';
+  ctx.fillStyle = 'rgba(194,65,12,0.7)';
   const dateStr = `📅 ${s.date}   ⏰ ${s.startTime||'-'} → ${s.endTime||'ຍັງດຳເນີນ'}   ⏱ ${s.hours?(s.hours.toFixed(1)+'h'):'-'}`;
   ctx.fillText(dateStr, W/2, y+12);
   y += 26;
@@ -2508,10 +2509,10 @@ function exportShiftImage(shiftId){
   rows.forEach(([label, value, color]) => {
     // label
     ctx.font      = '13px sans-serif';
-    ctx.fillStyle = 'rgba(255,255,255,0.55)';
+    ctx.fillStyle = 'rgba(0,0,0,0.55)';
     ctx.fillText(label, PADDING+8, y+rowH/2+5);
     // dots
-    ctx.fillStyle = 'rgba(255,255,255,0.1)';
+    ctx.fillStyle = 'rgba(0,0,0,0.1)';
     for(let dx=180;dx<W-PADDING-80;dx+=6) ctx.fillText('.', dx, y+rowH/2+5);
     // value
     ctx.font      = 'bold 14px monospace';
@@ -2520,25 +2521,25 @@ function exportShiftImage(shiftId){
     ctx.fillText(value, W-PADDING-8, y+rowH/2+5);
     ctx.textAlign = 'left';
     // separator line
-    ctx.strokeStyle = 'rgba(255,255,255,0.04)';
+    ctx.strokeStyle = 'rgba(0,0,0,0.04)';
     ctx.lineWidth   = 0.5;
     ctx.beginPath(); ctx.moveTo(PADDING,y+rowH); ctx.lineTo(W-PADDING,y+rowH); ctx.stroke();
     y += rowH;
   });
 
   y += 8;
-  drawDivider(ctx, PADDING, y, W-PADDING*2, '#FF7A00');
+  drawDivider(ctx, PADDING, y, W-PADDING*2, '#C2410C');
   y += 20;
 
   // ── TOTAL NET ─────────────────────────────────────────────
   const net = totalRev - commission;
   ctx.textAlign  = 'left';
   ctx.font       = 'bold 15px sans-serif';
-  ctx.fillStyle  = 'rgba(255,255,255,0.7)';
+  ctx.fillStyle  = 'rgba(0,0,0,0.7)';
   ctx.fillText('ສຸດທິ (ຫຼັງ Commission)', PADDING+8, y+14);
   ctx.font       = 'bold 20px monospace';
-  ctx.fillStyle  = '#00ff88';
-  ctx.shadowColor = 'rgba(0,255,136,0.5)';
+  ctx.fillStyle  = '#0b8a53';
+  ctx.shadowColor = 'rgba(11,138,83,0.5)';
   ctx.shadowBlur  = 10;
   ctx.textAlign   = 'right';
   ctx.fillText(fmt(net), W-PADDING-8, y+16);
@@ -2552,13 +2553,13 @@ function exportShiftImage(shiftId){
   const statusText = s.endTime ? '✅ ປິດ Shift ສຳເລັດ' : '🟢 Shift ດຳເນີນຢູ່';
   ctx.textAlign  = 'center';
   ctx.font       = 'bold 13px sans-serif';
-  ctx.fillStyle  = s.endTime ? '#00ff88' : '#FF7A00';
+  ctx.fillStyle  = s.endTime ? '#0b8a53' : '#C2410C';
   ctx.fillText(statusText, W/2, y+14);
   y += 28;
 
   // ── FOOTER ────────────────────────────────────────────────
   ctx.font      = '10px monospace';
-  ctx.fillStyle = 'rgba(255,122,0,0.3)';
+  ctx.fillStyle = 'rgba(194,65,12,0.3)';
   ctx.fillText(`Generated: ${new Date().toLocaleString()} | 8king888 System`, W/2, y+12);
 
   // ── DOWNLOAD ──────────────────────────────────────────────
@@ -2588,8 +2589,8 @@ function roundRect(ctx, x, y, w, h, r){
 function drawDivider(ctx, x, y, w, color){
   const grad = ctx.createLinearGradient(x, y, x+w, y);
   grad.addColorStop(0,   'transparent');
-  grad.addColorStop(0.3, color||'rgba(255,122,0,0.3)');
-  grad.addColorStop(0.7, color||'rgba(255,122,0,0.3)');
+  grad.addColorStop(0.3, color||'rgba(194,65,12,0.3)');
+  grad.addColorStop(0.7, color||'rgba(194,65,12,0.3)');
   grad.addColorStop(1,   'transparent');
   ctx.strokeStyle = grad;
   ctx.lineWidth   = 1;
@@ -2669,13 +2670,13 @@ function pgCommission(){
 function renderTierList(){
   const el=document.getElementById('tier-list'); if(!el) return;
   el.innerHTML=DB.commTiers.map((t,i)=>`
-  <div style="display:flex;align-items:center;gap:11px;padding:11px 15px;background:rgba(255,255,255,0.025);border-radius:10px;border:1px solid rgba(255,122,0,0.07);">
+  <div style="display:flex;align-items:center;gap:11px;padding:11px 15px;background:rgba(0,0,0,0.025);border-radius:10px;border:1px solid rgba(194,65,12,0.07);">
     <span class="td" style="font-size:12px;min-width:190px;">${t.min===0?'₭0':fmt(t.min)} – ${t.max===null||t.max===Infinity?'∞':fmt(t.max)}</span>
     <div style="display:flex;align-items:center;gap:7px;">
       <input type="number" value="${t.rate}" min="0" max="100" style="width:62px;text-align:center;font-weight:900;color:var(--gold);font-family:'Orbitron',monospace;font-size:14px;" oninput="DB.commTiers[${i}].rate=Number(this.value);updateCalc(SESSION.calcAmount)">
       <span class="tg fo">%</span>
     </div>
-    <div style="flex:1;height:5px;background:rgba(255,255,255,0.05);border-radius:3px;">
+    <div style="flex:1;height:5px;background:rgba(0,0,0,0.05);border-radius:3px;">
       <div style="height:100%;width:${t.rate*10}%;background:linear-gradient(90deg,var(--gold),var(--gold3));border-radius:3px;"></div>
     </div>
     ${DB.commTiers.length>1?`<button class="btn btn-red" style="font-size:10px;padding:4px 9px;" onclick="delTier(${i})">✕</button>`:''}
@@ -2713,7 +2714,7 @@ function updateCalc(v){
 // PAGE: EXPENSES
 // ============================================================
 const EXP_CATS = ['ລະບົບ','ບໍລິຫານ','HR','ສຳຮອງ','ສາທາລະນູປະໂພກ','ການຕະຫຼາດ','ອື່ນໆ'];
-const CAT_COLORS = {'ລະບົບ':'#FF6B35','ບໍລິຫານ':'#FF7A00','HR':'#00ff88','ສຳຮອງ':'#44aaff','ສາທາລະນູປະໂພກ':'#cc44ff','ການຕະຫຼາດ':'#ff4455','ອື່ນໆ':'#aaaaaa'};
+const CAT_COLORS = {'ລະບົບ':'#FF6B35','ບໍລິຫານ':'#C2410C','HR':'#0b8a53','ສຳຮອງ':'#2563eb','ສາທາລະນູປະໂພກ':'#9333ea','ການຕະຫຼາດ':'#dc2626','ອື່ນໆ':'#aaaaaa'};
 let _expPeriod = 'all'; // all | day | week | month
 
 function pgExpenses(){
@@ -2869,7 +2870,7 @@ function renderExpBarChart(exps){
     wrap.innerHTML=`<div class="bc" style="height:100px;align-items:flex-end;gap:4px;">
       ${entries.map(g=>`<div class="bcc">
         <div style="font-size:9px;color:var(--gold);margin-bottom:2px;">${g.val>0?(g.val/1000000).toFixed(1)+'M':''}</div>
-        <div style="width:100%;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--red),#cc2233);min-height:3px;height:${Math.max(4,(g.val/maxV)*80)}px;box-shadow:0 0 6px rgba(255,68,85,0.3);"></div>
+        <div style="width:100%;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--red),#cc2233);min-height:3px;height:${Math.max(4,(g.val/maxV)*80)}px;box-shadow:0 0 6px rgba(220,38,38,0.3);"></div>
         <div class="bday" style="font-size:9px;">${g.label}</div>
       </div>`).join('')}
     </div>`;
@@ -2902,7 +2903,7 @@ function renderExpBarChart(exps){
           <span style="color:${CAT_COLORS[cat]||'var(--gold)'};">${cat}</span>
           <span style="color:var(--text-dim);">${fmt(val)}</span>
         </div>
-        <div style="height:8px;background:rgba(255,255,255,0.05);border-radius:4px;">
+        <div style="height:8px;background:rgba(0,0,0,0.05);border-radius:4px;">
           <div style="height:100%;width:${(val/maxV*100).toFixed(1)}%;background:${CAT_COLORS[cat]||'var(--gold)'};border-radius:4px;box-shadow:0 0 6px ${CAT_COLORS[cat]||'var(--gold)'}44;transition:width .4s;"></div>
         </div>
       </div>`).join('')}
@@ -2915,7 +2916,7 @@ function renderExpBarChart(exps){
   wrap.innerHTML=`<div class="bc" style="height:100px;align-items:flex-end;gap:4px;">
     ${entries.map(([lbl,val])=>`<div class="bcc">
       <div style="font-size:9px;color:var(--red);margin-bottom:2px;">${val>0?(val/1000000).toFixed(1)+'M':''}</div>
-      <div style="width:100%;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--red),#cc2233);min-height:3px;height:${Math.max(4,(val/maxV)*80)}px;box-shadow:0 0 6px rgba(255,68,85,0.3);"></div>
+      <div style="width:100%;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--red),#cc2233);min-height:3px;height:${Math.max(4,(val/maxV)*80)}px;box-shadow:0 0 6px rgba(220,38,38,0.3);"></div>
       <div class="bday" style="font-size:9px;">${lbl.length>7?lbl.slice(5):lbl}</div>
     </div>`).join('')}
   </div>`;
@@ -2947,13 +2948,13 @@ function renderExpPieChart(exps){
   wrap.innerHTML=`
   <svg viewBox="0 0 200 160" width="100%" style="max-height:160px;">
     ${slices.map(s=>`<path d="${s.d}" fill="${s.color}" opacity="0.88" stroke="rgba(0,0,0,0.3)" stroke-width="1.5"/>`).join('')}
-    <text x="${cx}" y="${cy-5}" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="9" font-family="'Share Tech Mono',monospace">ລາຍຈ່າຍ</text>
-    <text x="${cx}" y="${cy+8}" text-anchor="middle" fill="var(--red,#ff4455)" font-size="10" font-weight="bold" font-family="'Orbitron',monospace">${(exps.length)}</text>
-    <text x="${cx}" y="${cy+20}" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="7" font-family="sans-serif">ລາຍການ</text>
+    <text x="${cx}" y="${cy-5}" text-anchor="middle" fill="rgba(0,0,0,0.6)" font-size="9" font-family="'Share Tech Mono',monospace">ລາຍຈ່າຍ</text>
+    <text x="${cx}" y="${cy+8}" text-anchor="middle" fill="var(--red,#dc2626)" font-size="10" font-weight="bold" font-family="'Orbitron',monospace">${(exps.length)}</text>
+    <text x="${cx}" y="${cy+20}" text-anchor="middle" fill="rgba(0,0,0,0.4)" font-size="7" font-family="sans-serif">ລາຍການ</text>
     ${entries.slice(0,5).map(([cat,val],i)=>`
       <rect x="165" y="${14+i*22}" width="9" height="9" rx="2" fill="${CAT_COLORS[cat]||'#aaa'}"/>
-      <text x="178" y="${22+i*22}" font-size="8.5" fill="rgba(255,255,255,0.7)" font-family="sans-serif">${cat}</text>
-      <text x="198" y="${22+i*22}" text-anchor="end" font-size="8" fill="rgba(255,255,255,0.45)" font-family="sans-serif">${(val/total*100).toFixed(0)}%</text>
+      <text x="178" y="${22+i*22}" font-size="8.5" fill="rgba(0,0,0,0.7)" font-family="sans-serif">${cat}</text>
+      <text x="198" y="${22+i*22}" text-anchor="end" font-size="8" fill="rgba(0,0,0,0.45)" font-family="sans-serif">${(val/total*100).toFixed(0)}%</text>
     `).join('')}
   </svg>`;
 }
@@ -3126,10 +3127,10 @@ function pgReserve(){
     </div>
 
     <!-- BALANCE HERO CARD -->
-    <div class="card glow p32" style="text-align:center;border-color:rgba(68,170,255,0.45);position:relative;overflow:hidden;">
+    <div class="card glow p32" style="text-align:center;border-color:rgba(37,99,235,0.45);position:relative;overflow:hidden;">
       <div style="position:absolute;top:-20px;right:-20px;font-size:120px;opacity:0.04;pointer-events:none;">🏦</div>
       <div style="color:var(--blue);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">ເງິນສຳຮອງທີ່ໃຊ້ໄດ້</div>
-      <div style="font-family:'Orbitron',monospace;font-size:48px;font-weight:900;color:${netBal>0?'var(--blue)':'var(--red)'};text-shadow:0 0 30px ${netBal>0?'rgba(68,170,255,0.5)':'rgba(255,68,85,0.5)'};letter-spacing:2px;">
+      <div style="font-family:'Orbitron',monospace;font-size:48px;font-weight:900;color:${netBal>0?'var(--blue)':'var(--red)'};text-shadow:0 0 30px ${netBal>0?'rgba(37,99,235,0.5)':'rgba(220,38,38,0.5)'};letter-spacing:2px;">
         ${fmt(netBal)}
       </div>
       <div style="display:flex;justify-content:center;gap:24px;margin-top:12px;flex-wrap:wrap;">
@@ -3170,7 +3171,7 @@ function pgReserve(){
           <label>ປະເພດ</label>
           <div style="display:flex;gap:8px;">
             <button id="rv-in-btn"  onclick="setRvType('in')"  class="btn btn-green" style="flex:1;font-size:13px;">📥 ຝາກ</button>
-            <button id="rv-out-btn" onclick="setRvType('out')" class="btn btn-outline" style="flex:1;font-size:13px;color:var(--red);border-color:rgba(255,68,85,0.4);">📤 ຖອນ</button>
+            <button id="rv-out-btn" onclick="setRvType('out')" class="btn btn-outline" style="flex:1;font-size:13px;color:var(--red);border-color:rgba(220,38,38,0.4);">📤 ຖອນ</button>
           </div>
         </div>
         <div class="fgr"><label>ຈຳນວນ (₭)</label><input id="rv-amt" type="number" placeholder="0" min="0"></div>
@@ -3215,9 +3216,9 @@ function setRvType(t){
   if(!ib||!ob) return;
   if(t==='in'){
     ib.className='btn btn-green'; ib.style.flex='1'; ib.style.fontSize='13px';
-    ob.className='btn btn-outline'; ob.style.flex='1'; ob.style.fontSize='13px'; ob.style.color='var(--red)'; ob.style.borderColor='rgba(255,68,85,0.4)';
+    ob.className='btn btn-outline'; ob.style.flex='1'; ob.style.fontSize='13px'; ob.style.color='var(--red)'; ob.style.borderColor='rgba(220,38,38,0.4)';
   } else {
-    ob.style.background='rgba(255,68,85,0.15)'; ob.style.border='1px solid rgba(255,68,85,0.5)'; ob.style.color='var(--red)'; ob.style.flex='1'; ob.style.fontSize='13px';
+    ob.style.background='rgba(220,38,38,0.15)'; ob.style.border='1px solid rgba(220,38,38,0.5)'; ob.style.color='var(--red)'; ob.style.flex='1'; ob.style.fontSize='13px';
     ob.className='btn'; 
     ib.className='btn btn-outline'; ib.style.flex='1'; ib.style.fontSize='13px';
   }
@@ -3330,19 +3331,19 @@ function pgPartner(){
     </div>
     <div class="card glow p20" style="max-width:420px;">
       <div style="display:flex;flex-direction:column;gap:8px;">
-        <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(255,122,0,0.1);">
+        <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(194,65,12,0.1);">
           <span style="color:var(--text-dim);">ສ່ວນຕ່າງລວມ (ຝາກ−ຖອນ−ຄ່າທຳນຽມ)</span>
           <span class="tg bold">${fmt(totalRevMonth())}</span>
         </div>
-        <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(255,122,0,0.1);">
+        <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(194,65,12,0.1);">
           <span style="color:var(--text-dim);">ຫັກລາຍຈ່າຍທັງໝົດ</span>
           <span class="tr bold">− ${fmt(totalExp())}</span>
         </div>
-        <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(255,122,0,0.1);">
+        <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(194,65,12,0.1);">
           <span style="color:var(--text-dim);">ກຳໄລສຸດທິການຂາຍ (×75%)</span>
           <span class="tg bold">${fmt(salesProfit())}</span>
         </div>
-        <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(255,122,0,0.1);">
+        <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(194,65,12,0.1);">
           <span style="color:var(--text-dim);">ຄ່າຄຸ້ມຄອງລະບົບ (25%)</span>
           <span style="color:var(--gold3);font-weight:700;">− ${fmt(totalRevMonth()*0.25)}</span>
         </div>
@@ -3352,7 +3353,7 @@ function pgPartner(){
         </div>
       </div>
     </div>
-    <div id="pwarn" class="hidden" style="background:rgba(255,68,85,0.1);border:1px solid rgba(255,68,85,0.28);border-radius:10px;padding:11px 16px;color:var(--red);font-size:13px;">⚠ ສ່ວນແບ່ງທັງໝົດ ≠ 100%</div>
+    <div id="pwarn" class="hidden" style="background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.28);border-radius:10px;padding:11px 16px;color:var(--red);font-size:13px;">⚠ ສ່ວນແບ່ງທັງໝົດ ≠ 100%</div>
     <div class="pgrid" id="pcards"></div>
     <div class="card p24" style="display:flex;gap:8px;flex-wrap:wrap;">
       <button class="btn btn-gold" onclick="savePartners()">💾 ບັນທຶກການເປ່ຽນແປງ</button>
@@ -3380,7 +3381,7 @@ function renderPartnerCards(){
       <span style="color:${p.color};font-family:'Orbitron',monospace;font-size:18px;font-weight:900;">%</span>
     </div>
     <div style="color:${p.color};font-size:19px;font-weight:900;font-family:'Orbitron',monospace;">${fmt(profit*p.share/100)}</div>
-    <div style="margin-top:10px;height:4px;background:rgba(255,255,255,0.05);border-radius:2px;">
+    <div style="margin-top:10px;height:4px;background:rgba(0,0,0,0.05);border-radius:2px;">
       <div style="height:100%;width:${Math.min(p.share,100)}%;background:${p.color};border-radius:2px;box-shadow:0 0 7px ${p.color};"></div>
     </div>
   </div>`).join('');
@@ -3418,7 +3419,7 @@ function openPartnerForm(x){
       <div class="fgr"><label>ຊື່ຫຸ້ນສ່ວນ</label><input id="pf-n" placeholder="ຊື່..."></div>
       <div class="fr">
         <div class="fgr"><label>ສ່ວນແບ່ງ %</label><input id="pf-s" type="number" placeholder="0" min="0" max="100"></div>
-        <div class="fgr"><label>ສີ</label><input id="pf-c" type="color" value="#FF7A00" style="height:40px;cursor:pointer;width:100%;"></div>
+        <div class="fgr"><label>ສີ</label><input id="pf-c" type="color" value="#C2410C" style="height:40px;cursor:pointer;width:100%;"></div>
       </div>
     </div>`,
     [{label:'+ ເພີ່ມ',cls:'btn btn-gold',fn:()=>{
@@ -3462,7 +3463,7 @@ function renderUserTable(){
     <td class="td">${i+1}</td>
     <td class="tg bold">${u.name}</td>
     <td class="td fm">${u.username}</td>
-    <td><span class="tag" style="background:${u.role==='admin'?'rgba(255,122,0,0.15)':'rgba(68,170,255,0.15)'};color:${u.role==='admin'?'var(--gold)':'var(--blue)'};">${u.role}</span></td>
+    <td><span class="tag" style="background:${u.role==='admin'?'rgba(194,65,12,0.15)':'rgba(37,99,235,0.15)'};color:${u.role==='admin'?'var(--gold)':'var(--blue)'};">${u.role}</span></td>
     <td style="display:flex;gap:6px;">
       <button class="btn btn-outline" style="font-size:11px;padding:5px 10px;" onclick="openUserForm(${u.id})">✏</button>
       ${u.id!==SESSION.user.id?`<button class="btn btn-red" style="font-size:11px;padding:5px 10px;" onclick="delUser(${u.id})">✕</button>`:'<span class="td" style="font-size:11px;padding:5px;">(ຕົນເອງ)</span>'}
@@ -3534,26 +3535,27 @@ function pgReports(){
       <div style="display:flex;gap:8px;flex-wrap:wrap;">
         <button class="btn btn-blue" onclick="exportCSVRange()" style="font-size:12px;">📥 CSV</button>
         <button class="btn btn-gold" onclick="exportAllData()" style="font-size:12px;">📦 JSON</button>
+        <button class="btn btn-green" id="rpt-xlsx-btn" onclick="exportReportExcel()" style="font-size:12px;">📗 Excel</button>
       </div>
     </div>
 
     <!-- DATE PICKER + PRESETS -->
-    <div class="card p20" style="border-color:rgba(68,170,255,0.3);">
+    <div class="card p20" style="border-color:rgba(37,99,235,0.3);">
       <div style="display:flex;align-items:flex-end;gap:10px;flex-wrap:wrap;margin-bottom:12px;">
         <div class="fgr" style="flex:1;min-width:140px;">
           <label>ວັນທີເລີ່ມຕົ້ນ</label>
           <input type="date" id="rpt-from" value="${_rptFrom}"
-            style="background:#0a0a00;border:1px solid rgba(68,170,255,0.35);border-radius:8px;color:var(--blue);padding:8px 12px;font-size:13px;"
+            style="background:#0a0a00;border:1px solid rgba(37,99,235,0.35);border-radius:8px;color:var(--blue);padding:8px 12px;font-size:13px;"
             onchange="_rptFrom=this.value">
         </div>
         <div class="fgr" style="flex:1;min-width:140px;">
           <label>ວັນທີສິ້ນສຸດ</label>
           <input type="date" id="rpt-to" value="${_rptTo}"
-            style="background:#0a0a00;border:1px solid rgba(68,170,255,0.35);border-radius:8px;color:var(--blue);padding:8px 12px;font-size:13px;"
+            style="background:#0a0a00;border:1px solid rgba(37,99,235,0.35);border-radius:8px;color:var(--blue);padding:8px 12px;font-size:13px;"
             onchange="_rptTo=this.value">
         </div>
         <button class="btn" onclick="applyRptRange()"
-          style="background:rgba(68,170,255,0.15);border:1px solid rgba(68,170,255,0.45);color:var(--blue);border-radius:8px;padding:9px 22px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px;margin-bottom:1px;">
+          style="background:rgba(37,99,235,0.15);border:1px solid rgba(37,99,235,0.45);color:var(--blue);border-radius:8px;padding:9px 22px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px;margin-bottom:1px;">
           📅 ກົ້ນຕອງ
         </button>
       </div>
@@ -3569,9 +3571,9 @@ function pgReports(){
         ].map(([l,fn],i)=>`
           <button id="rpt-preset-${i}" onclick="setRptPreset(${fn.toString()},${i})"
             style="border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;
-            border:1px solid rgba(68,170,255,0.35);
-            background:${i===0?'rgba(68,170,255,0.25)':'rgba(68,170,255,0.07)'};
-            color:${i===0?'var(--blue)':'rgba(68,170,255,0.6)'};
+            border:1px solid rgba(37,99,235,0.35);
+            background:${i===0?'rgba(37,99,235,0.25)':'rgba(37,99,235,0.07)'};
+            color:${i===0?'var(--blue)':'rgba(37,99,235,0.6)'};
             display:flex;align-items:center;gap:5px;">
             📅 ${l}
           </button>`).join('')}
@@ -3626,7 +3628,7 @@ function pgReports(){
     </div>
 
     <div style="text-align:center;color:var(--text-faint);font-size:10px;letter-spacing:1px;padding:8px 0;">
-      8king888 · ${DB.settings.storeName||'8king888 Gaming'} · ${SESSION.user.name} · ${new Date().toLocaleString()}
+      8king888 · ${DB.settings.storeName||'8king888 Gaming'} · ${SESSION.user.name} · 🕐 ໂຫຼດຂໍ້ມູນເມື່ອ: ${new Date().toLocaleString()}
     </div>
   </div>`;
 
@@ -3644,8 +3646,8 @@ function setRptPreset(fn, idx){
   // update pill styles
   for(let i=0;i<6;i++){
     const el=document.getElementById('rpt-preset-'+i); if(!el) continue;
-    el.style.background = i===idx ? 'rgba(68,170,255,0.25)' : 'rgba(68,170,255,0.07)';
-    el.style.color      = i===idx ? 'var(--blue)' : 'rgba(68,170,255,0.6)';
+    el.style.background = i===idx ? 'rgba(37,99,235,0.25)' : 'rgba(37,99,235,0.07)';
+    el.style.color      = i===idx ? 'var(--blue)' : 'rgba(37,99,235,0.6)';
   }
   renderRptAll();
 }
@@ -3657,7 +3659,7 @@ function applyRptRange(){
   // deactivate all presets
   for(let i=0;i<6;i++){
     const el=document.getElementById('rpt-preset-'+i); if(!el) continue;
-    el.style.background='rgba(68,170,255,0.07)'; el.style.color='rgba(68,170,255,0.6)';
+    el.style.background='rgba(37,99,235,0.07)'; el.style.color='rgba(37,99,235,0.6)';
   }
   renderRptAll();
 }
@@ -3736,27 +3738,27 @@ function renderRptAll(){
       ['Bonus',        fmt(bon),   'var(--purple)'],
       ['ລາຍຮັບລວມ',   fmt(rev),   'var(--gold)'],
     ].map(([l,v,c])=>`
-      <div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px;">
+      <div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(0,0,0,0.04);font-size:13px;">
         <span style="color:var(--text-dim);">${l}</span>
         <span style="color:${c};font-weight:700;">${v}</span>
       </div>`).join('')}
-    <div style="display:flex;justify-content:space-between;padding:8px 12px;background:rgba(255,255,255,0.03);border-radius:8px;margin-top:8px;font-size:13px;">
+    <div style="display:flex;justify-content:space-between;padding:8px 12px;background:rgba(0,0,0,0.03);border-radius:8px;margin-top:8px;font-size:13px;">
       <span style="color:var(--text-dim);">ສ່ວນຕ່າງ (ຝາກ−ຖອນ−ຄ່າທຳນຽມ)</span>
       <span style="font-weight:700;color:${netDiff>=0?'var(--green)':'var(--red)'};">${fmt(netDiff)}</span>
     </div>
-    <div style="display:flex;justify-content:space-between;padding:8px 12px;background:rgba(255,255,255,0.03);border-radius:8px;margin-top:4px;font-size:13px;">
+    <div style="display:flex;justify-content:space-between;padding:8px 12px;background:rgba(0,0,0,0.03);border-radius:8px;margin-top:4px;font-size:13px;">
       <span style="color:var(--text-dim);">ຄ່າຄຸ້ມຄອງລະບົບ (25%)</span>
       <span style="font-weight:700;color:var(--gold3);">− ${fmt(mgmtFee)}</span>
     </div>
-    <div style="display:flex;justify-content:space-between;padding:8px 12px;background:rgba(0,255,136,0.04);border-radius:8px;margin-top:4px;font-size:13px;border:1px solid rgba(0,255,136,0.12);">
+    <div style="display:flex;justify-content:space-between;padding:8px 12px;background:rgba(11,138,83,0.04);border-radius:8px;margin-top:4px;font-size:13px;border:1px solid rgba(11,138,83,0.12);">
       <span style="font-weight:700;">ກຳໄລສຸດທິການຂາຍ</span>
       <span style="font-weight:900;color:${salesP2>=0?'var(--green)':'var(--red)'};">${fmt(salesP2)}</span>
     </div>
-    <div style="display:flex;justify-content:space-between;padding:8px 12px;background:rgba(255,255,255,0.03);border-radius:8px;margin-top:4px;font-size:13px;">
+    <div style="display:flex;justify-content:space-between;padding:8px 12px;background:rgba(0,0,0,0.03);border-radius:8px;margin-top:4px;font-size:13px;">
       <span style="color:var(--text-dim);">ຫັກລາຍຈ່າຍທັງໝົດ</span>
       <span style="font-weight:700;color:var(--red);">− ${fmt(exp)}</span>
     </div>
-    <div style="display:flex;justify-content:space-between;padding:11px 12px;background:rgba(0,255,136,0.06);border-radius:8px;margin-top:4px;font-size:14px;border:1px solid rgba(0,255,136,0.15);">
+    <div style="display:flex;justify-content:space-between;padding:11px 12px;background:rgba(11,138,83,0.06);border-radius:8px;margin-top:4px;font-size:14px;border:1px solid rgba(11,138,83,0.15);">
       <span style="font-weight:800;">ກຳໄລສຸດທິທັງໝົດ</span>
       <span style="font-weight:900;color:${profit>=0?'var(--green)':'var(--red)'};">${fmt(profit)}</span>
     </div>
@@ -3778,18 +3780,18 @@ function renderRptAll(){
       ['ສະເລ່ຍ/ວັນ',        fmt(Math.round(rev/days)),'var(--blue)'],
       ['ລາຍຈ່າຍລວມ',        fmt(exp),                'var(--red)'],
     ].map(([l,v,c])=>`
-      <div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px;">
+      <div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(0,0,0,0.04);font-size:13px;">
         <span style="color:var(--text-dim);">${l}</span>
         <span style="color:${c};font-weight:700;">${v}</span>
       </div>`).join('')}
     <div style="margin-top:12px;">
       <div style="font-size:11px;color:var(--text-faint);letter-spacing:1px;margin-bottom:8px;">ສ່ວນແບ່ງຫຸ້ນສ່ວນ</div>
       ${DB.partners.map(p=>`
-        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.03);font-size:13px;">
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(0,0,0,0.03);font-size:13px;">
           <span style="color:${p.color};font-weight:600;">${p.name} (${p.share}%)</span>
           <span style="color:${p.color};font-weight:700;">${fmt(profit*p.share/100)}</span>
         </div>`).join('')}
-      <div style="display:flex;justify-content:space-between;padding:10px 12px;background:rgba(0,255,136,0.06);border-radius:8px;margin-top:8px;font-size:13px;border:1px solid rgba(0,255,136,0.15);">
+      <div style="display:flex;justify-content:space-between;padding:10px 12px;background:rgba(11,138,83,0.06);border-radius:8px;margin-top:8px;font-size:13px;border:1px solid rgba(11,138,83,0.15);">
         <span style="font-weight:700;">ກຳໄລສຸດທິທັງໝົດ</span>
         <span style="font-weight:900;color:${profit>=0?'var(--green)':'var(--red)'};">${fmt(profit)}</span>
       </div>
@@ -3904,7 +3906,181 @@ function exportCSVRange(){
   showToast('Export CSV ສຳເລັດ');
 }
 
+// ============================================================
+// EXPORT: Excel (.xlsx) — ຮູບແບບຕາມ Template "ສະຫຼຸບເວັບ"
+// ============================================================
+function fmtDMY(s){ if(!s) return ''; const [y,m,d]=String(s).split('-'); return `${d}/${m}/${y}`; }
 
+function monthsDaysLabel(fromStr, toStr){
+  const from = new Date(fromStr+'T00:00:00');
+  const to   = new Date(toStr+'T00:00:00');
+  if(to < from) return '0 ເດືອນ 0ມື້';
+  let months = (to.getFullYear()-from.getFullYear())*12 + (to.getMonth()-from.getMonth());
+  let tmp = new Date(from); tmp.setMonth(tmp.getMonth()+months);
+  if(tmp > to){ months--; tmp = new Date(from); tmp.setMonth(tmp.getMonth()+months); }
+  const days = Math.round((to - tmp) / 86400000);
+  return `${months} ເດືອນ ${days}ມື້`;
+}
+
+// ຍອດເງິນສຳຮອງທີ່ຍົກມາ ກ່ອນວັນທີທີ່ກຳນົດ (ຝາກ − ຖອນ − ລາຍຈ່າຍທັງໝົດ ກ່ອນໜ້ານັ້ນ)
+function reserveOpeningBalance(beforeDate){
+  const r = getReserve();
+  const dep = (r.transactions||[]).filter(t=>(t.date||'')<beforeDate)
+    .reduce((a,b)=>a+(b.type==='in'?b.amount:-b.amount),0);
+  const exp = DB.expenses.filter(e=>(e.date||'')<beforeDate).reduce((a,b)=>a+b.amount,0);
+  return dep - exp;
+}
+
+async function exportReportExcel(){
+  if(typeof ExcelJS==='undefined'){ showToast('ບໍ່ສາມາດໂຫຼດ Excel library ໄດ້ (ຕ້ອງການອິນເຕີເນັດ)','error'); return; }
+  const btn = document.getElementById('rpt-xlsx-btn');
+  if(btn){ btn.disabled=true; btn.textContent='⏳ ກຳລັງສ້າງ...'; }
+
+  try{
+    const loadTime = new Date();
+    const revs = getRptRevs(), exps = getRptExps();
+    const dep  = revs.reduce((a,b)=>a+(b.deposit||0),0);
+    const wit  = revs.reduce((a,b)=>a+(b.withdraw||0),0);
+    const prz  = revs.reduce((a,b)=>a+(b.prize||0),0);
+    const r    = getReserve();
+    const reserveIn = (r.transactions||[]).filter(t=>t.type==='in'&&(t.date||'')>=_rptFrom&&(t.date||'')<=_rptTo)
+      .reduce((a,b)=>a+b.amount,0);
+    const openingReserve = reserveOpeningBalance(_rptFrom);
+
+    const wb = new ExcelJS.Workbook();
+    wb.creator = SESSION.user ? SESSION.user.name : '8king888';
+    wb.created = loadTime;
+    const ws = wb.addWorksheet('ລາຍງານ', {views:[{showGridLines:false}]});
+    ws.columns = [{width:8.66},{width:44.83},{width:32.5},{width:25},{width:8.66}];
+
+    const FONT = 'Saysettha OT';
+    const thin = {style:'thin'};
+    const border = {top:thin,bottom:thin,left:thin,right:thin};
+    const fill = argb => ({type:'pattern',pattern:'solid',fgColor:{argb}});
+    const setC = (addr,val,opts={})=>{
+      const c = ws.getCell(addr);
+      c.value = (typeof val==='string' && val.charAt(0)==='=') ? {formula:val.slice(1)} : val;
+      c.font = Object.assign({name:FONT,size:12},opts.font||{});
+      if(opts.fill)   c.fill = fill(opts.fill);
+      if(opts.align)  c.alignment = opts.align;
+      if(opts.border) c.border = border;
+      if(opts.numFmt) c.numFmt = opts.numFmt;
+      return c;
+    };
+
+    // ── ROW 1: title banner ──────────────────────────────────
+    ws.mergeCells('B1:D1'); ws.getRow(1).height = 29;
+    setC('B1', `ສະຫຼຸບເວັບ ${DB.settings.storeName||'8king888'}`, {
+      font:{size:14,color:{argb:'FFFFFFFF'}}, fill:'FF1F4E78', align:{horizontal:'center',vertical:'center',wrapText:true}});
+
+    // ── ROW 2: date range ────────────────────────────────────
+    ws.mergeCells('B2:D2'); ws.getRow(2).height = 27.75;
+    setC('B2', `ວັນທີ ${fmtDMY(_rptFrom)} - ${fmtDMY(_rptTo)} (${monthsDaysLabel(_rptFrom,_rptTo)})`, {
+      font:{size:14,color:{argb:'FFFFFFFF'}}, fill:'FF1F4E78', align:{horizontal:'center',vertical:'center',wrapText:true}});
+
+    // ── ROW 3: unit ───────────────────────────────────────────
+    ws.mergeCells('B3:D3');
+    setC('B3', 'ໜ່ວຍ: ກີບ (LAK)', {font:{bold:true}});
+
+    // ── ROW 4: ເວລາໂຫຼດຂໍ້ມູນ (data load time) ──────────────
+    ws.mergeCells('B4:D4');
+    setC('B4', `🕐 ເວລາໂຫຼດຂໍ້ມູນ: ${loadTime.toLocaleString('lo-LA')}`, {
+      font:{size:9,italic:true,color:{argb:'FF808080'}}});
+
+    // ── SECTION 1 ─────────────────────────────────────────────
+    ws.mergeCells('B5:D5');
+    setC('B5','1. ລາຍການເຕີມ + ຖອນ + ລະບົບເວັບ',{font:{bold:true,color:{argb:'FFFFFFFF'}},fill:'FF2E75B6'});
+    ['ລາຍການ','ຈຳນວນເງິນ','ໝາຍເຫດ'].forEach((h,i)=>setC(['B6','C6','D6'][i],h,{font:{bold:true},border:true}));
+
+    setC('B7','ລາຍຮັບຈາກການເຕີມ',{border:true});
+    setC('C7',dep,{font:{color:{argb:'FF0000FF'}},border:true,numFmt:'#,##0'});
+    setC('B8','ລາຍຈ່າຍຈາກການຖອນ',{border:true});
+    setC('C8',wit,{font:{color:{argb:'FF0000FF'}},border:true,numFmt:'#,##0'});
+    setC('B9','ຄ່າບໍລິການ',{border:true});
+    setC('C9',prz,{font:{color:{argb:'FF0000FF'}},border:true,numFmt:'#,##0'});
+    setC('B10','ລະບົບເວັບ 25%',{border:true});
+    setC('C10','=(C7-(C8+C9))*25%',{font:{color:{argb:'FF0000FF'}},border:true,numFmt:'#,##0'});
+    setC('B11','ສະຫຼຸບກຳໄລຈາກເວັບ',{font:{bold:true},fill:'FFD9E1F2',border:true});
+    setC('C11','=C7-C8-C10',{font:{bold:true},fill:'FFD9E1F2',border:true,numFmt:'#,##0'});
+
+    // ── SECTION 2: ລາຍຈ່າຍຄົງທີ່ (dynamic rows) ────────────────
+    let row = 13;
+    ws.mergeCells(`B${row}:D${row}`);
+    setC(`B${row}`,'2. ລາຍຈ່າຍຄົງທີ່',{font:{color:{argb:'FFFFFFFF'}},fill:'FF2E75B6'});
+    row++; // header row
+    ['ລາຍການ','ຈຳນວນເງິນ','ໝາຍເຫດ'].forEach((h,i)=>setC(`${['B','C','D'][i]}${row}`,h,{font:{bold:true},border:true}));
+    const expStartRow = row+1;
+    row = expStartRow;
+    if(exps.length===0){
+      setC(`B${row}`,'(ບໍ່ມີລາຍການ)',{border:true});
+      setC(`C${row}`,0,{font:{color:{argb:'FF0000FF'}},border:true,numFmt:'#,##0'});
+      setC(`D${row}`,'',{border:true});
+      row++;
+    } else {
+      exps.forEach(e=>{
+        setC(`B${row}`,e.name,{border:true});
+        setC(`C${row}`,e.amount,{font:{color:{argb:'FF0000FF'}},border:true,numFmt:'#,##0'});
+        setC(`D${row}`,e.category||'',{font:{size:12,color:{argb:'FF808080'}},border:true});
+        row++;
+      });
+    }
+    const expEndRow = row-1;
+    const totalExpRow = row;
+    setC(`B${totalExpRow}`,'ລວມລາຍຈ່າຍ',{font:{bold:true},fill:'FFD9E1F2',border:true});
+    setC(`C${totalExpRow}`,`=SUM(C${expStartRow}:C${expEndRow})`,{font:{bold:true},fill:'FFD9E1F2',border:true,numFmt:'#,##0'});
+
+    // ── ກຳໄລ / ຂາດທຶນສຸດທິ ──────────────────────────────────────
+    const profitRow = totalExpRow+2;
+    ws.getRow(profitRow).height = 29;
+    setC(`B${profitRow}`,'ກຳໄລ / ຂາດທຶນສຸດທິ',{font:{size:14,bold:true},fill:'FFC6E0B4',border:true});
+    setC(`C${profitRow}`,`=C11-C${totalExpRow}`,{font:{size:14,bold:true},fill:'FFC6E0B4',border:true,numFmt:'#,##0;\\-#,##0'});
+
+    // ── SECTION 3: ເງິນສຳຮອງ ────────────────────────────────────
+    let r3 = profitRow+2;
+    ws.mergeCells(`B${r3}:D${r3}`);
+    setC(`B${r3}`,'3. ເງິນສຳຮອງ',{font:{color:{argb:'FFFFFFFF'}},fill:'FF0070C0'});
+    r3++;
+    ['ລາຍການ','ຈຳນວນເງິນ','ໝາຍເຫດ'].forEach((h,i)=>setC(`${['B','C','D'][i]}${r3}`,h,{font:{bold:true},fill:'FFDDEBF7',border:true}));
+    r3++;
+    const openRow=r3;
+    setC(`B${openRow}`,'ຍອດເງິນສຳຮອງຍົກມາ',{fill:'FFD9E1F2',border:true});
+    setC(`C${openRow}`,openingReserve,{font:{color:{argb:'FF0000FF'}},fill:'FFD9E1F2',border:true,numFmt:'#,##0'});
+    r3++;
+    const paidRow=r3;
+    setC(`B${paidRow}`,'ເງີນສຳຮອງທີ່ຈ່າຍໄປ',{fill:'FFE2EFDA',border:true});
+    setC(`C${paidRow}`,`=C${totalExpRow}`,{font:{color:{argb:'FF0000FF'}},fill:'FFE2EFDA',border:true,numFmt:'#,##0'});
+    r3++;
+    const topupRow=r3;
+    setC(`B${topupRow}`,'ເງີນສຳຮອງທີ່ເຕີມເຂົ້າ',{fill:'FFD9D9D9',border:true});
+    setC(`C${topupRow}`,reserveIn,{font:{color:{argb:'FF0000FF'}},fill:'FFD9D9D9',border:true,numFmt:'#,##0'});
+    r3++;
+    const remainRow=r3;
+    setC(`B${remainRow}`,'ຍອດເງິນສຳຮອງທີ່ຍັງເຫຼືອ',{font:{bold:true},fill:'FFB4C7E7',border:true});
+    setC(`C${remainRow}`,`=C${openRow}-C${paidRow}+C${topupRow}`,{font:{bold:true},fill:'FFB4C7E7',border:true,numFmt:'#,##0'});
+
+    // ── SECTION 4: ຍອດເງີນຄົງເຫຼືອໃນທະນາຄານ (manual entry) ──────
+    const bankRow = remainRow+2;
+    ws.getRow(bankRow).height = 32;
+    ws.mergeCells(`B${bankRow}:D${bankRow}`);
+    setC(`B${bankRow}`,'4. ຍອດເງີນຄົງເຫຼືອໃນທະນາຄານ',{font:{size:16,bold:true,color:{argb:'FFFFFFFF'}},fill:'FF00B050'});
+
+    const buf = await wb.xlsx.writeBuffer();
+    const blob = new Blob([buf],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    const nameSafe = (DB.settings.storeName||'8king888').replace(/[^\w-]+/g,'_');
+    a.download = `${nameSafe}_${_rptFrom}_${_rptTo}.xlsx`;
+    a.click();
+    showToast('📗 Export Excel ສຳເລັດ');
+  } catch(e){
+    console.error(e);
+    showToast('ສ້າງ Excel ລົ້ມເຫຼວ: '+e.message,'error');
+  } finally {
+    if(btn){ btn.disabled=false; btn.textContent='📗 Excel'; }
+  }
+}
+
+// ============================================================
 // PAGE: NOTIFICATIONS
 // ============================================================
 function pgNotif(){
@@ -3927,7 +4103,7 @@ function renderNotifList(){
   const typeColor={shift:'var(--green)',revenue:'var(--gold)',warn:'var(--red)',settings:'var(--blue)',expense:'var(--red)'};
   const typeIcon={shift:'🕐',revenue:'💰',warn:'⚠',settings:'⚙',expense:'💸'};
   el.innerHTML=DB.notifications.map(n=>`
-  <div style="display:flex;gap:13px;padding:13px 15px;background:${n.read?'rgba(255,255,255,0.015)':'rgba(255,122,0,0.04)'};border-radius:10px;border-left:3px solid ${n.read?'rgba(255,255,255,0.1)':typeColor[n.type]||'var(--gold)'};" onclick="readNotif(${n.id})">
+  <div style="display:flex;gap:13px;padding:13px 15px;background:${n.read?'rgba(0,0,0,0.015)':'rgba(194,65,12,0.04)'};border-radius:10px;border-left:3px solid ${n.read?'rgba(0,0,0,0.1)':typeColor[n.type]||'var(--gold)'};" onclick="readNotif(${n.id})">
     <span style="font-size:20px;">${typeIcon[n.type]||'📋'}</span>
     <div style="flex:1;">
       <div style="font-size:13px;color:${n.read?'var(--text-dim)':'var(--text)'};">${n.text}</div>
@@ -3973,7 +4149,7 @@ function renderLogList(q){
   if(q) logs=logs.filter(l=>l.user.includes(q)||l.action.includes(q));
   if(logs.length===0){ el.innerHTML=`<div class="empty"><div class="eicon">📋</div><p>ບໍ່ມີຂໍ້ມູນ</p></div>`; return; }
   el.innerHTML=logs.map(l=>`
-  <div style="display:flex;gap:13px;padding:11px 15px;background:rgba(255,255,255,0.02);border-radius:10px;border-left:3px solid ${tcolor[l.type]||'rgba(255,122,0,0.25)'};">
+  <div style="display:flex;gap:13px;padding:11px 15px;background:rgba(0,0,0,0.02);border-radius:10px;border-left:3px solid ${tcolor[l.type]||'rgba(194,65,12,0.25)'};">
     <span style="font-size:17px;">${ticon[l.type]||'📋'}</span>
     <div style="flex:1;">
       <div style="font-size:13px;"><span class="tg bold">${l.user}</span><span class="td"> — ${l.action}</span></div>
@@ -4059,7 +4235,7 @@ function pgSettings(){
         <b style="color:var(--gold);">ຂັ້ນຕອນ 3</b> — Copy <b>Database URL</b> (ຮູບແບບ: https://xxx-default-rtdb.firebaseio.com)<br>
         <b style="color:var(--gold);">ຂັ້ນຕອນ 4</b> — Project Settings ⚙ → Service accounts → <b>Database secrets</b> → Show → Copy secret<br>
         <b style="color:var(--gold);">ຂັ້ນຕອນ 5</b> — ໃສ່ທັງ 2 ຄ່າຂ້າງເທິງ → ກົດ "ບັນທຶກ &amp; ເຊື່ອມຕໍ່"<br>
-        <div style="margin-top:8px;padding:8px 12px;background:rgba(0,255,136,0.06);border-radius:8px;color:var(--green);font-size:11px;">
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(11,138,83,0.06);border-radius:8px;color:var(--green);font-size:11px;">
           ✅ ຫຼັງຈາກ setup — ທຸກ device ທີ່ເປີດ file ດຽວກັນ ຈະເຫັນຂໍ້ມູນດຽວກັນທັນທີ ~2 ວິ.
         </div>
       </div>
@@ -4078,7 +4254,7 @@ function pgSettings(){
 
     <div class="card p24">
       <div class="st">ສູດຄຳນວນ Break Even</div>
-      <div style="background:rgba(255,122,0,0.04);border:1px solid rgba(255,122,0,0.12);border-radius:10px;padding:17px;">
+      <div style="background:rgba(194,65,12,0.04);border:1px solid rgba(194,65,12,0.12);border-radius:10px;padding:17px;">
         <div class="fm tg" style="font-size:13px;line-height:2.2;">
           ກຳໄລສຸດທິ = ລາຍຮັບທັງໝົດ − ລາຍຈ່າຍທັງໝົດ<br>
           Break Even = ລາຍຈ່າຍ ÷ ອັດຕາກຳໄລ<br>
